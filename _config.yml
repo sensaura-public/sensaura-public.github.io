@@ -1,3 +1,5 @@
 highlighter: pygments
 safe: true
 exclude: [ ghtools ]
+paginate: 10
+paginate_path: "/archives/page/:num"
