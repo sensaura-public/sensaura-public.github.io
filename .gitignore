@@ -1,4 +1,5 @@
 *~
 *.lock
 _site
-sample_*.jpg
+images/sample_*.jpg
+_posts/2012*sample.md
