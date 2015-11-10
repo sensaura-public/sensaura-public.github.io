@@ -41,11 +41,11 @@ Pellentesque vitae nisi urna. Quisque iaculis orci sed aliquet porta. Fusce cons
 
 def generatePost(postdir, num):
   with open(join(postdir, "2012-12-%02d-sample.md" % num), "w") as output:
-    output.write(FRONT_MATTER % choice(TITLES))
+    output.write(FRONT_MATTER.strip() % choice(TITLES))
     output.write(CONTENT)
     
 if __name__ == "__main__":
   posts = join(abspath(join(dirname(__file__), "..")), "_posts")
-  for x in range(30):
+  for x in range(1, 30):
     generatePost(posts, x)
     
