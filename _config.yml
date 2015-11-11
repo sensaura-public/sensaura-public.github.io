@@ -4,6 +4,10 @@ exclude: [ ghtools, sass ]
 paginate: 10
 paginate_path: "/archives/page/:num"
 
+# Custom settings
+sensaura_project: false # If true, this is a project.
+
+# Default values by directory
 defaults:
   -
     scope:
