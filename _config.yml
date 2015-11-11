@@ -1,6 +1,6 @@
 highlighter: pygments
 safe: true
-exclude: [ ghtools, sass ]
+exclude: [ "ghtools", "sass", "pages/README.txt", "Gemfile", "Gemfile.lock" ]
 paginate: 10
 paginate_path: "/archives/page/:num"
 
