@@ -10,4 +10,19 @@
       </ul>
     </div>
   </nav>
+  {% if site.data.sections %}
+  <nav>
+    <div class="nav-wrapper">
+      <ul>
+      {% for section in site.data.sections %}
+        {% if page.section == section.name %}
+        <li class="active"><a href="index.html">{{ section.title }}</a></li>
+        {% else %}
+        <li><a href="index.html">{{ section.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+      </ul>
+    </div>
+  </nav>
+  {% endif %}
 </header>
