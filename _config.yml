@@ -3,3 +3,10 @@ safe: true
 exclude: [ ghtools, sass ]
 paginate: 10
 paginate_path: "/archives/page/:num"
+
+defaults:
+  -
+    scope:
+      path: "pages"
+    values:
+      layout: "staticpage"
