@@ -3,22 +3,25 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="index.html">Blog</a></li>
-        <li><a href="#">SensNode</a></li>
-        <li><a href="#">SensNet</a></li>
-        <li><a href="#">SensHub</a></li>
+      {% for section in site.data.sections %}
+        {% if page.section == section.name %}
+        <li class="active"><a href="{{ section.url }}">{{ section.title }}</a></li>
+        {% else %}
+        <li><a href="{{ section.url }}">{{ section.title }}</a></li>
+        {% endif %}
+      {% endfor %}
       </ul>
     </div>
   </nav>
-  {% if site.data.sections %}
+  {% if site.data.subsections %}
   <nav>
     <div class="nav-wrapper">
       <ul>
-      {% for section in site.data.sections %}
-        {% if page.section == section.name %}
-        <li class="active"><a href="index.html">{{ section.title }}</a></li>
+      {% for subsection in site.data.subsections %}
+        {% if page.subsection == subsection.name %}
+        <li class="active"><a href="{{ subsection.url }}">{{ subsection.title }}</a></li>
         {% else %}
-        <li><a href="index.html">{{ section.title }}</a></li>
+        <li><a href="{{ subsection.url }}">{{ subsection.title }}</a></li>
         {% endif %}
       {% endfor %}
       </ul>

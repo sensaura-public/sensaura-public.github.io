@@ -9,6 +9,13 @@ sensaura_project: false # If true, this is a project.
 
 # Default values by directory
 defaults:
+  # Set the default section for the site
+  -
+    scope:
+      path: ""
+    values:
+      section: "blog"
+  # Set the layout to use for static pages
   -
     scope:
       path: "pages"
