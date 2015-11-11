@@ -5,13 +5,14 @@
 </head>
 <body>
   {% include header.html %}
-  <main class="container">
-    <div class="row">
+  <main class="container row">
     {% if paginator.page == 1 %}
       <div class="col s12">
         {{ content }}
       </div>
     {% endif %}
+    <div class="col s12 center">
+      <img src="/images/adsense_demo.png">
     </div>
     <div class="col s12">
       <!-- Post detail -->
