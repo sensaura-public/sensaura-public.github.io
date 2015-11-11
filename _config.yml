@@ -22,6 +22,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  # Set the layout to use for tag pages
+  -
+    scope:
+      path: "tags"
+    values:
+      layout: "tag"
   # Set the layout to use for static pages
   -
     scope:
