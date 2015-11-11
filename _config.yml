@@ -15,6 +15,13 @@ defaults:
       path: ""
     values:
       section: "blog"
+  # Set the default section for the site
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
   # Set the layout to use for static pages
   -
     scope:

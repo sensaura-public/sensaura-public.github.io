@@ -5,62 +5,49 @@
 </head>
 <body>
   {% include header.html %}
-  <div class="row">
-  {% if paginator.page == 1 %}
+  <main class="container">
+    <div class="row">
+    {% if paginator.page == 1 %}
+      <div class="col s12">
+        {{ content }}
+      </div>
+    {% endif %}
+    </div>
     <div class="col s12">
-      {{ content }}
+      <!-- Post detail -->
+      {% for post in paginator.posts %}
+        {% include postpreview.html %}
+      {% endfor %}
+    </div>
+    <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+    <div class="col s12">
+      <ul class="pagination center">
+    {% if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_left</i></a></li>
+    {% else %}
+        <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    {% endif %}
+  
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <li class="active"><a href="#!">{{ page }}</a></li>
+      {% elsif page == 1 %}
+        <li><a href="/">{{ page }}</a></li>
+      {% else %}
+        <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+      {% endif %}
+    {% endfor %}
+  
+    {% if paginator.next_page %}
+        <li class="waves-effect"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_right</i></a></li>
+    {% else %}
+        <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    {% endif %}
+      </ul>
     </div>
   {% endif %}
-  </div>
-  <div class="col s12">
-    <!-- Post detail -->
-    <ul class="collection">
-    {% for post in paginator.posts %}
-      <li class="collection-item row">
-        <div class="col s12">
-          <span class="title">{{ post.title }}</span>
-        </div>
-        {% if post.cover %}
-        <div class="col s3"><img class="responsive-img" src="images/{{ post.cover }}" alt=""></div>
-        <div class="col s9">
-        {% else %}
-        <div class="col s12">
-        {% endif %}
-          {{ post.excerpt }}
-          <div class="right"><a href="{{ post.url }}">More ...</a></div>
-        </div>
-      </li>
-    {% endfor %}
-    </ul>
-  </div>
-  <!-- Pagination -->
-{% if paginator.total_pages > 1 %}
-  <div class="col s12">
-    <ul class="pagination center">
-  {% if paginator.previous_page %}
-      <li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_left</i></a></li>
-  {% else %}
-      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-  {% endif %}
-
-  {% for page in (1..paginator.total_pages) %}
-    {% if page == paginator.page %}
-      <li class="active"><a href="#!">{{ page }}</a></li>
-    {% elsif page == 1 %}
-      <li><a href="/">{{ page }}</a></li>
-    {% else %}
-      <li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
-    {% endif %}
-  {% endfor %}
-
-  {% if paginator.next_page %}
-      <li class="waves-effect"><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><i class="material-icons">chevron_right</i></a></li>
-  {% else %}
-      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-  {% endif %}
-    </ul>
-  </div>
-{% endif %}
+  </main>
   {% include footer.html %}
   {% include javascript.inc %}
 </body>
