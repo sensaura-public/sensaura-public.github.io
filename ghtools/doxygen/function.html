@@ -1,0 +1,29 @@
+<%include file="frontmatter.inc"/>
+<div class="row">
+  <div class="col s3">
+    <%include file="treeview.inc"/>
+  </div>
+  <div class="col s9">
+    <!-- Basic information -->
+    <% file = docItem.getFile() %>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">${docItem.getDisplayName()}</span>
+        % if file is not None:
+        <p>Defined in file <a href="${file.url}">${file.name}</a></p>
+        % endif
+        <p>${docItem.briefdescription}</p>
+        <p>${docItem.detaileddescription}</p>
+      </div>
+    </div>
+
+    <!-- Parameters -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Parameters</span>
+      </div>
+    </div>
+    
+    <%include file="debuginfo.inc"/>
+  </div>
+</div>
