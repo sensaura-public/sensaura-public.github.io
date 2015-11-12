@@ -1,5 +1,5 @@
 <!-- Generate the tree view of all items -->
-<ul id="nav-mobile" class="side-nav fixed">
+<ul id="nav-mobile" class="side-nav fixed" style="position: relative;">
   <!-- TODO: Fixed items here -->
   <li class="bold"><a href="about.html" class="waves-effect waves-teal">About</a></li>
   <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Getting Started</a></li>
@@ -26,4 +26,3 @@
   % endif
 % endfor
 </ul>
-

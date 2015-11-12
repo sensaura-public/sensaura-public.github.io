@@ -1,6 +1,6 @@
 highlighter: pygments
 safe: true
-exclude: [ "ghtools", "sass", "pages/README.txt", "Gemfile", "Gemfile.lock" ]
+exclude: [ "ghtools", "sass", "pages/README.txt", "apidocs/README.txt", "Gemfile", "Gemfile.lock" ]
 paginate: 10
 paginate_path: "/archives/page/:num"
 
@@ -34,3 +34,9 @@ defaults:
       path: "pages"
     values:
       layout: "staticpage"
+  # Set the layout to use for API documentation
+  -
+    scope:
+      path: "apidocs"
+    values:
+      layout: "apidocs"
