@@ -9,6 +9,7 @@ from mako.template import Template
 from mako.lookup import TemplateLookup
 from mako.runtime import Context
 from StringIO import StringIO
+from traceback import print_exc
 
 ITEMS = dict()
 KINDS = dict()
@@ -110,7 +111,6 @@ class Compound(DocItem):
     self.children = dict()
     for child in getChildrenByTagName(node, "member"):
       item = DocItem(child, self)
-      item.parent = self
       self.children[item.refid] = item
 
 def updateItem(node):
@@ -120,10 +120,6 @@ def updateItem(node):
     print "Warning: Could not find definition for item %s" % refid
     return
   item = ITEMS[refid]
-  kind = node.getAttribute("kind")
-  if item.kind <> kind:
-    print "Warning: Member definition is for a different kind %s vs %s" % (kind, item.kind)
-    return
   # Add attributes
   for attr in getChildrenByNodeType(node, Node.ATTRIBUTE_NODE):
     if not attr.localName in ("id", "kind"):
@@ -164,9 +160,13 @@ def processTemplate(template, outputname, lookup, docItem = None):
     docItems = ITEMS,
     docItemsByKind = KINDS
     )
-  template.render_context(context)
-  with open(outputname, "w") as output:
-    output.write(buf.getvalue())
+  try:
+    template.render_context(context)
+    with open(outputname, "w") as output:
+      output.write(buf.getvalue())
+  except Exception, ex:
+    print "Error: Could not generate '%s'" % outputname
+    print_exc()
 
 def generateDocs(outdir):
   global ITEMS, KINDS
