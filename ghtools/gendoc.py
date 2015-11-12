@@ -89,6 +89,7 @@ class DocItem:
     self.name = getText(getChildByName(node, "name"))
     self.sequence = SEQUENCE
     self.parent = parent
+    self.url = "%s.html" % self.refid
     # HACK: Doxygen treats class methods as functions, we will call them
     #       a 'method' instead.
     if (self.parent is not None) and (self.parent.kind == "class") and (self.kind == "function"):
@@ -100,6 +101,21 @@ class DocItem:
     if not KINDS.has_key(self.kind):
       KINDS[self.kind] = list()
     KINDS[self.kind].append(self)
+    
+  def getFile(self):
+    """ Determine the filename this is defined in
+    """
+    testing = self
+    while (testing is not None) and (testing.kind <> "file"):
+      testing = testing.parent
+    return testing
+
+  def getDisplayName(self):
+    """ Get a name suitable for display
+    """
+    if self.kind in ("function", "method"):
+      return "%s %s%s" % (self.type, self.name, self.argsstring)
+    return self.name
 
 class Compound(DocItem):
   """ Represents a compound block
@@ -113,6 +129,39 @@ class Compound(DocItem):
       item = DocItem(child, self)
       self.children[item.refid] = item
 
+class ParamInfo:
+  """ Represents parameter information
+  """
+  
+  def __init__(self, node):
+    tags = dict([ (n.tagName, n) for n in getChildrenByNodeType(node, Node.ELEMENT_NODE) ])
+    # Get the name
+    self.name = ""
+    if tags.has_key("declname"):
+      self.name = getText(tags["declname"])
+    elif tags.has_key("defname"):
+      self.name = getText(tags["defname"])
+    # Get the type information
+    self.type = None
+    self.typeref = None
+    self.typekind = None
+    if tags.has_key("type"):
+      self.type = getText(tags["type"])
+      self.typeref = tags["type"].getAttribute("refid")
+      self.typekind = tags["type"].getAttribute("refkind")
+
+def getStructuredText(node):
+  parts = list()
+  params = dict()
+  for child in getChildrenByNodeType(node, Node.ELEMENT_NODE, True):
+    if child.tagName == "para":
+      parts.append(getText(child))
+    else:
+      print child.tagName
+  # Combine it all
+  return " ".join(parts), params
+  return " ".join([ getText(p) for p in getChildrenByTagName(node, "para") ])
+
 def updateItem(node):
   global ITEMS
   refid = node.getAttribute("id")
@@ -120,13 +169,22 @@ def updateItem(node):
     print "Warning: Could not find definition for item %s" % refid
     return
   item = ITEMS[refid]
+  item.params = list()
+  details = dict()
   # Add attributes
   for attr in getChildrenByNodeType(node, Node.ATTRIBUTE_NODE):
     if not attr.localName in ("id", "kind"):
       item.__dict__[attr.localName] = attr.value
   # Add child elements
   for child in getChildrenByNodeType(node, Node.ELEMENT_NODE):
-    item.__dict__[child.tagName] = getText(child)
+    if child.tagName == "param":
+      p = ParamInfo(child)
+      item.params.append(p)
+      details[p.name] = p
+    elif child.tagName in ("briefdescription", "detaileddescription"):
+      item.__dict__[child.tagName], params = getStructuredText(child)
+    else:
+      item.__dict__[child.tagName] = getText(child)
 
 def loadData(indir):
   global ITEMS
