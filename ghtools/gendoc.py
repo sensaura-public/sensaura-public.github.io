@@ -81,12 +81,17 @@ class DocItem:
   """ Represents a documentation item
   """
 
-  def __init__(self, node):
+  def __init__(self, node, parent = None):
     global ITEMS, SEQUENCE
     self.refid = node.getAttribute("refid")
     self.kind = node.getAttribute("kind")
     self.name = getText(getChildByName(node, "name"))
     self.sequence = SEQUENCE
+    self.parent = parent
+    # HACK: Doxygen treats class methods as functions, we will call them
+    #       a 'method' instead.
+    if (self.parent is not None) and (self.parent.kind == "class") and (self.kind == "function"):
+      self.kind = "method"
     # Update the sequence
     SEQUENCE = SEQUENCE + 1
     # Update the global mapping and the kinds
@@ -104,7 +109,8 @@ class Compound(DocItem):
     # Add all the children
     self.children = dict()
     for child in getChildrenByTagName(node, "member"):
-      item = DocItem(child)
+      item = DocItem(child, self)
+      item.parent = self
       self.children[item.refid] = item
 
 def updateItem(node):
@@ -151,7 +157,6 @@ def loadData(indir):
 #----------------------------------------------------------------------------
 
 def processTemplate(template, outputname, lookup, docItem = None):
-  print "  %s" % outputname
   buf = StringIO()
   # Set up the context
   context = Context(buf,
