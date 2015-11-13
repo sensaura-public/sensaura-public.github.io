@@ -4,7 +4,7 @@ from sys import argv
 from os import makedirs
 from os.path import basename, abspath, isdir, isfile, exists, join, dirname
 from shutil import rmtree
-from xml.dom.minidom import parse, Node
+from xml.parsers.expat import ParserCreate
 from mako.template import Template
 from mako.lookup import TemplateLookup
 from mako.runtime import Context
@@ -40,215 +40,166 @@ def showUsage(msg = None):
   print USAGE.strip() % argv[0]
   exit(1)
 
-class Data:
+#----------------------------------------------------------------------------
+# Documentation data model
+#----------------------------------------------------------------------------
+
+class DocItem:
   def __init__(self, **kwds):
+    self.parent = None
+    self.children = list()
     self.__dict__.update(kwds)
 
-  def __eq__(self, other):
-    return self.__dict__ == other.__dict__
+  def addChild(self, child):
+    child.parent = self
+    self.children.append(child)
+
+# Items grouped by various conditions
+ITEMS = list()
+ITEMS_BY_REFID = dict()
+ITEMS_BY_KIND = dict()
+
+def addItem(item):
+  """ Add a new item
+  """
+  global ITEMS, ITEMS_BY_REFID, ITEMS_BY_KIND
+  ITEMS.append(item)
+  ITEMS_BY_REFID[item.refid] = item
+  if not ITEMS_BY_KIND.has_key(item.kind):
+    ITEMS_BY_KIND[item.kind] = list()
+  ITEMS_BY_KIND[item.kind].append(item)
 
 #----------------------------------------------------------------------------
 # XML data loading
 #----------------------------------------------------------------------------
 
-def getChildByName(node, name):
-  for child in node.childNodes:
-    if (child.nodeType == Node.ELEMENT_NODE) and (child.tagName == name):
-      return child
-  return None
-
-def getText(node):
-  node.normalize()
-  text = ""
-  for child in node.childNodes:
-    if child.nodeType == Node.TEXT_NODE:
-      text = text + child.data
-  return text
-
-def getChildrenByTagName(parent, name, recursive = False):
-  """ Iterator for finding child nodes by name
-  """
-  for child in parent.childNodes:
-    if (child.nodeType == Node.ELEMENT_NODE) and (child.tagName == name):
-      yield child
-      if recursive:
-        for c2 in getChildrenByTagName(child, name, recursive):
-          yield c2
-
-def getChildrenByNodeType(parent, typeid, recursive = False):
-  """ Iterator for finding child nodes by name
-  """
-  for child in parent.childNodes:
-    if child.nodeType == typeid:
-      yield child
-      if recursive:
-        for c2 in getChildrenByNodeType(child, typeid, recursive):
-          yield c2
-
-def walkChildTree(parent, action, data):
-  """ Invoke 'action(node, enter, data)' for each node in the child tree
-
-    Note that 'action()' get called twice for every node - once when the
-    node is first seen (enter == True) and again after all child nodes of
-    that node are processed (enter == False).
-  """
-  for child in parent.childNodes:
-    action(child, True, data)
-    walkChildTree(child, action, data)
-    action(child, False, data)
-
-class DocItem:
-  """ Represents a documentation item
+class BaseParser:
+  """ Base implementation of a expat based XML parser
   """
 
-  def __init__(self, node, parent = None):
-    global ITEMS, SEQUENCE
-    self.refid = node.getAttribute("refid")
-    self.kind = node.getAttribute("kind")
-    self.name = getText(getChildByName(node, "name"))
-    self.sequence = SEQUENCE
-    self.parent = parent
-    self.url = "%s.html" % self.refid
-    # HACK: Doxygen treats class methods as functions, we will call them
-    #       a 'method' instead.
-    if (self.parent is not None) and (self.parent.kind == "class") and (self.kind == "function"):
-      self.kind = "method"
-    # Update the sequence
-    SEQUENCE = SEQUENCE + 1
-    # Update the global mapping and the kinds
-    ITEMS[self.refid] = self
-    if not KINDS.has_key(self.kind):
-      KINDS[self.kind] = list()
-    KINDS[self.kind].append(self)
-
-  def getFile(self):
-    """ Determine the filename this is defined in
+  def __init__(self):
+    """ Create the parser and attach hooks
     """
-    testing = self
-    while (testing is not None) and (testing.kind <> "file"):
-      testing = testing.parent
-    return testing
+    self._parser = ParserCreate()
+    self._parser.StartElementHandler = self._StartElementHandler
+    self._parser.EndElementHandler = self._EndElementHandler
+    self._parser.CharacterDataHandler = self._CharacterDataHandler
+    self._stack = list()
+    self._active = None
+    # Use this to deliberately ignore tags without displaying output
+    self.ignoreTags = list()
 
-  def getDisplayName(self):
-    """ Get a name suitable for display
-    """
-    if self.kind in ("function", "method"):
-      return "%s %s%s" % (self.type, self.name, self.argsstring)
-    return self.name
+  #--------------------------------------------------------------------------
+  # Event dispatching
+  #--------------------------------------------------------------------------
 
-class Compound(DocItem):
-  """ Represents a compound block
-  """
-
-  def __init__(self, node):
-    DocItem.__init__(self, node)
-    # Add all the children
-    self.children = dict()
-    for child in getChildrenByTagName(node, "member"):
-      item = DocItem(child, self)
-      self.children[item.refid] = item
-
-class ParamInfo:
-  """ Represents parameter information
-  """
-
-  def __init__(self, node):
-    tags = dict([ (n.tagName, n) for n in getChildrenByNodeType(node, Node.ELEMENT_NODE) ])
-    # Get the name
-    self.name = ""
-    if tags.has_key("declname"):
-      self.name = getText(tags["declname"])
-    elif tags.has_key("defname"):
-      self.name = getText(tags["defname"])
-    # Get the type information
-    self.type = None
-    self.typeref = None
-    self.typekind = None
-    if tags.has_key("type"):
-      self.type = getText(tags["type"])
-      self.typeref = tags["type"].getAttribute("refid")
-      self.typekind = tags["type"].getAttribute("refkind")
-
-def getStructuredText(node):
-  state = Data(stack = list(), desc = list(), retdesc = list(), state = "")
-  def textAction(node, enter, data):
-    if node.nodeType == Node.TEXT_NODE:
-      if len(data.stack) == 0:
-        return
-      parent = data.stack[-1]
-      if parent.tagName == "para":
-        if enter:
-          if data.state == "return":
-            data.retdesc.append(node.data)
-          else:
-            data.desc.append(node.data)
-      elif parent.tagName == "ref":
-        if enter:
-          data.desc.append('<a href="%s.html">%s</a>' % (parent.getAttribute("refid"), node.data))
-      elif parent.tagName == "simplesect":
-        kind = parent.getAttribute("kind")
-        if kind == "return":
-          if enter:
-            data.state = kind
-          else:
-            data.state = ""
-        else:
-          if enter:
-            print "simplesect::%s" % kind
-      else:
-        print data.stack[-1].tagName
-    elif node.nodeType == Node.ELEMENT_NODE:
-      if enter:
-        data.stack.append(node)
-      else:
-        data.stack = data.stack[:-1]
-  # Build the text and parameter blocks and return it
-  walkChildTree(node, textAction, state)
-  return " ".join(state.desc), None
-
-def updateItem(node):
-  global ITEMS
-  refid = node.getAttribute("id")
-  if not ITEMS.has_key(refid):
-    print "Warning: Could not find definition for item %s" % refid
-    return
-  item = ITEMS[refid]
-  item.params = list()
-  details = dict()
-  # Add attributes
-  for attr in getChildrenByNodeType(node, Node.ATTRIBUTE_NODE):
-    if not attr.localName in ("id", "kind"):
-      item.__dict__[attr.localName] = attr.value
-  # Add child elements
-  for child in getChildrenByNodeType(node, Node.ELEMENT_NODE):
-    if child.tagName == "param":
-      p = ParamInfo(child)
-      item.params.append(p)
-      details[p.name] = p
-    elif child.tagName in ("briefdescription", "detaileddescription"):
-      item.__dict__[child.tagName], params = getStructuredText(child)
+  def _StartElementHandler(self, name, attributes):
+    # Add to the call stack
+    self._active = name
+    self._stack.append(self._active)
+    # Allow custom processing
+    methodName = "begin%s" % name.capitalize()
+    method = getattr(self, methodName, None)
+    if(callable(method)):
+      method(name, attributes)
     else:
-      item.__dict__[child.tagName] = getText(child)
+      if not name in self.ignoreTags:
+        print "Unhandled tag '<%s>'" % name
 
-def loadData(indir):
-  global ITEMS
-  DATASET = dict()
-  print "Loading index.xml"
-  top = parse(join(indir, "index.xml")).documentElement
-  # Find all top level compounds
-  for node in top.getElementsByTagName("compound"):
-    item = Compound(node)
-    if not DATASET.has_key(item.kind):
-      DATASET[item.kind] = dict()
-    DATASET[item.kind][item.refid] = item
-  print "%d documentation items found" % len(ITEMS)
-  # Now get the detail for each one
-  for kind in DATASET.keys():
-    for entry in DATASET[kind].keys():
-      print "Loading %s.xml" % entry
-      top = parse(join(indir, entry + ".xml")).documentElement
-      for node in top.getElementsByTagName("memberdef"):
-        updateItem(node)
+  def _EndElementHandler(self, name):
+    # Pop off the call stack
+    self._stack = self._stack[:-1]
+    if len(self._stack) > 0:
+      self._active = self._stack[-1]
+    else:
+      self._active = None
+    # Allow custom processing
+    methodName = "end%s" % name.capitalize()
+    method = getattr(self, methodName, None)
+    if(callable(method)):
+      method(name)
+
+  def _CharacterDataHandler(self, data):
+    self.processText(self._active, data)
+
+  #--------------------------------------------------------------------------
+  # Parsing
+  #--------------------------------------------------------------------------
+
+  def beginParse(self):
+    """ Called prior to parsing. Use this to reset internal state
+    """
+    pass
+
+  def parse(self, filename):
+    """ Parse a file
+    """
+    self.beginParse()
+    self._parser.ParseFile(open(filename, "r"))
+
+  def processText(self, name, text):
+    """ Called to handle text between tags
+    """
+    pass
+
+class CompoundParser(BaseParser):
+  """ Parser for the index.xml file generated by doxygen
+
+    This builds up the list of top level compound objects and builds the
+    initial data for their child members.
+  """
+
+  def __init__(self):
+    """ Constructor
+    """
+    BaseParser.__init__(self)
+    self.ignoreTags.append("doxygenindex")
+    self.ignoreTags.append("name")
+
+  #--------------------------------------------------------------------------
+  # Parse handlers
+  #--------------------------------------------------------------------------
+
+  def beginParse(self):
+    """ Called prior to parsing. Use this to reset internal state
+    """
+    self.activeCompound = None
+    self.activeMember = None
+
+  def processText(self, name, text):
+    if name == "name":
+      if self.activeMember is not None:
+        self.activeMember.name = self.activeMember.name + text
+      elif self.activeCompound is not None:
+        self.activeCompound.name = self.activeCompound.name + text
+
+  def beginCompound(self, name, attributes):
+    self.activeCompound = DocItem(
+      refid = attributes['refid'],
+      kind = attributes['kind'],
+      name = ""
+      )
+
+  def endCompound(self, name):
+    addItem(self.activeCompound)
+    self.activeCompound = None
+
+  def beginMember(self, name, attributes):
+    self.activeMember = DocItem(
+      refid = attributes['refid'],
+      kind = attributes['kind'],
+      name = ""
+      )
+    # Hack: Doxygen treats methods as functions, lets give them their own
+    #       kind so we can handle it appropriately
+    if (self.activeCompound.kind == "class") and (self.activeMember.kind == "function"):
+      self.activeMember.kind = "method"
+    # Attach to parent
+    self.activeCompound.addChild(self.activeMember)
+
+  def endMember(self, name):
+    addItem(self.activeMember)
+    self.activeMember = None
 
 #----------------------------------------------------------------------------
 # Output generation
@@ -293,6 +244,15 @@ def generateDocs(outdir):
     except:
       pass
 
+def loadData(indir):
+  """ Load the documentation data from the XML files.
+  """
+  if not isfile(join(indir, "index.xml")):
+    showUsage("Could not find 'index.xml' in input directory")
+  parser = CompoundParser()
+  parser.parse(join(indir, "index.xml"))
+
+
 #----------------------------------------------------------------------------
 # Main program
 #----------------------------------------------------------------------------
@@ -318,9 +278,9 @@ if __name__ == "__main__":
   # Now, load the dataset
   loadData(indir)
   print "Documentation types:"
-  for key in sorted(KINDS.keys()):
-    print "%-16s: %d" % (key, len(KINDS[key]))
-  # Generate the documentation
-  print "Generating output files ..."
-  generateDocs(outdir)
+  for key in sorted(ITEMS_BY_KIND.keys()):
+    print "%-16s: %d" % (key, len(ITEMS_BY_KIND[key]))
+#  # Generate the documentation
+#  print "Generating output files ..."
+#  generateDocs(outdir)
 
