@@ -66,6 +66,15 @@ class DocItem:
     if self.kind in ("method", "function"):
       return "%s %s%s" % (self.type, self.name, self.argsstring)
 
+  def getParameterDescription(self, name):
+    """ Match a description to a parameter name
+    """
+    if hasattr(self, "paramDesc"):
+      for param in self.paramDesc:
+        if name in param.names:
+          return param.description
+    return ""
+
 # Items grouped by various conditions
 ITEMS = list()
 ITEMS_BY_REFID = dict()
@@ -245,7 +254,8 @@ class DetailParser(BaseParser):
     "type",
     "definition",
     "argsstring",
-    "inbodydescription"
+    "inbodydescription",
+    "declname"
     )
 
   def __init__(self):
@@ -322,8 +332,21 @@ class DetailParser(BaseParser):
     setattr(self.activeItem, section.name, self.getText())
     self.text = section.text
 
+  def beginParam(self, name, attributes):
+    self.activeItem = DocItem(
+      parent = self.activeItem,
+      declname = "",
+      type = ""
+      )
+  def endParam(self, name):
+    param = self.activeItem
+    self.activeItem = param.parent
+    if not hasattr(self.activeItem, "params"):
+      self.activeItem.params = list()
+    self.activeItem.params.append(param)
+
   def beginParameterlist(self, name, attributes):
-    self.activeItem.params = list()
+    self.activeItem.paramDesc = list()
 
   def endParameterlist(self, name):
     pass
@@ -335,7 +358,7 @@ class DetailParser(BaseParser):
       description = "",
       text = self.text
       )
-    self.activeItem.params.append(param)
+    self.activeItem.paramDesc.append(param)
     self.activeItem = param
     self.clearText()
 
@@ -398,9 +421,9 @@ def processTemplate(template, outputname, lookup, docItem = None):
     template.render_context(context)
     with open(outputname, "w") as output:
       output.write(buf.getvalue())
-    print "  %s" % outputname
   except Exception, ex:
     print "Error: Could not generate '%s'" % outputname
+    print docItem.__dict__
     print_exc()
 
 def generateDocs(outdir):

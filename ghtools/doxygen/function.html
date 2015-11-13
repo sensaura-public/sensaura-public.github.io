@@ -10,31 +10,49 @@
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
         % if file is not None:
-        <p>Defined in file <a href="">${file.name}</a></p>
+        <p><a href="${file.refid + '.html'}">${file.name}</a></p>
         % endif
         <p>${docItem.briefdescription}</p>
         <p>${docItem.detaileddescription}</p>
       </div>
     </div>
 
+    % if hasattr(docItem, "params"):
     <!-- Parameters -->
     <div class="card">
       <div class="card-content">
         <span class="card-title">Parameters</span>
+        <table>
+          <thead>
+            <tr>
+              <th data-field="name">Name</th>
+              <th data-field="type">Type</th>
+              <th data-field="description">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          % for param in docItem.params:
+            <tr>
+              <td>${param.declname}</td>
+              <td>${param.type}</td>
+              <td>${docItem.getParameterDescription(param.declname)}</td>
+            </tr>
+          % endfor
+          </tbody>
+        </table>
       </div>
     </div>
+    % endif
 
+    % if hasattr(docItem, "returns"):
     <!-- Return value -->
     <div class="card">
       <div class="card-content">
-        <span class="card-title">Returns</span>
-        <p>${docItem.type}</p>
-        % if hasattr(docItem, "returns"):
+        <span class="card-title">Returns ${docItem.type}</span>
         <p>${docItem.returns}</p>
-        % endif
       </div>
     </div>
+    % endif
 
-    <%include file="debuginfo.inc"/>
   </div>
 </div>
