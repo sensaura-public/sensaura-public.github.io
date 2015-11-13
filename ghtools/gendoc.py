@@ -407,6 +407,16 @@ def loadData(indir):
 # Output generation
 #----------------------------------------------------------------------------
 
+def getPlural(name):
+  """ Get the plural form of the given name
+  """
+  if len(name) > 0:
+    if name[-1] in ("s", "S"):
+      name = name + "es"
+    else:
+      name = name + "s"
+  return name.lower().capitalize()
+  
 def processTemplate(template, outputname, lookup, docItem = None):
   global ITEMS, ITEMS_BY_KIND, ITEMS_BY_REFID
   # Set up the context
@@ -415,7 +425,9 @@ def processTemplate(template, outputname, lookup, docItem = None):
     docItem = docItem,
     docItems = ITEMS,
     docItemsByKind = ITEMS_BY_KIND,
-    docItemsByRefId = ITEMS_BY_REFID
+    docItemsByRefId = ITEMS_BY_REFID,
+    # Utility functions
+    getPlural = getPlural,
     )
   try:
     template.render_context(context)
