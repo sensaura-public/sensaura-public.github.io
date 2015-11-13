@@ -40,6 +40,13 @@ def showUsage(msg = None):
   print USAGE.strip() % argv[0]
   exit(1)
 
+class Data:
+  def __init__(self, **kwds):
+    self.__dict__.update(kwds)
+
+  def __eq__(self, other):
+    return self.__dict__ == other.__dict__
+
 #----------------------------------------------------------------------------
 # XML data loading
 #----------------------------------------------------------------------------
@@ -78,6 +85,18 @@ def getChildrenByNodeType(parent, typeid, recursive = False):
         for c2 in getChildrenByNodeType(child, typeid, recursive):
           yield c2
 
+def walkChildTree(parent, action, data):
+  """ Invoke 'action(node, enter, data)' for each node in the child tree
+
+    Note that 'action()' get called twice for every node - once when the
+    node is first seen (enter == True) and again after all child nodes of
+    that node are processed (enter == False).
+  """
+  for child in parent.childNodes:
+    action(child, True, data)
+    walkChildTree(child, action, data)
+    action(child, False, data)
+
 class DocItem:
   """ Represents a documentation item
   """
@@ -101,7 +120,7 @@ class DocItem:
     if not KINDS.has_key(self.kind):
       KINDS[self.kind] = list()
     KINDS[self.kind].append(self)
-    
+
   def getFile(self):
     """ Determine the filename this is defined in
     """
@@ -132,7 +151,7 @@ class Compound(DocItem):
 class ParamInfo:
   """ Represents parameter information
   """
-  
+
   def __init__(self, node):
     tags = dict([ (n.tagName, n) for n in getChildrenByNodeType(node, Node.ELEMENT_NODE) ])
     # Get the name
@@ -151,16 +170,41 @@ class ParamInfo:
       self.typekind = tags["type"].getAttribute("refkind")
 
 def getStructuredText(node):
-  parts = list()
-  params = dict()
-  for child in getChildrenByNodeType(node, Node.ELEMENT_NODE, True):
-    if child.tagName == "para":
-      parts.append(getText(child))
-    else:
-      print child.tagName
-  # Combine it all
-  return " ".join(parts), params
-  return " ".join([ getText(p) for p in getChildrenByTagName(node, "para") ])
+  state = Data(stack = list(), desc = list(), retdesc = list(), state = "")
+  def textAction(node, enter, data):
+    if node.nodeType == Node.TEXT_NODE:
+      if len(data.stack) == 0:
+        return
+      parent = data.stack[-1]
+      if parent.tagName == "para":
+        if enter:
+          if data.state == "return":
+            data.retdesc.append(node.data)
+          else:
+            data.desc.append(node.data)
+      elif parent.tagName == "ref":
+        if enter:
+          data.desc.append('<a href="%s.html">%s</a>' % (parent.getAttribute("refid"), node.data))
+      elif parent.tagName == "simplesect":
+        kind = parent.getAttribute("kind")
+        if kind == "return":
+          if enter:
+            data.state = kind
+          else:
+            data.state = ""
+        else:
+          if enter:
+            print "simplesect::%s" % kind
+      else:
+        print data.stack[-1].tagName
+    elif node.nodeType == Node.ELEMENT_NODE:
+      if enter:
+        data.stack.append(node)
+      else:
+        data.stack = data.stack[:-1]
+  # Build the text and parameter blocks and return it
+  walkChildTree(node, textAction, state)
+  return " ".join(state.desc), None
 
 def updateItem(node):
   global ITEMS
