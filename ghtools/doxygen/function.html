@@ -10,7 +10,7 @@
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
         % if file is not None:
-        <p>Defined in file <a href="${file.url}">${file.name}</a></p>
+        <p>Defined in file <a href="">${file.name}</a></p>
         % endif
         <p>${docItem.briefdescription}</p>
         <p>${docItem.detaileddescription}</p>
@@ -23,7 +23,18 @@
         <span class="card-title">Parameters</span>
       </div>
     </div>
-    
+
+    <!-- Return value -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Returns</span>
+        <p>${docItem.type}</p>
+        % if hasattr(docItem, "returns"):
+        <p>${docItem.returns}</p>
+        % endif
+      </div>
+    </div>
+
     <%include file="debuginfo.inc"/>
   </div>
 </div>
