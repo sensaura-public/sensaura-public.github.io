@@ -1,9 +1,64 @@
 <%include file="frontmatter.inc"/>
+<%include file="common.inc"/>
 <div class="row">
   <div class="col s3">
     <%include file="treeview.inc"/>
   </div>
   <div class="col s9">
-    <%include file="debuginfo.inc"/>
+    <!-- Basic information -->
+    <% file = docItem.getFile() %>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">${docItem.getDisplayName()}</span>
+        % if file is not None:
+        <p class="byline"><a href="file.getURL()">${file.name}</a></p>
+        % endif
+        <p>${docItem.briefdescription}</p>
+        <p>${docItem.detaileddescription}</p>
+      </div>
+    </div>
+    
+    % if hasattr(docItem, "params"):
+    <!-- Parameters -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Parameters</span>
+        <table>
+          <thead>
+            <tr>
+              <th data-field="name">Name</th>
+              <th data-field="type">Type</th>
+              <th data-field="description">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          % for param in docItem.params:
+            <tr>
+              <td>${param.declname}</td>
+              <td>${param.type}</td>
+              <td>${docItem.getParameterDescription(param.declname)}</td>
+            </tr>
+          % endfor
+          </tbody>
+        </table>
+      </div>
+    </div>
+    % endif
+
+    % if hasattr(docItem, "returns"):
+    <!-- Return value -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Return Value</span>
+        <p>${docItem.returns}</p>
+      </div>
+    </div>
+    % endif
+
+<%include file="debuginfo.inc"/>
+
+    {% include adsense.inc %}
+    {% include disqus.inc %}
+
   </div>
 </div>

@@ -1,4 +1,5 @@
 <%include file="frontmatter.inc"/>
+<%include file="common.inc"/>
 <div class="row">
   <div class="col s3">
     <%include file="treeview.inc"/>
@@ -9,14 +10,12 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
-        % if file is not None:
-        <p><a href="${file.refid + '.html'}">${file.name}</a></p>
-        % endif
+        <p class="byline"><a href="file.getURL()">${file.name}</a></p>
         <p>${docItem.briefdescription}</p>
         <p>${docItem.detaileddescription}</p>
       </div>
     </div>
-
+    
     % if hasattr(docItem, "params"):
     <!-- Parameters -->
     <div class="card">
@@ -48,11 +47,14 @@
     <!-- Return value -->
     <div class="card">
       <div class="card-content">
-        <span class="card-title">Returns ${docItem.type}</span>
+        <span class="card-title">Return Value</span>
         <p>${docItem.returns}</p>
       </div>
     </div>
     % endif
+
+    {% include adsense.inc %}
+    {% include disqus.inc %}
 
   </div>
 </div>

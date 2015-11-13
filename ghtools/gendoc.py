@@ -16,6 +16,38 @@ KINDS = dict()
 SEQUENCE = 1
 
 #----------------------------------------------------------------------------
+# Utility functions for template processing
+#----------------------------------------------------------------------------
+
+DOCUMENTED_KINDS = list()
+
+def addDocumentedKinds(names):
+  """ Add to the list of DocItem kinds that get their own page
+  """
+  global DOCUMENTED_KINDS
+  if isinstance(names, (list, tuple)):
+    for name in names:
+      if not name in DOCUMENTED_KINDS:
+        DOCUMENTED_KINDS.append(name)
+  else:
+    if not names in DOCUMENTED_KINDS:
+      DOCUMENTED_KINDS.append(names)
+
+def getDocumentedKinds():
+  global DOCUMENTED_KINDS
+  return DOCUMENTED_KINDS
+  
+def getPlural(name):
+  """ Get the plural form of the given name
+  """
+  if len(name) > 0:
+    if name[-1] in ("s", "S"):
+      name = name + "es"
+    else:
+      name = name + "s"
+  return name.lower().capitalize()
+
+#----------------------------------------------------------------------------
 # Usage information and error reporting
 #----------------------------------------------------------------------------
 
@@ -54,6 +86,22 @@ class DocItem:
     child.parent = self
     self.children.append(child)
 
+  def getChildrenByKind(self, kind):
+    result = list()
+    for child in self.children:
+      if child.kind == kind:
+        result.append(child)
+    return result
+    
+  def getDescription(self, alternate = "No description"):
+    desc = getattr(self, "briefdescription", "")
+    if len(desc) > 0:
+      return desc
+    desc = getattr(self, "detaileddescription", "")
+    if len(desc) > 0:
+      return desc
+    return alternate
+    
   def getFile(self):
     """ Find the closest file object to this one
     """
@@ -62,9 +110,22 @@ class DocItem:
       result = result.parent
     return result
 
+  def getURL(self):
+    """ Find a URL containing the documentation
+    """
+    result = self
+    while (result is not None) and (result.kind not in getDocumentedKinds()):
+      result = result.parent
+    if result is None:
+      return "#"
+    if result == self:
+      return "%s.html" % result.refid
+    return "%s.html#%s" % (result.refid, self.refid)
+    
   def getDisplayName(self):
-    if self.kind in ("method", "function"):
+    if self.kind in ("function", "method"):
       return "%s %s%s" % (self.type, self.name, self.argsstring)
+    return self.name
 
   def getParameterDescription(self, name):
     """ Match a description to a parameter name
@@ -266,7 +327,6 @@ class DetailParser(BaseParser):
     self.ignoreTags.append("codeline")
     self.ignoreTags.append("highlight")
     self.ignoreTags.append("sp")
-    self.ignoreTags.append("para")
 
   #--------------------------------------------------------------------------
   # Helpers
@@ -289,6 +349,7 @@ class DetailParser(BaseParser):
     """ Called prior to parsing. Use this to reset internal state
     """
     # Set state
+    self.activeCompound = None
     self.activeItem = None
     self.activeTag = None
     self.text = list()
@@ -296,6 +357,19 @@ class DetailParser(BaseParser):
   def processText(self, name, text):
     self.addText(text)
 
+  def beginCompounddef(self, name, attributes):
+    self.activeCompound = getItem(attributes['id'])
+    
+  def endCompounddef(self, name):
+    self.activeCompound = None
+    
+  def beginIncludes(self, name, attributes):
+    fileref = getItem(attributes.get('refid', None))
+    if (fileref is None) or (self.activeCompound is None) or (self.activeCompound.parent is not None):
+      return
+    self.activeCompound.parent = fileref
+    fileref.addChild(self.activeCompound)
+    
   def beginMemberdef(self, name, attributes):
     self.activeItem = getItem(attributes['id'])
     if self.activeItem is None:
@@ -407,16 +481,6 @@ def loadData(indir):
 # Output generation
 #----------------------------------------------------------------------------
 
-def getPlural(name):
-  """ Get the plural form of the given name
-  """
-  if len(name) > 0:
-    if name[-1] in ("s", "S"):
-      name = name + "es"
-    else:
-      name = name + "s"
-  return name.lower().capitalize()
-  
 def processTemplate(template, outputname, lookup, docItem = None):
   global ITEMS, ITEMS_BY_KIND, ITEMS_BY_REFID
   # Set up the context
@@ -428,6 +492,8 @@ def processTemplate(template, outputname, lookup, docItem = None):
     docItemsByRefId = ITEMS_BY_REFID,
     # Utility functions
     getPlural = getPlural,
+    addDocumentedKinds = addDocumentedKinds,
+    getDocumentedKinds = getDocumentedKinds,
     )
   try:
     template.render_context(context)

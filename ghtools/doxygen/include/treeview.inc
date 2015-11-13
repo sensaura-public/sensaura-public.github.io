@@ -3,7 +3,7 @@
   <!-- TODO: Fixed items here -->
   <li class="bold"><a href="index.html" class="waves-effect waves-teal">Overview</a></li>
   <!-- Collapsible menus -->
-% for kind in ("file", "enum", "typedef", "struct", "class", "function"):
+% for kind in getDocumentedKinds():
   % if docItemsByKind.has_key(kind):
   <li class="no-padding">
     <ul class="collapsible collapsible-accordion">

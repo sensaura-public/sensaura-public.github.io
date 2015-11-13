@@ -2,6 +2,7 @@
   font-size: 2em;
   }
   
-.show {
-  visibility: visible;
+.byline {
+  font-size: 80%;
+  font-style: italic;
   }

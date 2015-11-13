@@ -1,0 +1,40 @@
+<%include file="frontmatter.inc"/>
+<%include file="common.inc"/>
+<div class="row">
+  <div class="col s3">
+    <%include file="treeview.inc"/>
+  </div>
+  <div class="col s9">
+    <!-- Basic information -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">${docItem.getDisplayName()}</span>
+        % if hasattr(docItem, "briefdescription"):
+        <p>${docItem.briefdescription}</p>
+        % endif
+        % if hasattr(docItem, "detaileddescription"):
+        <p>${docItem.detaileddescription}</p>
+        % endif
+      </div>
+    </div>
+    
+    % for section in ("define", "enum", "struct", "typedef", "variable", "function", "class"):
+      <% entries = docItem.getChildrenByKind(section) %>
+      % if len(entries) > 0:
+        % if section in getDocumentedKinds():
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">${getPlural(section)}</span>
+        % for item in entries:
+        <p><a href="item.getURL()">${item.getDisplayName()}</a></p>
+        <p>${item.getDescription()}</p>
+        % endfor
+      </div>
+    </div>
+        % endif
+      % endif
+    % endfor
+
+<%include file="debuginfo.inc"/>
+  </div>
+</div>
