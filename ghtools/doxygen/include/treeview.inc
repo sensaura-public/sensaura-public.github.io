@@ -19,9 +19,9 @@
         <div class="collection">
           % for item in docItemsByKind[kind]:
           % if (docItem is not None) and (docItem.refid == item.refid):
-          <a class="collection-item active" href="${item.refid + '.html'}">${item.getDisplayName()}</a>
+          <a class="collection-item active" href="${item.refid + '.html'}">${item.getShortName()}</a>
           % else:
-          <a class="collection-item" href="${item.refid + '.html'}">${item.getDisplayName()}</a>
+          <a class="collection-item" href="${item.refid + '.html'}">${item.getShortName()}</a>
           % endif
           % endfor
         </div>
