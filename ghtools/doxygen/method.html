@@ -12,7 +12,7 @@
         <span class="card-title">${docItem.getDisplayName()}</span>
         <p class="byline">
           % if file is not None:
-          Defined in <a href="file.getURL()">${file.name}</a>,
+          Defined in <a href="${file.getURL()}">${file.name}</a>,
           % endif
           Member of <a href="${docItem.parent.getURL()}">${docItem.parent.name}</a>
         </p>
@@ -57,6 +57,8 @@
       </div>
     </div>
     % endif
+
+    <%include file="debuginfo.inc"/>
 
     {% include adsense.inc %}
     {% include disqus.inc %}
