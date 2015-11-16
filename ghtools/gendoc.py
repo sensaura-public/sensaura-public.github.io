@@ -131,6 +131,11 @@ class DocItem:
       return "%s %s" % (self.definition, self.argsstring)
     return self.name
 
+  def getShortName(self):
+    if self.kind in ("function", "method"):
+      return self.definition.split(" ")[-1]
+    return self.name
+
   def getParameterDescription(self, name):
     """ Match a description to a parameter name
     """
