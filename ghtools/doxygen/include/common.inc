@@ -1,1 +1,1 @@
-<% addDocumentedKinds(("file", "enum", "typedef", "struct", "class", "method", "function")) %>
+<% addDocumentedKinds(("file", "enum", "struct", "class", "method", "function")) %>
