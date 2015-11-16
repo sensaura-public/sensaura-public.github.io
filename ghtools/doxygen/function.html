@@ -10,12 +10,12 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
-        <p class="byline"><a href="file.getURL()">${file.name}</a></p>
+        <p class="byline">Defined in <a href="file.getURL()">${file.name}</a></p>
         <p>${docItem.briefdescription}</p>
         <p>${docItem.detaileddescription}</p>
       </div>
     </div>
-    
+
     % if hasattr(docItem, "params"):
     <!-- Parameters -->
     <div class="card">
@@ -52,6 +52,8 @@
       </div>
     </div>
     % endif
+
+<%include file="debuginfo.inc"/>
 
     {% include adsense.inc %}
     {% include disqus.inc %}

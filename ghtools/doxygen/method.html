@@ -10,14 +10,17 @@
     <div class="card">
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
-        % if file is not None:
-        <p class="byline"><a href="file.getURL()">${file.name}</a></p>
-        % endif
+        <p class="byline">
+          % if file is not None:
+          Defined in <a href="file.getURL()">${file.name}</a>,
+          % endif
+          Member of <a href="${docItem.parent.getURL()}">${docItem.parent.name}</a>
+        </p>
         <p>${docItem.briefdescription}</p>
         <p>${docItem.detaileddescription}</p>
       </div>
     </div>
-    
+
     % if hasattr(docItem, "params"):
     <!-- Parameters -->
     <div class="card">
