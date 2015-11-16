@@ -93,14 +93,18 @@ class DocItem:
         result.append(child)
     return result
 
+  def getText(self, *args):
+    for name in args:
+      value = getattr(self, name, "").strip()
+      if len(value) > 0:
+        return value
+    return ""
+
   def getDescription(self, alternate = "No description"):
-    desc = getattr(self, "briefdescription", "").strip()
-    if len(desc) > 0:
-      return desc
-    desc = getattr(self, "detaileddescription", "").strip()
-    if len(desc) > 0:
-      return desc
-    return alternate
+    result = self.getText("briefdescription", "detaileddescription")
+    if len(result) == 0:
+      result = alternate
+    return result
 
   def getFile(self):
     """ Find the closest file object to this one
@@ -124,7 +128,7 @@ class DocItem:
 
   def getDisplayName(self):
     if self.kind in ("function", "method"):
-      return "%s %s%s" % (self.type, self.name, self.argsstring)
+      return "%s %s" % (self.definition, self.argsstring)
     return self.name
 
   def getParameterDescription(self, name):
