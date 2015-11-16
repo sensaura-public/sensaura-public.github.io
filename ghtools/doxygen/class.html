@@ -5,6 +5,103 @@
     <%include file="treeview.inc"/>
   </div>
   <div class="col s9">
-<%include file="debuginfo.inc"/>
+<%
+file = docItem.getFile()
+
+vars = {
+  "private": list(),
+  "public": list(),
+  "protected": list(),
+  "other": list()
+  }
+
+methods = {
+  "private": list(),
+  "public": list(),
+  "protected": list(),
+  "other": list()
+  }
+
+hasVariables = False
+hasMethods = False
+
+for child in docItem.children:
+  if child.kind == "variable":
+    hasVariables = True
+    if child.prot in ("public", "private", "protected"):
+      vars[child.prot].append(child)
+    else:
+      vars["other"].append(child)
+  elif child.kind == "method":
+    hasMethods = True
+    if child.prot in ("public", "private", "protected"):
+      methods[child.prot].append(child)
+    else:
+      methods["other"].append(child)
+%>
+
+    <!-- Basic information -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">${docItem.getDisplayName()}</span>
+        <p class="byline">
+          % if file is not None:
+          Defined in <a href="${file.getURL()}">${file.name}</a>
+          % endif
+        </p>
+        <p>${docItem.briefdescription}</p>
+        <p>${docItem.detaileddescription}</p>
+      </div>
+    </div>
+
+    % if hasVariables:
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Instance Variables</span>
+        % for prot in ("private", "protected", "public", "other"):
+          % if len(vars[prot]) > 0:
+          <div>
+            <b>${prot.capitalize()}</b>
+            <table>
+              % for item in sorted(vars[prot], key = lambda x: x.name):
+              <tr>
+                <td><a id="${item.refid}" name="${item.refid}"></a>${item.type} ${item.name}</td>
+                <td>${item.getDescription()}</td>
+              </tr>
+              % endfor
+            </table>
+          </div>
+          % endif
+        % endfor
+      </div>
+    </div>
+    % endif
+
+    % if hasMethods:
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Methods</span>
+        % for prot in ("private", "protected", "public", "other"):
+          % if len(methods[prot]) > 0:
+          <div>
+            <b>${prot.capitalize()}</b>
+            <table>
+              % for item in sorted(methods[prot], key = lambda x: x.name):
+              <tr>
+                <td>${item.type} <a href="${item.getURL()}">${item.name}</a></td>
+                <td>${item.getDescription()}</td>
+              </tr>
+              % endfor
+            </table>
+          </div>
+          % endif
+        % endfor
+      </div>
+    </div>
+    % endif
+
+    {% include adsense.inc %}
+    {% include disqus.inc %}
+
   </div>
 </div>
