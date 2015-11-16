@@ -36,7 +36,7 @@ def addDocumentedKinds(names):
 def getDocumentedKinds():
   global DOCUMENTED_KINDS
   return DOCUMENTED_KINDS
-  
+
 def getPlural(name):
   """ Get the plural form of the given name
   """
@@ -92,16 +92,16 @@ class DocItem:
       if child.kind == kind:
         result.append(child)
     return result
-    
+
   def getDescription(self, alternate = "No description"):
-    desc = getattr(self, "briefdescription", "")
+    desc = getattr(self, "briefdescription", "").strip()
     if len(desc) > 0:
       return desc
-    desc = getattr(self, "detaileddescription", "")
+    desc = getattr(self, "detaileddescription", "").strip()
     if len(desc) > 0:
       return desc
     return alternate
-    
+
   def getFile(self):
     """ Find the closest file object to this one
     """
@@ -121,7 +121,7 @@ class DocItem:
     if result == self:
       return "%s.html" % result.refid
     return "%s.html#%s" % (result.refid, self.refid)
-    
+
   def getDisplayName(self):
     if self.kind in ("function", "method"):
       return "%s %s%s" % (self.type, self.name, self.argsstring)
@@ -359,17 +359,17 @@ class DetailParser(BaseParser):
 
   def beginCompounddef(self, name, attributes):
     self.activeCompound = getItem(attributes['id'])
-    
+
   def endCompounddef(self, name):
     self.activeCompound = None
-    
+
   def beginIncludes(self, name, attributes):
     fileref = getItem(attributes.get('refid', None))
     if (fileref is None) or (self.activeCompound is None) or (self.activeCompound.parent is not None):
       return
     self.activeCompound.parent = fileref
     fileref.addChild(self.activeCompound)
-    
+
   def beginMemberdef(self, name, attributes):
     self.activeItem = getItem(attributes['id'])
     if self.activeItem is None:
@@ -412,6 +412,7 @@ class DetailParser(BaseParser):
       declname = "",
       type = ""
       )
+
   def endParam(self, name):
     param = self.activeItem
     self.activeItem = param.parent
@@ -458,8 +459,12 @@ class DetailParser(BaseParser):
       self.clearText()
 
   def end(self, name):
-    if (name in DetailParser.DESCRIPTION_TAGS) and (self.activeItem is not None):
-      setattr(self.activeItem, name, self.getText())
+    if (name in DetailParser.DESCRIPTION_TAGS):
+      if self.activeItem is not None:
+        setattr(self.activeItem, name, self.getText())
+      elif self.activeCompound is not None:
+        setattr(self.activeCompound, name, self.getText())
+
 
 def loadData(indir):
   """ Load the documentation data from the XML files.
