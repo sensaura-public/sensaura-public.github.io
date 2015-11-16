@@ -316,7 +316,8 @@ class DetailParser(BaseParser):
     "definition",
     "argsstring",
     "inbodydescription",
-    "declname"
+    "declname",
+    "initializer",
     )
 
   def __init__(self):
@@ -385,6 +386,18 @@ class DetailParser(BaseParser):
 
   def endMemberdef(self, name):
     self.activeItem = None
+
+  def beginEnumvalue(self, name, attributes):
+    enumValue = DocItem(
+      parent = self.activeItem,
+      refid = attributes['id'],
+      prot = attributes.get('prot', "")
+      )
+    self.activeItem.addChild(enumValue)
+    self.activeItem = enumValue
+
+  def endEnumvalue(self, name):
+    self.activeItem = self.activeItem.parent
 
   def beginRef(self, name, attributes):
     # TODO: What about references that don't get their own pages?
