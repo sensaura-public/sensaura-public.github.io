@@ -1,30 +1,32 @@
 <!-- Generate the tree view of all items -->
-<ul id="nav-mobile" class="side-nav fixed" style="position: relative;">
-  <!-- TODO: Fixed items here -->
-  <li class="bold"><a href="index.html" class="waves-effect waves-teal">Overview</a></li>
   <!-- Collapsible menus -->
+  <ul class="collapsible collapsible-accordion">
+    <!-- TODO: Fixed items here -->
+    <li>
+      <div class="collapsible-header">
+        <a class="waves-effect waves-teal" href="index.html">Overview</a>
+      </div>
+    </li>
 % for kind in getDocumentedKinds():
   % if docItemsByKind.has_key(kind):
-  <li class="no-padding">
-    <ul class="collapsible collapsible-accordion">
-      % if (docItem is not None) and (kind == docItem.kind):
-      <li class="bold"><a class="collapsible-header  waves-effect waves-teal active">${getPlural(kind)}</a>
-      % else:
-      <li class="bold"><a class="collapsible-header  waves-effect waves-teal">${getPlural(kind)}</a>
-      % endif
-        <div class="collapsible-body">
-          <ul>
-            % for item in docItemsByKind[kind]:
-            % if (docItem is not None) and (docItem.refid == item.refid):
-            <li class="active"><a href="${item.refid + '.html'}">${item.name}</a></li>
-            % else:
-            <li><a href="${item.refid + '.html'}">${item.name}</a></li>
-            % endif
-            % endfor
-          </ul>
+    <li>
+    % if (docItem is not None) and (kind == docItem.kind):
+      <div class="collapsible-header waves-effect waves-teal active">${getPlural(kind)}</div>
+    % else:
+      <div class="collapsible-header waves-effect waves-teal">${getPlural(kind)}</div>
+    % endif
+      <div class="collapsible-body">
+        <div class="collection">
+          % for item in docItemsByKind[kind]:
+          % if (docItem is not None) and (docItem.refid == item.refid):
+          <a class="collection-item active" href="${item.refid + '.html'}">${item.getDisplayName()}</a>
+          % else:
+          <a class="collection-item" href="${item.refid + '.html'}">${item.getDisplayName()}</a>
+          % endif
+          % endfor
         </div>
-      </li>
-    </ul>
-  </li>
+      </div>
+    </li>
   % endif
 % endfor
+  </ul>
