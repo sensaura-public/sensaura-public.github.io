@@ -5,6 +5,41 @@
     <%include file="treeview.inc"/>
   </div>
   <div class="col s9">
-<%include file="debuginfo.inc"/>
+    <!-- Basic information -->
+    <% file = docItem.getFile() %>
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">enum ${docItem.getDisplayName()}</span>
+        <p class="byline"><a href="file.getURL()">${file.name}</a></p>
+        <p>${docItem.briefdescription}</p>
+        <p>${docItem.detaileddescription}</p>
+      </div>
+    </div>
+
+    <!-- Parameters -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">Values</span>
+        <table>
+          <thead>
+            <tr>
+              <th data-field="name">Name</th>
+              <th data-field="description">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+          % for member in docItem.children:
+            <tr>
+              <td>${member.name}${getattr(member, "initializer", "")}</td>
+              <td>${member.getDescription()}</td>
+            </tr>
+          % endfor
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {% include adsense.inc %}
+    {% include disqus.inc %}
   </div>
 </div>
