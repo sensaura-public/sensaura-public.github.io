@@ -395,16 +395,16 @@ class DetailParser(BaseParser):
 
   def beginSimplesect(self, name, attributes):
     kind = attributes['kind']
-    if kind == "return": # Can't use, it's a keyword
-      kind = "returns"
-    self.activeItem = DocItem(parent = self.activeItem, name = kind, text = self.text)
-    self.clearText()
+    if kind == "return":
+      self.activeItem = DocItem(parent = self.activeItem, kind = "simplesect", name = "returns", text = self.text)
+      self.clearText()
 
   def endSimplesect(self, name):
-    section = self.activeItem
-    self.activeItem = section.parent
-    setattr(self.activeItem, section.name, self.getText())
-    self.text = section.text
+    if (self.activeItem is not None) and (self.activeItem.kind == "simplesect"):
+      section = self.activeItem
+      self.activeItem = section.parent
+      setattr(self.activeItem, section.name, self.getText())
+      self.text = section.text
 
   def beginParam(self, name, attributes):
     self.activeItem = DocItem(
@@ -463,7 +463,9 @@ class DetailParser(BaseParser):
       if self.activeItem is not None:
         setattr(self.activeItem, name, self.getText())
       elif self.activeCompound is not None:
-        setattr(self.activeCompound, name, self.getText())
+        # Add extra values (but don't overwrite)
+        if len(getattr(self.activeCompound, name, "")) == 0:
+          setattr(self.activeCompound, name, self.getText())
 
 
 def loadData(indir):
