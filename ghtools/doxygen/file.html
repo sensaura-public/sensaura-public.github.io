@@ -5,39 +5,74 @@
     <%include file="treeview.inc"/>
   </div>
   <div class="col s9">
-    <!-- Basic information -->
-    <h1>${docItem.getDisplayName()}</h1>
-    % if hasattr(docItem, "briefdescription"):
-    <p>${docItem.briefdescription}</p>
-    % endif
-    % if hasattr(docItem, "detaileddescription"):
-    <p>${docItem.detaileddescription}</p>
-    % endif
+<%
+SECTIONS = ("define", "enum", "struct", "typedef", "variable", "function", "class")
+GROUPS = dict()
 
-<ul class="collapsible" data-collapsible="accordion">
-    % for section in ("define", "enum", "struct", "typedef", "variable", "function", "class"):
-      <% entries = docItem.getChildrenByKind(section) %>
-      % if len(entries) > 0:
+for section in SECTIONS:
+  GROUPS[section] = list()
+
+for child in docItem.children:
+  if not GROUPS.has_key(child.kind):
+    GROUPS[child.kind] = list()
+  GROUPS[child.kind].append(child)
+%>
+    <!-- Basic information -->
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">${docItem.getDisplayName()}</span>
+        <p>${docItem.briefdescription}</p>
+        <p>${docItem.detaileddescription}</p>
+        <div class="card-action">
+          % for section in SECTIONS:
+            % if len(GROUPS[section]) > 0:
+              <a href="#${section}">${getPlural(section)}</a>
+            % endif
+          % endfor
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail -->
+    % for section in SECTIONS:
+      % if len(GROUPS[section]) > 0:
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title"><a id="${section}" name="${section}"></a>${getPlural(section)}</span>
         % if section in getDocumentedKinds():
-        <li>
-          <div class="collapsible-header"><i class="material-icons">list</i>${getPlural(section)}</div>
-          <div class="collapsible-body container">
-            % for item in entries:
-            <div class="card">
-              <div class="card-content">
-                <span class="card-title">${item.getDisplayName()}</span>
-                <p>${item.getDescription()}</p>
-                <p><a href="${item.getURL()}">More ...</a></p>
-              </div>
-            </div>
-            % endfor
-          </div>
-        </li>
+        <table>
+          % for item in GROUPS[section]:
+          <tr>
+            <td><a href="${item.getURL()}">${item.getShortName()}</a></td>
+            <td>${item.getDescription()}</td>
+          </tr>
+          % endfor
+        </table>
+        % else:
+          <table>
+          % for item in GROUPS[section]:
+            <tr>
+              <td><a id="${item.refid}" name="${item.refid}"></a>${item.name}</td>
+              <td>${item.getText("definition", "initializer")}</td>
+              <td>
+                % if len(getattr(item, "briefdescription", "")) > 0:
+                <p>${item.briefdescription}</p>
+                % endif
+                % if len(getattr(item, "detaileddescription", "")) > 0:
+                <p>${item.detaileddescription}</p>
+                % endif
+              </td>
+            </tr>
+          % endfor
+          </table>
         % endif
+      </div>
+    </div>
       % endif
     % endfor
-</ul>
 
-<%include file="debuginfo.inc"/>
+    {% include adsense.inc %}
+    {% include disqus.inc %}
+
   </div>
 </div>
