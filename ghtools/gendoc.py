@@ -325,6 +325,7 @@ class DetailParser(BaseParser):
 
   DESCRIPTION_TAGS = (
     "name",
+    "title",
     "briefdescription",
     "detaileddescription",
     "type",
@@ -421,6 +422,37 @@ class DetailParser(BaseParser):
   def endRef(self, name):
     self.addText('</a>')
 
+  def beginSect1(self, name, attributes):
+    self.activeItem = DocItem(
+      refid = attributes['id'],
+      kind = "sect1",
+      text = self.text
+      )
+    self.clearText()
+    self.activeCompound.addChild(self.activeItem)
+
+  def endSect1(self, name):
+    text = self.getText()
+    self.text = self.activeItem.text
+    self.activeItem.text = text
+    self.activeItem = None
+
+  def beginSect2(self, name, attributes):
+    section = DocItem(
+      refid = attributes['id'],
+      kind = "sect2",
+      text = self.text
+      )
+    self.clearText()
+    self.activeItem.addChild(section)
+    self.activeItem = section
+
+  def endSect2(self, name):
+    text = self.getText()
+    self.text = self.activeItem.text
+    self.activeItem.text = text
+    self.activeItem = self.activeItem.parent
+
   def beginSimplesect(self, name, attributes):
     kind = attributes['kind']
     if kind == "return":
@@ -494,6 +526,7 @@ class DetailParser(BaseParser):
         # Add extra values (but don't overwrite)
         if len(getattr(self.activeCompound, name, "")) == 0:
           setattr(self.activeCompound, name, self.getText())
+      self.clearText()
 
 
 def loadData(indir, config):
@@ -553,9 +586,10 @@ def generateDocs(outdir, config):
   # Create the lookup engine for includes
   lookup = TemplateLookup(directories = [ templates, join(templates, "include") ])
   # Generate the index page first
+  item = getItem("indexpage")
   try:
     template = lookup.get_template("index.html")
-    processTemplate(template, join(outdir, "index.html"), lookup, config)
+    processTemplate(template, join(outdir, "index.html"), lookup, config, item)
   except Exception, ex:
     print "Warning: Could not process 'index.html'"
   # Process each item

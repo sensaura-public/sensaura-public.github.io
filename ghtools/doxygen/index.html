@@ -5,7 +5,31 @@
     <%include file="treeview.inc"/>
   </div>
   <div class="col s9">
-    Documentation here
+
+    % if docItem is not None:
+      <!-- Documentation sections -->
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">${docItem.getText("title")}</span>
+            <p>${docItem.detaileddescription}</p>
+        </div>
+      </div>
+
+      % for section in docItem.children:
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title"><a id="${section.refid}" name="${section.refid}"></a>${section.title}</span>
+            <p>${section.text}</p>
+            % for subsection in section.children:
+            <b><a id="${subsection.refid}" name="${subsection.refid}"></a>${subsection.title}</b>
+            <p>${subsection.text}</p>
+            % endfor
+        </div>
+      </div>
+      % endfor
+    % endif
+
+    <%include file="debuginfo.inc"/>
   </div>
 </div>
 
