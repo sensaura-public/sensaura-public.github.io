@@ -1,8 +1,9 @@
 #!/usr/bin/env python
 #----------------------------------------------------------------------------
 from sys import argv
+from json import loads
 from os import makedirs
-from os.path import basename, abspath, isdir, isfile, exists, join, dirname
+from os.path import basename, abspath, isdir, isfile, exists, join, dirname, splitext
 from shutil import rmtree
 from xml.parsers.expat import ParserCreate
 from mako.template import Template
@@ -10,6 +11,7 @@ from mako.lookup import TemplateLookup
 from mako.runtime import Context
 from StringIO import StringIO
 from traceback import print_exc
+from optparse import OptionParser
 
 ITEMS = dict()
 KINDS = dict()
@@ -25,13 +27,13 @@ def addDocumentedKinds(names):
   """ Add to the list of DocItem kinds that get their own page
   """
   global DOCUMENTED_KINDS
-  if isinstance(names, (list, tuple)):
+  if type(names) == str:
+    if not names in DOCUMENTED_KINDS:
+      DOCUMENTED_KINDS.append(names)
+  else:
     for name in names:
       if not name in DOCUMENTED_KINDS:
         DOCUMENTED_KINDS.append(name)
-  else:
-    if not names in DOCUMENTED_KINDS:
-      DOCUMENTED_KINDS.append(names)
 
 def getDocumentedKinds():
   global DOCUMENTED_KINDS
@@ -76,11 +78,15 @@ def showUsage(msg = None):
 # Documentation data model
 #----------------------------------------------------------------------------
 
-class DocItem:
+class Data:
+  def __init__(self, **kwds):
+    self.__dict__.update(kwds)
+
+class DocItem(Data):
   def __init__(self, **kwds):
     self.parent = None
     self.children = list()
-    self.__dict__.update(kwds)
+    Data.__init__(self, **kwds)
 
   def addChild(self, child):
     child.parent = self
@@ -289,11 +295,11 @@ class CompoundParser(BaseParser):
       kind = attributes['kind'],
       name = ""
       )
+    addItem(self.activeCompound)
     # Each compound entry has a detail file associated with it
     self.sources.append("%s.xml" % self.activeCompound.refid)
 
   def endCompound(self, name):
-    addItem(self.activeCompound)
     self.activeCompound = None
 
   def beginMember(self, name, attributes):
@@ -302,6 +308,7 @@ class CompoundParser(BaseParser):
       kind = attributes['kind'],
       name = ""
       )
+    addItem(self.activeMember)
     # Hack: Doxygen treats methods as functions, lets give them their own
     #       kind so we can handle it appropriately
     if (self.activeCompound.kind == "class") and (self.activeMember.kind == "function"):
@@ -310,7 +317,6 @@ class CompoundParser(BaseParser):
     self.activeCompound.addChild(self.activeMember)
 
   def endMember(self, name):
-    addItem(self.activeMember)
     self.activeMember = None
 
 class DetailParser(BaseParser):
@@ -409,8 +415,8 @@ class DetailParser(BaseParser):
     self.activeItem = self.activeItem.parent
 
   def beginRef(self, name, attributes):
-    # TODO: What about references that don't get their own pages?
-    self.addText('<a href="%s.html">' % attributes['refid'])
+    target = getItem(attributes['refid'])
+    self.addText('<a href="%s">' % target.getURL())
 
   def endRef(self, name):
     self.addText('</a>')
@@ -490,12 +496,16 @@ class DetailParser(BaseParser):
           setattr(self.activeCompound, name, self.getText())
 
 
-def loadData(indir):
+def loadData(indir, config):
   """ Load the documentation data from the XML files.
   """
   print "Processing input ..."
   if not isfile(join(indir, "index.xml")):
     showUsage("Could not find 'index.xml' in input directory")
+  # Set up the documented kinds (from config file)
+  if hasattr(config, "documented"):
+    addDocumentedKinds(config.documented)
+  # Process the index file
   parser = CompoundParser()
   print "  index.xml"
   parser.parse(join(indir, "index.xml"))
@@ -510,11 +520,12 @@ def loadData(indir):
 # Output generation
 #----------------------------------------------------------------------------
 
-def processTemplate(template, outputname, lookup, docItem = None):
+def processTemplate(template, outputname, lookup, config, docItem = None):
   global ITEMS, ITEMS_BY_KIND, ITEMS_BY_REFID
   # Set up the context
   buf = StringIO()
   context = Context(buf,
+    config = config,
     docItem = docItem,
     docItems = ITEMS,
     docItemsByKind = ITEMS_BY_KIND,
@@ -533,7 +544,7 @@ def processTemplate(template, outputname, lookup, docItem = None):
     print docItem.__dict__
     print_exc()
 
-def generateDocs(outdir):
+def generateDocs(outdir, config):
   global ITEMS
   # Figure our where our templates are
   templates = join(abspath(dirname(argv[0])), "doxygen")
@@ -544,14 +555,14 @@ def generateDocs(outdir):
   # Generate the index page first
   try:
     template = lookup.get_template("index.html")
-    processTemplate(template, join(outdir, "index.html"), lookup)
+    processTemplate(template, join(outdir, "index.html"), lookup, config)
   except Exception, ex:
     print "Warning: Could not process 'index.html'"
   # Process each item
   for item in ITEMS:
     try:
       template = lookup.get_template("%s.html" % item.kind)
-      processTemplate(template, join(outdir, "%s.html" % item.refid), lookup, item)
+      processTemplate(template, join(outdir, "%s.html" % item.refid), lookup, config, item)
     except:
       pass
 
@@ -559,18 +570,43 @@ def generateDocs(outdir):
 # Main program
 #----------------------------------------------------------------------------
 
+def fromJSONFile(filename):
+  """ Deserialise JSON from a file
+  """
+  # Add extension if needed
+  if splitext(filename)[1] == "":
+    filename = filename + ".json"
+  lines = list()
+  with open(filename, "r") as config:
+    for line in config:
+      clean = line.strip()
+      if clean.startswith("#") or clean.startswith("//"):
+        lines.append("")
+      else:
+        lines.append(line)
+  return loads("\n".join(lines))
+
 if __name__ == "__main__":
+  # Process command line arguments
+  parser = OptionParser()
+  parser.add_option("-c", "--config", action="store", type="string", dest="config")
+  options, args = parser.parse_args()
   # Check args
-  if len(argv) <> 3:
-    showUsage();
+  if len(args) <> 2:
+    showUsage()
+  # Load the configuration if specified
+  config = dict()
+  if options.config is not None:
+    config = fromJSONFile(options.config)
+  config = Data(**config)
   # Get the input directory and make sure it exists
-  indir = abspath(argv[1])
+  indir = abspath(args[0])
   if not isdir(indir):
     showUsage("Input directory '%s' does not exist." % indir)
   if not isfile(join(indir, "index.xml")):
     showUsage("Input directory '%s' does not contain 'index.xml'." % indir)
   # Get the output directory and make sure it's empty
-  outdir = abspath(argv[2])
+  outdir = abspath(args[1])
   if exists(outdir):
     if not isdir(outdir):
       showUsage("Output path '%s' is  not a directory." % outdir)
@@ -578,11 +614,11 @@ if __name__ == "__main__":
   # Create the output directory
   makedirs(outdir)
   # Now, load the dataset
-  loadData(indir)
+  loadData(indir, config)
   print "Documentation types:"
   for key in sorted(ITEMS_BY_KIND.keys()):
     print "%-16s: %d" % (key, len(ITEMS_BY_KIND[key]))
   # Generate the documentation
   print "Generating output files ..."
-  generateDocs(outdir)
+  generateDocs(outdir, config)
 
