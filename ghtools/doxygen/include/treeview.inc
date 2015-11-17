@@ -4,7 +4,7 @@
     <!-- TODO: Fixed items here -->
     <li>
       <div class="collapsible-header">
-        <a class="waves-effect waves-teal" href="index.html">Overview</a>
+        <a href="index.html">Overview</a>
       </div>
     </li>
 % for kind in getDocumentedKinds():
