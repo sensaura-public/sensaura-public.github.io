@@ -158,3 +158,23 @@ $collection-link-color: $secondary-color !default;
 
 /* Progress Bar */
 $progress-bar-color: $secondary-color !default;
+
+// Core Color Classes
+$core_colors: (
+  "primary-color": $primary-color,
+  "primary-color-light": $primary-color-light,
+  "primary-color-dark": $primary-color-dark,
+  "secondary-color": $secondary-color,
+  "success-color": $success-color,
+  "error-color": $error-color,
+  "link-color": $link-color,
+);
+
+@each $color_name, $color_value in $core_colors {
+  .#{$color_name} {
+    background-color: $color_value !important;
+  }
+  .#{$color_name}-text {
+    color: $color_value !important;
+  }
+}

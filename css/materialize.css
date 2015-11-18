@@ -1639,6 +1639,48 @@
 /*** Typography ***/
 /*** Collections ***/
 /* Progress Bar */
+.primary-color {
+  background-color: #3f51b5 !important; }
+
+.primary-color-text {
+  color: #3f51b5 !important; }
+
+.primary-color-light {
+  background-color: #c5cae9 !important; }
+
+.primary-color-light-text {
+  color: #c5cae9 !important; }
+
+.primary-color-dark {
+  background-color: #303f9f !important; }
+
+.primary-color-dark-text {
+  color: #303f9f !important; }
+
+.secondary-color {
+  background-color: #EF5350 !important; }
+
+.secondary-color-text {
+  color: #EF5350 !important; }
+
+.success-color {
+  background-color: #4CAF50 !important; }
+
+.success-color-text {
+  color: #4CAF50 !important; }
+
+.error-color {
+  background-color: #F44336 !important; }
+
+.error-color-text {
+  color: #F44336 !important; }
+
+.link-color {
+  background-color: #039be5 !important; }
+
+.link-color-text {
+  color: #039be5 !important; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
