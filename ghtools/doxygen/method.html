@@ -1,13 +1,13 @@
 <%include file="frontmatter.inc"/>
 <%include file="common.inc"/>
 <div class="row">
-  <div class="col s3">
+  <div class="col s4">
     <%include file="treeview.inc"/>
   </div>
-  <div class="col s9">
+  <div class="col s8">
     <!-- Basic information -->
     <% file = docItem.getFile() %>
-    <div class="card">
+    <div class="card z-depth-0">
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
         <p class="byline">
@@ -23,7 +23,7 @@
 
     % if hasattr(docItem, "params"):
     <!-- Parameters -->
-    <div class="card">
+    <div class="card z-depth-0">
       <div class="card-content">
         <span class="card-title">Parameters</span>
         <table>
@@ -50,7 +50,7 @@
 
     % if hasattr(docItem, "returns"):
     <!-- Return value -->
-    <div class="card">
+    <div class="card z-depth-0">
       <div class="card-content">
         <span class="card-title">Return Value</span>
         <p>${docItem.returns}</p>

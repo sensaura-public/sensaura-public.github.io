@@ -2,7 +2,7 @@ highlighter: pygments
 safe: true
 exclude: [ "ghtools", "sass", "pages/README.txt", "apidocs/README.txt", "Gemfile", "Gemfile.lock" ]
 paginate: 10
-paginate_path: "/archives/page/:num"
+paginate_path: "/blog/page:num"
 
 # Custom settings
 sensaura_project: false # If true, this is a project.

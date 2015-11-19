@@ -1,8 +1,26 @@
 .post-title {
   font-size: 2em;
   }
-  
+
 .byline {
   font-size: 80%;
   font-style: italic;
+  }
+
+.content-pane {
+  border-right: 1px solid;
+  }
+
+.sidebar-pane {
+  }
+
+.widget {
+  margin: 0.5em;
+  padding: 1em;
+  border-bottom: 1px solid;
+  }
+
+.widget .title {
+  font-size: 2em;
+  font-style: bold;
   }

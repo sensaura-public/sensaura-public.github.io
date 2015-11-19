@@ -1,4 +1,4 @@
-<div class="col s12" style="padding: 2em;">
+<div>
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Sensaura_Main -->
 <ins class="adsbygoogle"
