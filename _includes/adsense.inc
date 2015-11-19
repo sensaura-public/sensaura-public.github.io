@@ -1,5 +1,5 @@
 <div class="col s3">&nbsp;</div>
-<div class="col s6">
+<div class="col s6" style="padding: 2em;">
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Sensaura_Main -->
 <ins class="adsbygoogle"
