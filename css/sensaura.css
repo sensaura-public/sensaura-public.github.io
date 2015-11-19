@@ -1,8 +1,12 @@
 .post-title {
   font-size: 2em;
   }
-  
+
 .byline {
   font-size: 80%;
   font-style: italic;
+  }
+
+.bordered {
+  border: solid 1px;
   }
