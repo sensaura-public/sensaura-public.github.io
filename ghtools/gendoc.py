@@ -308,12 +308,12 @@ class CompoundParser(BaseParser):
       kind = attributes['kind'],
       name = ""
       )
-    addItem(self.activeMember)
     # Hack: Doxygen treats methods as functions, lets give them their own
     #       kind so we can handle it appropriately
     if (self.activeCompound.kind == "class") and (self.activeMember.kind == "function"):
       self.activeMember.kind = "method"
     # Attach to parent
+    addItem(self.activeMember)
     self.activeCompound.addChild(self.activeMember)
 
   def endMember(self, name):
@@ -655,4 +655,3 @@ if __name__ == "__main__":
   # Generate the documentation
   print "Generating output files ..."
   generateDocs(outdir, config)
-
