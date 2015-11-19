@@ -1,5 +1,5 @@
 <!-- Disqus comment thread for page -->
-<div id="disqus_thread"></div>
+<div class="col s12" id="disqus_thread"></div>
 <script>
 var disqus_config = function () {
 this.page.developer = 1; // Comment out when the site is live
