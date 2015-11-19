@@ -15,7 +15,8 @@ defaults:
       path: ""
     values:
       section: "blog"
-  # Set the default section for the site
+      master: "/"
+  # Set the default layout for posts
   -
     scope:
       path: ""
