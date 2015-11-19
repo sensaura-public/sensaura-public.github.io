@@ -1,6 +1,6 @@
 <!-- Generate the tree view of all items -->
   <!-- Collapsible menus -->
-  <ul class="collapsible collapsible-accordion">
+  <ul class="collapsible collapsible-accordion z-depth-0">
     <!-- TODO: Fixed items here -->
     <li>
       <div class="collapsible-header">

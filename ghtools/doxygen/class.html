@@ -1,10 +1,10 @@
 <%include file="frontmatter.inc"/>
 <%include file="common.inc"/>
 <div class="row">
-  <div class="col s3">
+  <div class="col s4">
     <%include file="treeview.inc"/>
   </div>
-  <div class="col s9">
+  <div class="col s8">
 <%
 file = docItem.getFile()
 
@@ -41,7 +41,7 @@ for child in docItem.children:
 %>
 
     <!-- Basic information -->
-    <div class="card">
+    <div class="card z-depth-0">
       <div class="card-content">
         <span class="card-title">${docItem.getDisplayName()}</span>
         <p class="byline">
@@ -55,7 +55,7 @@ for child in docItem.children:
     </div>
 
     % if hasVariables:
-    <div class="card">
+    <div class="card z-depth-0">
       <div class="card-content">
         <span class="card-title">Instance Variables</span>
         % for prot in ("private", "protected", "public", "other"):
@@ -78,7 +78,7 @@ for child in docItem.children:
     % endif
 
     % if hasMethods:
-    <div class="card">
+    <div class="card z-depth-0">
       <div class="card-content">
         <span class="card-title">Methods</span>
         % for prot in ("private", "protected", "public", "other"):
