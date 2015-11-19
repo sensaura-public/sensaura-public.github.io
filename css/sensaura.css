@@ -7,6 +7,19 @@
   font-style: italic;
   }
 
-.bordered {
-  border: solid 1px;
+.content-pane {
+  border-right: 1px solid;
+  }
+
+.sidebar-pane {
+  }
+
+.widget {
+  margin: 0.5em;
+  padding: 1em;
+  }
+
+.widget .title {
+  font-size: 2em;
+  font-style: bold;
   }
