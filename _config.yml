@@ -16,6 +16,7 @@ defaults:
     values:
       section: "blog"
       master: "/"
+      widgets: [ "slack", "recent", "adsense" ]
   # Set the default layout for posts
   -
     scope:
