@@ -1,5 +1,5 @@
 name,title,url
-blog,Blog,http://sensaura.org/
-sensnode,SensNode,http://sensnode.sensaura.org/
-sensnet,SensNet,http://sensnet.sensaura.org/
-senshub,SensHub,http://senshub.sensaura.org/
+blog,Blog,http://localhost:4000/blog/index.html
+sensnode,SensNode,http://localhost:4001/
+sensnet,SensNet,http://localhost:4002/
+senshub,SensHub,http://localhost:4003/
