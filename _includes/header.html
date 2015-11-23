@@ -1,7 +1,7 @@
 <header>
   <nav>
     <div class="nav-wrapper container">
-      <a href="{{ page.master }}" class="brand-logo amber-text">Sensaura</a>
+      <a href="{{ page.master }}" class="brand-logo"><img src="/images/common/sensaura_full_dark_64.png"/></a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       {% for section in site.data.sections %}
         {% if page.section == section.name %}
@@ -15,7 +15,7 @@
   </nav>
   {% if site.data.subsections %}
   <nav>
-    <div class="nav-wrapper container primary-color-dark">
+    <div class="nav-wrapper container">
       <ul>
       {% for subsection in site.data.subsections %}
         {% if page.subsection == subsection.name %}

@@ -16,6 +16,7 @@ defaults:
     values:
       section: "blog"
       master: "/"
+      widgets: [ "slack", "recent", "adsense" ]
   # Set the default layout for posts
   -
     scope:
@@ -34,7 +35,7 @@ defaults:
     scope:
       path: "pages"
     values:
-      layout: "staticpage"
+      layout: "default"
   # Set the layout to use for API documentation
   -
     scope:
