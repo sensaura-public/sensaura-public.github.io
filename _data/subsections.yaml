@@ -1,0 +1,15 @@
+sensnode_about:
+  title: About
+  url: /pages/sensnode/about.html
+
+sensnode_hardware:
+  title: Hardware
+  url: /pages/sensnode/hardware.html
+
+sensnode_api:
+  title: API
+  url: /apidocs/sensnode/index.html
+
+sensnode_sensors:
+  title: Sensors
+  url: /pages/sensnode/sensors.html

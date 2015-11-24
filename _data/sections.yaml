@@ -1,0 +1,16 @@
+- name: blog
+  title: Blog
+  url: /blog/index.html
+
+- name: sensnode
+  title: SensNode
+  url: /pages/sensnode/about.html
+  subsections: [ sensnode_about, sensnode_hardware, sensnode_api, sensnode_sensors ]
+
+- name: sensnet
+  title: SensNet
+  url: /pages/sensnet/about.html
+
+- name: senshub
+  title: SensHub
+  url: /pages/senshub/about.html
