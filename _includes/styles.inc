@@ -2,6 +2,7 @@
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <!--Import materialize.css-->
 <link type="text/css" rel="stylesheet" href="/css/materialize.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="/css/pygments.css"  media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="/css/sensaura.css"  media="screen,projection"/>
 <!-- Bring in jQuery first so we can use $(document) -->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
