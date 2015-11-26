@@ -9,7 +9,3 @@ sensnode_hardware:
 sensnode_api:
   title: API
   url: /apidocs/sensnode/index.html
-
-sensnode_sensors:
-  title: Sensors
-  url: /pages/sensnode/sensors.html
