@@ -24,7 +24,7 @@ defaults:
     values:
       section: "blog"
       master: "/"
-      widgets: [ "slack", "recent", "adsense" ]
+      widgets: [ "category", "slack", "recent", "adsense" ]
   # Set the default layout for posts
   -
     scope:
@@ -32,18 +32,31 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-  # Set the layout to use for tag pages
-  -
-    scope:
-      path: "tags"
-    values:
-      layout: "tag"
   # Set the layout to use for static pages
   -
     scope:
       path: "pages"
     values:
       layout: "default"
+  # Set default categories for static pages
+  -
+    scope:
+      path: "pages/senshub"
+    values:
+      category: "senshub"
+      section: "senshub"
+  -
+    scope:
+      path: "pages/sensnet"
+    values:
+      category: "sensnet"
+      section: "sensnet"
+  -
+    scope:
+      path: "pages/sensnode"
+    values:
+      category: "sensnode"
+      section: "sensnode"
   # Set the layout to use for API documentation
   -
     scope:
