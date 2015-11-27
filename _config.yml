@@ -25,11 +25,17 @@ defaults:
       section: "blog"
       master: "/"
       widgets: [ "category", "slack", "recent", "adsense" ]
-  # Set the default layout for posts
+  # Set the default layout for posts and drafts
   -
     scope:
       path: ""
       type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "drafts"
     values:
       layout: "post"
   # Set the layout to use for static pages
