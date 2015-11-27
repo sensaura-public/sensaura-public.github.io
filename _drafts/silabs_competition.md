@@ -1,5 +1,7 @@
 ---
 title: Silicon Labs Low Power Design Competition
+category: sensnode
+layout: post
 ---
 A few months ago I found out about a [Low Power Contest](http://community.silabs.com/t5/Contests/Low-Power-Contest/m-p/153186#U153186)
 being run by [Silicon Labs](http://www.silabs.com/Pages/default.aspx). The [SensNode](/pages/sensnode/about.html) hardware
