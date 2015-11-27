@@ -3,7 +3,7 @@ redcarpet:
   extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "tables"]
 highlighter: pygments
 #safe: true
-exclude: [ "ghtools", "sass", "pages/README.txt", "apidocs/README.txt", "Gemfile", "Gemfile.lock" ]
+exclude: [ "ghtools", "sass", "pages/README.txt", "apidocs/README.txt", "_drafts/README.txt", "Gemfile", "Gemfile.lock" ]
 paginate: 10
 paginate_path: "/blog/page:num"
 
