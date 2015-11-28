@@ -10,4 +10,4 @@ if [ "X$1" != "X" ]; then
   PORT=$1
 fi
 
-bundler exec jekyll serve --host=0.0.0.0 --port=${PORT} --drafts
+JEKYLL_ENV=local bundler exec jekyll serve --host=0.0.0.0 --port=${PORT} --drafts
