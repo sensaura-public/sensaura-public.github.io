@@ -7,7 +7,7 @@ Most customisation on a SensNode device will be done by building sensor board (o
 to the [SensNode Form Factor](/pages/sensnode/hardware.html) and plug above or below a [processor board](/pages/sensnode/cpuboard.html)
 to provide input for the sensor.
 
-![TODO: Garden Sensor]()
+![Garden Sensor](/images/photos/garden_sensor.jpg)
 
 The image above shows a typical home made sensor board, in this case one designed for use in a garden to measure light
 levels, humidity, temperature and soil moisture. This particular board uses the I2C interface to communicate with the

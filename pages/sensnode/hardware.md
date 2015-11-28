@@ -6,6 +6,7 @@ title: Hardware Specification
 A SensNode device must adhere to this hardware specification to provide interoperability between components. The specification
 consists of a PCB form factor, pin headers and electrical characteristics.
 
+
 ## Form Factor
 
 The form factor specifies the size of the PCB and the location of the headers.
@@ -14,13 +15,13 @@ The form factor specifies the size of the PCB and the location of the headers.
 
 The size of the PCB is designed to be small enough to easily deploy but large enough that it can be built by hand with
 relative ease. A SensNode (and associated back pack boards) can be etched or milled as single sided PCBs as well as
-being fabricated as multiple layer boards. The design also allows the PCB to be used on a breadboard during development
-and debugging.
+being fabricated as multiple layer boards. The design uses 0.1" (2.54mm) pitch headers which allows the PCB to be used
+on a breadboard during development and debugging.
 
 All inputs and output operate at 3.3V levels, interacting with 5V level components will require a level convertor. Analog
 inputs use the 3.3V Vcc line as the reference voltage, inputs must be scaled accordingly.
 
-![TODO: SensNode Breakout]()
+![SensNode Breakout](/images/photos/breakout_board.jpg)
 
 A final SensNode sensor will consist of two or more boards stacked together. The headers on a [processor board](/pages/sensnode/cpuboard.html)
 should provide both male and female header connections to allow this stacking. The design uses 6 and 8 pin headers so
@@ -57,9 +58,9 @@ programming mode.
 | 6 |RESET    |CPU reset line, active low.                     |
 
 As different manufacturers provide different methods of entering bootloader mode on start up this interface defines
-a generic interface. The boot loader entry sequence, from the point of view of an external programmer, is shown below:
-
-![TODO: Bootloader Entry]()
+a generic interface. If the *PROG* input is held high while the processor powers up (or comes out of reset) it will
+enter serial bootloader mode. Discrete circuitry on the processor board itself will trigger the processor specific
+entry conditions from these inputs.
 
 As entering bootloader mode requires the processor to reset which will unlatch the power supply the debug interface
 allows for power to be provided by an alternative method. If the Vcc pin goes low when the processor is reset the
@@ -95,15 +96,3 @@ pins are configured for analog sampling.
 The firmware allows for *PIN4* to be configured as a sleep indication pin. When this functionality is enabled the pin
 will be held high while the processor is in running mode and will be pulled low when the processor enters sleep or
 low power mode. Sensor boards may use this to control power to external peripherals.
-
-## Processor Board
-
-**[More Information ...](/pages/sensnode/cpuboard.html)**
-
-## Power Supply
-
-**[More Information ...](/pages/sensnode/powerboard.html)**
-
-## Sensor Boards
-
-**[More Information ...](/pages/sensnode/backpack.html)**

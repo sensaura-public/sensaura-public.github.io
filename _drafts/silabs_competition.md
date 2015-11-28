@@ -8,7 +8,7 @@ seemed a good candidate so I submitted an outline to the first phase of the comp
 ideas. In return Silicon Labs sent me a [EFM32 Zero Gecko Starter Kit](https://www.silabs.com/products/mcu/lowpower/Pages/efm32zg-stk3200.aspx)
 so I moved on to the next stage, prototyping a SensNode board with the starter kit acting as the processor.
 
-![TODO: Zero Gecko Breakout]()
+![Zero Gecko Breakout](/images/photos/zero_gecko_prototype.jpg)
 
 My [entry is now submitted](TODO: link to entry) but unfortunately it was not entirely complete. You can read the actual
 submission for more details but it boiled down to a lot of problems maintaining reliable communications with the NRF24L01+
@@ -17,7 +17,7 @@ fairly short (such as when the CPU and the module are on the same PCB) this isn'
 cables involved to connect the breakout board to the Gecko development kit it becomes difficult to communicate with
 the module.
 
-![TODO: Garden Sensor]()
+![Garden Sensor](/images/photos/garden_sensor.jpg)
 
 It was a good test of the hardware form factor though - the sensor board I designed was fairly easy to lay out, mill
 and solder as a single sided PCB and it functions perfectly well. The sensor uses a couple of I2C sensors and a resistive
@@ -34,7 +34,7 @@ simply defined the peripheral register locations and manipulating them directly 
 is a time consuming process (thankfully [Frank Duignan](http://eleceng.dit.ie/frank/arm/index.html) has created headers
 for a [range of CPUs](http://eleceng.dit.ie/frank/arm/cortex/) already).
 
-![TODO: Breakout Board]()
+![Breakout Board](/images/photos/breakout_board.jpg)
 
 Another useful things that came out of the competition entry was the SensNode breakout board (shown above). This allows
 the use of manufacturer development boards for prototyping while keeping the SensNode form factor for testing integration.

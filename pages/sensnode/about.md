@@ -9,22 +9,34 @@ as possible to build and deploy remote sensors. SensNode consists of a [hardware
 and a [software API](/apidocs/sensnode/index.html) that allow a range of devices that adhere to the specific to interact
 with each other.
 
+The [SensNode](/pages/sensnode/about.html) hardware splits the functionality into three distinct areas - the
+[processor board](/pages/sensnode/cpuboard.html) which contains the main CPU and networking functionality, a
+[power supply](/pages/sensnode/powerboard.html) and one or more [sensor backpacks](/pages/sensnode/backpack.html) to
+perform the actual measurements.
+
+![Module interaction](/images/diagrams/hardware_modules.png)
+
+Building a remote sensor is simply a matter of mixing existing designs with your own customisations. For example -
+if you develop a solar power power supply board you can combine that with an existing processor board and environment
+sensor backpack to deploy sensors for a garden. If you contribute your designs back to the project we can build up a
+library of modules that can be mixed and matched to suit a wide range of sensor requirements.
+
 ## Processor Boards
 
-The processor boards are the basis of the SensNode system and consist of an ARM CPU, a NRF24L01+ 2.4GHz RF module and
-a well defined form factor and expansion headers. Processor boards are not tied to any manufacturer or model of ARM
-chip - the current prototypes are built around an EFM32 Cortex-M0 CPU and additional designs are being built around
-the XMC1100 and STM32F030 CPUs.
+[Processor boards](/pages/sensnode/cpuboard) are the basis of the SensNode system and consist of an ARM CPU, a
+NRF24L01+ 2.4GHz RF module and a well defined form factor with expansion headers. Processor boards are not tied
+to any manufacturer or model of ARM chip - the current prototypes are built around an EFM32 Cortex-M0 CPU and
+additional designs are being built around the XMC1100 and STM32F030 CPUs.
 
-![TODO: Processor Board Breakout]()
+![Processor Board Breakout](/images/photos/sensor_and_breakout.jpg)
 
 For testing and prototyping a simple breakout board design is available which allows the form factor to be used with
 any ARM development board that has a pin header interface.
 
 ## SensNode API
 
-A common API is provided for all target processors which allows for portability across systems. Heavily influenced by
-the [Arduino](https://www.arduino.cc/) core library this API provides functions for using GPIO (analog and digital),
+A [common API](/apidocs/sensnode/index.html) is provided for all target processors which allows for portability across systems. Heavily
+influenced by the [Arduino](https://www.arduino.cc/) core library this API provides functions for using GPIO (analog and digital),
 SPI, I2C, timing and delays as well as more advanced features available on ARM chips such as real time clock support,
 processor sleep modes and automatic wake up on pin change events.
 

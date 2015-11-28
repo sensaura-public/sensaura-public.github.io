@@ -8,16 +8,11 @@ The SensNet protocol is a simple data transfer protocol built on the NRF24L01+ t
 to be read from or written to through a simple API. The network uses a [star topology](https://en.wikipedia.org/wiki/Star_network)
 where each network consists of a single hub and multiple nodes.
 
-![TODO: Network Topology Diagram]()
-
 The current design allows for a theoretical maximum of 254 nodes in each network and has a range of up to 100m from
 the hub. The primary design goal was ease of configuration, the protocol supports;
 
-  * Automatic network connections. Pressing and holding the *action* button on a [SensNode](/pages/sensnode/about.html)
-    on power up will trigger a connection to the network. This connection information will be remembered and the node
-    will automatically join the network again after a power cycle.
-  * Self describing nodes. Each node can report the attributes it provides - their name, data type and if they can be
-    written to as well as read from.
+1. Automatic network connections. Pressing and holding the *action* button on a [SensNode](/pages/sensnode/about.html) on power up will trigger a connection to the network. This connection information will be remembered and the node will automatically join the network again after a power cycle.
+2. Self describing nodes. Each node can report the attributes it provides - their name, data type and if they can be written to as well as read from.
 
 ## Attributes
 
