@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>{{ page.title }}</title>
+  {% include styles.inc %}
+</head>
+<body>
+  {% include header.html %}
+  <div class="container">
+    <div class="row">
+      <div class="col s4">
+        {% include sidebar.inc %}
+      </div>
+      <div class="col s8 row">
+        <div class="markdown">
+          {{ content }}
+        </div>
+        {% include adsense.inc %}
+        {% include disqus.inc %}
+      </div>
+    </div>
+  </div>
+  {% include footer.html %}
+  {% include javascript.inc %}
+</body>
+</html>
