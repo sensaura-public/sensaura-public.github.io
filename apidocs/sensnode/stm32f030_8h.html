@@ -1,0 +1,2989 @@
+---
+title: stm32f030.h
+---
+
+
+
+<div class="row">
+  <div class="col s4">
+    <!-- Generate the tree view of all items -->
+  <!-- Collapsible menus -->
+  <ul class="collapsible collapsible-accordion z-depth-0">
+    <!-- TODO: Fixed items here -->
+    <li>
+      <div class="collapsible-header">
+        <a href="index.html">Overview</a>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal active">Files</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a class="collection-item active" href="stm32f030_8h.html">stm32f030.h</a>
+          <a class="collection-item" href="xmc1100_8h.html">xmc1100.h</a>
+          <a class="collection-item" href="mcp23008_8h.html">mcp23008.h</a>
+          <a class="collection-item" href="nokia5110_8h.html">nokia5110.h</a>
+          <a class="collection-item" href="nrf24l01_8h.html">nrf24l01.h</a>
+          <a class="collection-item" href="platform_8h.html">platform.h</a>
+          <a class="collection-item" href="projdocs_8h.html">projdocs.h</a>
+          <a class="collection-item" href="sensnode_8h.html">sensnode.h</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal">Enums</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a class="collection-item" href="sensnode_8h_1af789a31d3bfb714c71d2c94ec5bb4f45.html">TIMEUNIT</a>
+          <a class="collection-item" href="sensnode_8h_1a1b17acc17c7719e7ae8f1c6b492478f5.html">WAKE_REASON</a>
+          <a class="collection-item" href="sensnode_8h_1abbf9eb4e541c6ad62765c45b72ff78a6.html">PIN</a>
+          <a class="collection-item" href="sensnode_8h_1a353814d7eb3eac5a06f0ed8bae4a2db0.html">PIN_MODE</a>
+          <a class="collection-item" href="sensnode_8h_1ad05d56588d6636101b32742645319b6b.html">PIN_FLAG</a>
+          <a class="collection-item" href="sensnode_8h_1afc072d93a0ebbede62e89f022d17b506.html">BAUDRATE</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal">Structs</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a class="collection-item" href="struct_d_a_t_e_t_i_m_e.html">DATETIME</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal">Classes</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a class="collection-item" href="class_m_c_p23_s08.html">MCP23S08</a>
+          <a class="collection-item" href="class_m_c_p23_x08.html">MCP23X08</a>
+          <a class="collection-item" href="class_nokia5110.html">Nokia5110</a>
+          <a class="collection-item" href="class_n_r_f24_l01.html">NRF24L01</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal">Methods</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a class="collection-item" href="class_m_c_p23_s08_1a2ac995a9fbf6ce2e4f510882b4933e1a.html">MCP23S08::MCP23S08</a>
+          <a class="collection-item" href="class_m_c_p23_s08_1a9181c84935dcbb804534258816c29250.html">MCP23S08::init</a>
+          <a class="collection-item" href="class_m_c_p23_s08_1abafa387ea27610575fe99b434ddb54e2.html">MCP23S08::pinConfig</a>
+          <a class="collection-item" href="class_m_c_p23_s08_1a215202780c5903d7fd20c7e492343888.html">MCP23S08::pinRead</a>
+          <a class="collection-item" href="class_m_c_p23_s08_1aa7684dc624104f0878f457619dda56b6.html">MCP23S08::pinWrite</a>
+          <a class="collection-item" href="class_m_c_p23_x08_1acb9010cd885d6bffce71a12df4d84fa4.html">MCP23X08::init</a>
+          <a class="collection-item" href="class_m_c_p23_x08_1a0d96a8acaa6e9848f9becd79e4f3494c.html">MCP23X08::pinConfig</a>
+          <a class="collection-item" href="class_m_c_p23_x08_1a9967b47c615dac8d447e7dfdfbf70ddd.html">MCP23X08::pinRead</a>
+          <a class="collection-item" href="class_m_c_p23_x08_1aa7cf5e7501d575b9a5ecb65fceb5ae0a.html">MCP23X08::pinWrite</a>
+          <a class="collection-item" href="class_nokia5110_1a3ccbbdbbbe27e15ecb284cf165fd572f.html">Nokia5110::init</a>
+          <a class="collection-item" href="class_n_r_f24_l01_1a6edc8463ed6de39a0c3220faccee9ef7.html">NRF24L01::init</a>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="collapsible-header waves-effect waves-teal">Functions</div>
+      <div class="collapsible-body">
+        <div class="collection">
+          <a class="collection-item" href="mcp23008_8h_1a79fde7d09867c6182f8d2f5734d66ba7.html">MCP23008</a>
+          <a class="collection-item" href="mcp23008_8h_1ac4ae554e242cee73c504038d88855eba.html">init</a>
+          <a class="collection-item" href="mcp23008_8h_1a8bfb38b9772c07f3f04227ab97a1d9e5.html">pinConfig</a>
+          <a class="collection-item" href="mcp23008_8h_1a68ea2cad93545db074304c654a53cd86.html">pinRead</a>
+          <a class="collection-item" href="mcp23008_8h_1a9c69f5feea041127c38d368628594e4e.html">pinWrite</a>
+          <a class="collection-item" href="platform_8h_1ae8297bf2b99a2ad67af6f9a421ea4b16.html">initGPIO</a>
+          <a class="collection-item" href="platform_8h_1a070402cc6c1cae693d10f59f9c483f76.html">initSPI</a>
+          <a class="collection-item" href="platform_8h_1acffec5285773a97df48504a290544436.html">initTICK</a>
+          <a class="collection-item" href="platform_8h_1a6ffb76a6997c9cafb84063e3c07edf32.html">initSERIAL</a>
+          <a class="collection-item" href="sensnode_8h_1a05dffb509478801c59747249f05dafe5.html">getTicks</a>
+          <a class="collection-item" href="sensnode_8h_1a568a86c9e406b9523d3da29003948d31.html">timeElapsed</a>
+          <a class="collection-item" href="sensnode_8h_1a39a36ae7aea9c983ccebe9f7339ab976.html">timeExpired</a>
+          <a class="collection-item" href="sensnode_8h_1aeba28ca33514edf6cd3dbb0a38512a2b.html">delay</a>
+          <a class="collection-item" href="sensnode_8h_1a9c2da3f84036aaf89a1d3ef800be1c78.html">getDateTime</a>
+          <a class="collection-item" href="sensnode_8h_1a5dcf586e24277fb2d65b1ae9f33c2662.html">setDateTime</a>
+          <a class="collection-item" href="sensnode_8h_1a682cb30fe5e11090ee3160b203b45c49.html">setAlarm</a>
+          <a class="collection-item" href="sensnode_8h_1adceefebbf83233aa9337acfadec1e9a9.html">isDateTimeValid</a>
+          <a class="collection-item" href="sensnode_8h_1a446d65c16d9fb003764e642672f69c56.html">toTimestamp</a>
+          <a class="collection-item" href="sensnode_8h_1a29d16f29ad50176f1f704b4ae43a6961.html">fromTimestamp</a>
+          <a class="collection-item" href="sensnode_8h_1a7861ee1569802186a619778efc85af13.html">shutdown</a>
+          <a class="collection-item" href="sensnode_8h_1aec173cbb8154998c1364295fc0e77fc3.html">sleep</a>
+          <a class="collection-item" href="sensnode_8h_1a9dac3876785c2cbe409d320214d4c59d.html">indicate</a>
+          <a class="collection-item" href="sensnode_8h_1af261f1e170f5c6b24d41258d9c50b3cc.html">pinAvailable</a>
+          <a class="collection-item" href="sensnode_8h_1a1573cbff047590250e4c09895a9cde48.html">pinMarkUsed</a>
+          <a class="collection-item" href="sensnode_8h_1abe09f470d7c0bdb2ebb31107824899ee.html">pinConfig</a>
+          <a class="collection-item" href="sensnode_8h_1a4c7333da89338bb37572900205e6f3e2.html">pinRead</a>
+          <a class="collection-item" href="sensnode_8h_1aabc7c3d70b7f9c475a249bcfed0ef2c8.html">pinWrite</a>
+          <a class="collection-item" href="sensnode_8h_1a9cbb0ed4f7eda9d38a6b976431366b48.html">pinSample</a>
+          <a class="collection-item" href="sensnode_8h_1afb2981bf65fa5e583d832b283224d713.html">spiConfig</a>
+          <a class="collection-item" href="sensnode_8h_1a763dfe8d0a04f48eabe437f4967f3b9e.html">spiWrite</a>
+          <a class="collection-item" href="sensnode_8h_1a2be8bfb4abbbaab46ec8c5fc1936f750.html">spiRead</a>
+          <a class="collection-item" href="sensnode_8h_1a5720089aea044956461e11c7815e67a3.html">spiTransfer</a>
+          <a class="collection-item" href="sensnode_8h_1ad52f17b5acbbd49002d06c751000f8bb.html">i2cConfig</a>
+          <a class="collection-item" href="sensnode_8h_1a6a3b1b041f7ec95990785bd497d07cbf.html">i2cSendTo</a>
+          <a class="collection-item" href="sensnode_8h_1a0229cc01912d66d1ba98d1f6b4ba3842.html">i2cReadFrom</a>
+          <a class="collection-item" href="sensnode_8h_1a667701a187621318dae10a8419bb8137.html">serialConfig</a>
+          <a class="collection-item" href="sensnode_8h_1a7a809f2da530d69d77406e05cbd4c007.html">serialWrite</a>
+          <a class="collection-item" href="sensnode_8h_1abf7328630e148a345dfb93e5cb01f699.html">serialPrint</a>
+          <a class="collection-item" href="sensnode_8h_1ab110e1a3f79ced59ba66dbfef09a46d8.html">serialFormat</a>
+          <a class="collection-item" href="sensnode_8h_1a72eaa1ce3f806719a9c3d8f0d9e21f8b.html">serialAvailable</a>
+          <a class="collection-item" href="sensnode_8h_1acb9dbe14ed1bde9a76890e1a9220f18b.html">serialRead</a>
+          <a class="collection-item" href="sensnode_8h_1ad426aa61f68df27fcea5424e4c6f4ed2.html">vformat</a>
+          <a class="collection-item" href="sensnode_8h_1a2fe46114f753ac4d3633f0f0066a3353.html">sformat</a>
+          <a class="collection-item" href="sensnode_8h_1a606e000d8bc9311e86c36911f9ac417a.html">crcInit</a>
+          <a class="collection-item" href="sensnode_8h_1a9c996d42074a7561fce02a01cbbc46b3.html">crcByte</a>
+          <a class="collection-item" href="sensnode_8h_1a21dfb38d9163d8663b7013b4bfb28594.html">crcData</a>
+          <a class="collection-item" href="sensnode_8h_1ab949df5aec6c519e2dc532499b236d9a.html">shiftOut</a>
+          <a class="collection-item" href="sensnode_8h_1a0e2102f43b05fdcb4fe295c80a70afc6.html">shiftIn</a>
+          <a class="collection-item" href="sensnode_8h_1a5b81c62fe9758ac36849fa38d46cdf3b.html">shiftInOut</a>
+          <a class="collection-item" href="sensnode_8h_1a4fc01d736fe50cf5b977f755b675f11d.html">setup</a>
+          <a class="collection-item" href="sensnode_8h_1afe461d27b9c48d5921c00d521181f12f.html">loop</a>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  </div>
+  <div class="col s8">
+
+    <!-- Basic information -->
+    <div class="card z-depth-0">
+      <div class="card-content">
+        <span class="card-title">stm32f030.h</span>
+        <p>
+ Low level all-in-one header file for the STM32F030 ARM CPU.      </p>
+        <p>
+ Defines system parameters and special function registers for the STM32F030 to allow development without CMSIS or vendor specific libraries. Register names are as described in Reference Manual. Original version by Frank Duignan which can be  found here .      </p>
+        <div class="card-action">
+              <a href="#define">Defines</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detail -->
+    <div class="card z-depth-0">
+      <div class="card-content">
+        <span class="card-title"><a id="define" name="define"></a>Defines</span>
+          <table>
+            <tr>
+              <td><a id="stm32f030_8h_1a6ef5e086b5c8bdb2522d0077d77ebd0f" name="stm32f030_8h_1a6ef5e086b5c8bdb2522d0077d77ebd0f"></a>cpu_sleep</td>
+              <td>asm( "  wfi  " )</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e" name="stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"></a>GPIOF_BASE</td>
+              <td>0x48001400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1a93ab27129f04064089616910c296ec" name="stm32f030_8h_1a1a93ab27129f04064089616910c296ec"></a>GPIOD_BASE</td>
+              <td>0x48000c00</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f" name="stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"></a>GPIOC_BASE</td>
+              <td>0x48000800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68" name="stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"></a>GPIOB_BASE</td>
+              <td>0x48000400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa" name="stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"></a>GPIOA_BASE</td>
+              <td>0x48000000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a656a447589e785594cbf2f45c835ad7e" name="stm32f030_8h_1a656a447589e785594cbf2f45c835ad7e"></a>CRC_BASE</td>
+              <td>0x40023000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db" name="stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"></a>FLASH_BASE</td>
+              <td>0x40022000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d" name="stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"></a>RCC_BASE</td>
+              <td>0x40021000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563" name="stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"></a>DMA_BASE</td>
+              <td>0x40020000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4adaf4fd82ccc3a538f1f27a70cdbbef" name="stm32f030_8h_1a4adaf4fd82ccc3a538f1f27a70cdbbef"></a>DBGMCU_BASE</td>
+              <td>0x40015800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574" name="stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"></a>TIM17_BASE</td>
+              <td>0x40014800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf" name="stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"></a>TIM16_BASE</td>
+              <td>0x40014400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7ab42ce1846930569d742d339b554078" name="stm32f030_8h_1a7ab42ce1846930569d742d339b554078"></a>TIM15_BASE</td>
+              <td>0x40014000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d" name="stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"></a>USART1_BASE</td>
+              <td>0x40013800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d" name="stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"></a>SPI1_BASE</td>
+              <td>0x40013000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a" name="stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"></a>TIM1_BASE</td>
+              <td>0x40012c00</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6" name="stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"></a>ADC_BASE</td>
+              <td>0x40012400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061" name="stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"></a>EXTI_BASE</td>
+              <td>0x40010400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d" name="stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"></a>SYSCFG_BASE</td>
+              <td>0x40010000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac691ec23dace8b7a649a25acb110217a" name="stm32f030_8h_1ac691ec23dace8b7a649a25acb110217a"></a>PWR_BASE</td>
+              <td>0x40007000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a04bda70f25c795fb79f163b633ad4a5d" name="stm32f030_8h_1a04bda70f25c795fb79f163b633ad4a5d"></a>I2C2_BASE</td>
+              <td>0x40005800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1acd72dbffb1738ca87c838545c4eb85a3" name="stm32f030_8h_1acd72dbffb1738ca87c838545c4eb85a3"></a>I2C1_BASE</td>
+              <td>0x40005400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ade83162a04bca0b15b39018a8e8ec090" name="stm32f030_8h_1ade83162a04bca0b15b39018a8e8ec090"></a>USART2_BASE</td>
+              <td>0x40004400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86" name="stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"></a>SPI2_BASE</td>
+              <td>0x40003800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8543ee4997296af5536b007cd4748f55" name="stm32f030_8h_1a8543ee4997296af5536b007cd4748f55"></a>IWDG_BASE</td>
+              <td>0x40003000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a9a5bf4728ab93dea5b569f5b972cbe62" name="stm32f030_8h_1a9a5bf4728ab93dea5b569f5b972cbe62"></a>WWDG_BASE</td>
+              <td>0x40002c00</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4265e665d56225412e57a61d87417022" name="stm32f030_8h_1a4265e665d56225412e57a61d87417022"></a>RTC_BASE</td>
+              <td>0x40002800</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a862855347d6e1d92730dfe17ee8e90b8" name="stm32f030_8h_1a862855347d6e1d92730dfe17ee8e90b8"></a>TIM14_BASE</td>
+              <td>0x40002000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8268ec947929f192559f28c6bf7d1eac" name="stm32f030_8h_1a8268ec947929f192559f28c6bf7d1eac"></a>TIM6_BASE</td>
+              <td>0x40001000</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af0c34a518f87e1e505cd2332e989564a" name="stm32f030_8h_1af0c34a518f87e1e505cd2332e989564a"></a>TIM3_BASE</td>
+              <td>0x40000400</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1234035224d2d22cd6be76a5ee04cf02" name="stm32f030_8h_1a1234035224d2d22cd6be76a5ee04cf02"></a>GPIOA_MODER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab25fd19daee4d052acdfc1654397a7a4" name="stm32f030_8h_1ab25fd19daee4d052acdfc1654397a7a4"></a>GPIOA_OTYPER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> RE GISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a97dfd3e873e70dc25ffb556afc6e4785" name="stm32f030_8h_1a97dfd3e873e70dc25ffb556afc6e4785"></a>GPIOA_OSPEEDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a60bf8df26535bc0db4575c84798c81a5" name="stm32f030_8h_1a60bf8df26535bc0db4575c84798c81a5"></a>GPIOA_PUPDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a3aa34ada5c781e9016373b125ba3cb9b" name="stm32f030_8h_1a3aa34ada5c781e9016373b125ba3cb9b"></a>GPIOA_IDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a01d6d1f0b029ae3da79df62eb4f7a69a" name="stm32f030_8h_1a01d6d1f0b029ae3da79df62eb4f7a69a"></a>GPIOA_ODR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8f16199899812596623780a3bcc46849" name="stm32f030_8h_1a8f16199899812596623780a3bcc46849"></a>GPIOA_BSRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a25f77abfd13bacb790f5f4c55c26c23b" name="stm32f030_8h_1a25f77abfd13bacb790f5f4c55c26c23b"></a>GPIOA_LCKR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a76606f8249e2d759341614b68d15e59a" name="stm32f030_8h_1a76606f8249e2d759341614b68d15e59a"></a>GPIOA_AFRL</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af2832a0e3c91b018047fc435eb19be3e" name="stm32f030_8h_1af2832a0e3c91b018047fc435eb19be3e"></a>GPIOA_AFRH</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a9c111ddc85e66775e6d3e6ed2e44eb4f" name="stm32f030_8h_1a9c111ddc85e66775e6d3e6ed2e44eb4f"></a>GPIOA_BRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad7723846cc5db8e43a44d78cf21f6efa"> GPIOA_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1affac2caec05d40f61f7e4b3aef5ff2a4" name="stm32f030_8h_1affac2caec05d40f61f7e4b3aef5ff2a4"></a>GPIOB_MODER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aef9c290201f1348720bf7716e32b0ce4" name="stm32f030_8h_1aef9c290201f1348720bf7716e32b0ce4"></a>GPIOB_OTYPER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a909ebebbc8de2e518c95c538c38b6149" name="stm32f030_8h_1a909ebebbc8de2e518c95c538c38b6149"></a>GPIOB_OSPEEDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aad6e9cd5fa8d64c77af952d14e456b3c" name="stm32f030_8h_1aad6e9cd5fa8d64c77af952d14e456b3c"></a>GPIOB_PUPDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8d4fd0ff69da08c3697646d1213b75d1" name="stm32f030_8h_1a8d4fd0ff69da08c3697646d1213b75d1"></a>GPIOB_IDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a08db1d3769d2fe400cffb74e32b67a9f" name="stm32f030_8h_1a08db1d3769d2fe400cffb74e32b67a9f"></a>GPIOB_ODR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a655fb7f4dc9f0c07c004e559c9697796" name="stm32f030_8h_1a655fb7f4dc9f0c07c004e559c9697796"></a>GPIOB_BSRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1adaf97a0f44fe98a9560992c6bcd9a251" name="stm32f030_8h_1adaf97a0f44fe98a9560992c6bcd9a251"></a>GPIOB_LCKR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0cc032e9f6ef15987dc73d22c28ef8a5" name="stm32f030_8h_1a0cc032e9f6ef15987dc73d22c28ef8a5"></a>GPIOB_AFR L</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a21a95808a795917e81ed46466865ace0" name="stm32f030_8h_1a21a95808a795917e81ed46466865ace0"></a>GPIOB_AFRH</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0c7c0db6bb2dc88162cec23b7d90700f" name="stm32f030_8h_1a0c7c0db6bb2dc88162cec23b7d90700f"></a>GPIOB_BRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac944a89eb789000ece920c0f89cb6a68"> GPIOB_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a358ff7fc1e547fed6740a6075bc45084" name="stm32f030_8h_1a358ff7fc1e547fed6740a6075bc45084"></a>GPIOC_MODER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a38d3fcef1b5894aecbf6b5dada26f6e8" name="stm32f030_8h_1a38d3fcef1b5894aecbf6b5dada26f6e8"></a>GPIOC_OTYPER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad3fe45a8267fad498bf589285cfc9474" name="stm32f030_8h_1ad3fe45a8267fad498bf589285cfc9474"></a>GPIOC_OSPEEDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1abfbeaa765be118f55fdb52b72a319b08" name="stm32f030_8h_1abfbeaa765be118f55fdb52b72a319b08"></a>GPIOC_PUPDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aeafc11f32ee218ab815c1923c76579a8" name="stm32f030_8h_1aeafc11f32ee218ab815c1923c76579a8"></a>GPIOC_IDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a54cf46cdf41330942c4279c05bab3af1" name="stm32f030_8h_1a54cf46cdf41330942c4279c05bab3af1"></a>GPIOC_ODR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a88dcc56c201f13d73e5073857af6aeb5" name="stm32f030_8h_1a88dcc56c201f13d73e5073857af6aeb5"></a>GPIOC_BSRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab4cbc24f396d90772bb98a68b1f07ae4" name="stm32f030_8h_1ab4cbc24f396d90772bb98a68b1f07ae4"></a>GPIOC_LCKR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab3de5d2fee186828a759107986698b86" name="stm32f030_8h_1ab3de5d2fee186828a759107986698b86"></a>GPIOC_AFRL</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad0737f58535843511d33c0d749f73f1f" name="stm32f030_8h_1ad0737f58535843511d33c0d749f73f1f"></a>GPIOC_AFRH</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac6a4510b46cf898d3c3a2f56c84386b7" name="stm32f030_8h_1ac6a4510b46cf898d3c3a2f56c84386b7"></a>GPIOC_BRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a26f267dc35338eef219544c51f1e6b3f"> GPIOC_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0299d708e570b48d178fdf61e6f8e580" name="stm32f030_8h_1a0299d708e570b48d178fdf61e6f8e580"></a>GPIOD_MODER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0f806fb737414df49fd531680704e6fa" name="stm32f030_8h_1a0f806fb737414df49fd531680704e6fa"></a>GPIOD_OTYPER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa4a028b779467dd6d391a4d9ea573967" name="stm32f030_8h_1aa4a028b779467dd6d391a4d9ea573967"></a>GPIOD_OSPEEDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afa5b16fcac95c1fc0170c320db14fcfc" name="stm32f030_8h_1afa5b16fcac95c1fc0170c320db14fcfc"></a>GPIOD_PUPDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a446a27be5b79e7435f30b91e8621d858" name="stm32f030_8h_1a446a27be5b79e7435f30b91e8621d858"></a>GPIOD_IDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a392890f38814540d2765aafddf347f02" name="stm32f030_8h_1a392890f38814540d2765aafddf347f02"></a>GPIOD_ODR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2e40db970b04f13b374e5fb81c9adf0b" name="stm32f030_8h_1a2e40db970b04f13b374e5fb81c9adf0b"></a>GPIOD_BSRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+          </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8d2bb163aba2864ca5376c785a9b52ff" name="stm32f030_8h_1a8d2bb163aba2864ca5376c785a9b52ff"></a>GPIOD_LCKR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a3ae6d2c5fbdd0df93431d9c1219d799c" name="stm32f030_8h_1a3ae6d2c5fbdd0df93431d9c1219d799c"></a>GPIOD_AFRL</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a743fc2750d31b06c6c20dfbaf09100fc" name="stm32f030_8h_1a743fc2750d31b06c6c20dfbaf09100fc"></a>GPIOD_AFRH</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac7dec0235cd22aa5c0bc17fe8f1b723c" name="stm32f030_8h_1ac7dec0235cd22aa5c0bc17fe8f1b723c"></a>GPIOD_BRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a1a93ab27129f04064089616910c296ec"> GPIOD_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ae677d09e91324da86cf4348d7a7bf032" name="stm32f030_8h_1ae677d09e91324da86cf4348d7a7bf032"></a>GPIOF_MODER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ae83f26bac321676ed8dfcfc1331e25a3" name="stm32f030_8h_1ae83f26bac321676ed8dfcfc1331e25a3"></a>GPIOF_OTYPER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7ce009e7a807741d92cb81ca3f0befea" name="stm32f030_8h_1a7ce009e7a807741d92cb81ca3f0befea"></a>GPIOF_OSPEEDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6dfbea535dac35864fd1a087ed45aed9" name="stm32f030_8h_1a6dfbea535dac35864fd1a087ed45aed9"></a>GPIOF_PUPDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aed7630938e62a3472ad7058a712ab5f8" name="stm32f030_8h_1aed7630938e62a3472ad7058a712ab5f8"></a>GPIOF_IDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1abf345308772c3302ee16721bd818f2f7" name="stm32f030_8h_1abf345308772c3302ee16721bd818f2f7"></a>GPIOF_ODR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a037118b355c863a07f4fb84fadc79e4d" name="stm32f030_8h_1a037118b355c863a07f4fb84fadc79e4d"></a>GPIOF_BSRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a24e6c4f336806b3cd0b0a107b185d9dc" name="stm32f030_8h_1a24e6c4f336806b3cd0b0a107b185d9dc"></a>GPIOF_LCKR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af8c71580243ce9fbce9e4d5542d9a747" name="stm32f030_8h_1af8c71580243ce9fbce9e4d5542d9a747"></a>GPIOF_AFRL</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGIS TER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8fff3b87946e745bd0f7f38a0dbabbfc" name="stm32f030_8h_1a8fff3b87946e745bd0f7f38a0dbabbfc"></a>GPIOF_AFRH</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a35e53847bccba5ae1e79b28748ee9aac" name="stm32f030_8h_1a35e53847bccba5ae1e79b28748ee9aac"></a>GPIOF_BRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7f9a3f4223a1a784af464a114978d26e"> GPIOF_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1abd554ab402ee4c39b7982ecbc2b4bc80" name="stm32f030_8h_1abd554ab402ee4c39b7982ecbc2b4bc80"></a>CRC_DR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a656a447589e785594cbf2f45c835ad7e"> CRC_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a847dac8f0874762f98fd7b2f87c07e75" name="stm32f030_8h_1a847dac8f0874762f98fd7b2f87c07e75"></a>CRC_IDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a656a447589e785594cbf2f45c835ad7e"> CRC_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a99c5e05da210d5e5a0cfffe466b089b0" name="stm32f030_8h_1a99c5e05da210d5e5a0cfffe466b089b0"></a>CRC_CR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a656a447589e785594cbf2f45c835ad7e"> CR C_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a67f2b73e9152930dccf1e6d6d48c49f2" name="stm32f030_8h_1a67f2b73e9152930dccf1e6d6d48c49f2"></a>CRC_INIT</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a656a447589e785594cbf2f45c835ad7e"> CRC_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a17131472a9863dc9ef3fd97ec5b4dafc" name="stm32f030_8h_1a17131472a9863dc9ef3fd97ec5b4dafc"></a>FLASH_ACR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2973b6c10e5a02be98c7917ab8d57f6e" name="stm32f030_8h_1a2973b6c10e5a02be98c7917ab8d57f6e"></a>FLASH_KEYR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad6329e3fdd2b67f6f6492ccd5078712f" name="stm32f030_8h_1ad6329e3fdd2b67f6f6492ccd5078712f"></a>FLASH_OPTKEYR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2899915141a0fbc7a0c6bfa34e04b2fe" name="stm32f030_8h_1a2899915141a0fbc7a0c6bfa34e04b2fe"></a>FLASH_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a900ab18dd1277874aca0524b9a482fe0" name="stm32f030_8h_1a900ab18dd1277874aca0524b9a482fe0"></a>FLASH_CR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1472d15c64a505e4da185ab2779aadfc" name="stm32f030_8h_1a1472d15c64a505e4da185ab2779aadfc"></a>FLASH_AR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a69b9f041a2b3c573904bb99f4568e7a9" name="stm32f030_8h_1a69b9f041a2b3c573904bb99f4568e7a9"></a>FLASH_OBR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2cdac8e0600fc8f669150095c11bad18" name="stm32f030_8h_1a2cdac8e0600fc8f669150095c11bad18"></a>FLASH_WRPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a23a9099a5f8fc9c6e253c0eecb2be8db"> FLASH_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a3465fac46f8d87fc7e243765777af052" name="stm32f030_8h_1a3465fac46f8d87fc7e243765777af052"></a>RCC_CR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8f7780f390ef4cbb05efa06554ba0998" name="stm32f030_8h_1a8f7780f390ef4cbb05efa06554ba0998"></a>RCC_CFGR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a10536e1ad45c689f571d5de3d7b3de55" name="stm32f030_8h_1a10536e1ad45c689f571d5de3d7b3de55"></a>RCC_CIR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aec8fff978fdbc3903c85e1bb5b4fa698" name="stm32f030_8h_1aec8fff978fdbc3903c85e1bb5b4fa698"></a>RCC_APB2RSTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a758db6d69dc2816cd403e5361ab124f2" name="stm32f030_8h_1a758db6d69dc2816cd403e5361ab124f2"></a>RCC_APB1RSTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac80336b2b7c3c43e36370c84ab122b1f" name="stm32f030_8h_1ac80336b2b7c3c43e36370c84ab122b1f"></a>RCC_AHBENR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6d4cd87f49d551c356fed82cbbddc5a4" name="stm32f030_8h_1a6d4cd87f49d551c356fed82cbbddc5a4"></a>RCC_APB2ENR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad4baa1f26b04719fe3d4e2f02d7dde40" name="stm32f030_8h_1ad4baa1f26b04719fe3d4e2f02d7dde40"></a>RCC_APB1ENR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1abd13837c4c33c5df3bdff96f8886d438" name="stm32f030_8h_1abd13837c4c33c5df3bdff96f8886d438"></a>RCC_BDCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6e483b8da7b5a5da25e9a745bb19f6ec" name="stm32f030_8h_1a6e483b8da7b5a5da25e9a745bb19f6ec"></a>RCC_CSR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad97b07e757b67cb8711ca5d20ea8ad3e" name="stm32f030_8h_1ad97b07e757b67cb8711ca5d20ea8ad3e"></a>RCC_AHBRSTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a64199667e9ebcac6859f3f9c275fc7d9" name="stm32f030_8h_1a64199667e9ebcac6859f3f9c275fc7d9"></a>RCC_CFGR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x2c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6912e879823f06f07b1b81b8889b4670" name="stm32f030_8h_1a6912e879823f06f07b1b81b8889b4670"></a>RCC_CFGR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x30)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a9add20a98b0c495f01854ac661cbb47f" name="stm32f030_8h_1a9add20a98b0c495f01854ac661cbb47f"></a>RCC_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a0e681b03f364532055d88f63fec0d99d"> RCC_BASE </a>  + 0x34)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a99380719e499f6ab5e648ebe1242d270" name="stm32f030_8h_1a99380719e499f6ab5e648ebe1242d270"></a>DMA_ISR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac31ea8fc5af7b4af84f28637abb4f799" name="stm32f030_8h_1ac31ea8fc5af7b4af84f28637abb4f799"></a>DMA_IFCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afda24c0bf4410dd4c3b007a9f344966f" name="stm32f030_8h_1afda24c0bf4410dd4c3b007a9f344966f"></a>DMA_CCR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ae521f599af1cdfb068f78bb483aa058e" name="stm32f030_8h_1ae521f599af1cdfb068f78bb483aa058e"></a>DMA_CNDTR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af2c01709c1145f7d2a3b97689bd793d2" name="stm32f030_8h_1af2c01709c1145f7d2a3b97689bd793d2"></a>DMA_CPAR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ada35e283fc2728600f09d6341536b5ba" name="stm32f030_8h_1ada35e283fc2728600f09d6341536b5ba"></a>DMA_CMAR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afb4a79c70f1d4000ab5fb4e85d460c09" name="stm32f030_8h_1afb4a79c70f1d4000ab5fb4e85d460c09"></a>DMA_CCR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af7dd800f1861c46276884b939b247e05" name="stm32f030_8h_1af7dd800f1861c46276884b939b247e05"></a>DMA_CNDTR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa6772c3dae87aa8b728f1bfb8d118623" name="stm32f030_8h_1aa6772c3dae87aa8b728f1bfb8d118623"></a>DMA_CPAR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8111192b22aa943707ed13fa8a9583a3" name="stm32f030_8h_1a8111192b22aa943707ed13fa8a9583a3"></a>DMA_CMAR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0888fe468d2f2e066aee24247058d413" name="stm32f030_8h_1a0888fe468d2f2e066aee24247058d413"></a>DMA_CCR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x30)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6b0b20fcf820b4ec1af1b8369845f990" name="stm32f030_8h_1a6b0b20fcf820b4ec1af1b8369845f990"></a>DMA_CNDTR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x34)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af2527c101f088f4aa99ccbb707d55f55" name="stm32f030_8h_1af2527c101f088f4aa99ccbb707d55f55"></a>DMA_CPAR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x38)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a41a1ee7afe2c70ec2245558a313c1d81" name="stm32f030_8h_1a41a1ee7afe2c70ec2245558a313c1d81"></a>DMA_CMAR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x3c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab6d91dd59083eb6126584853958d6a2c" name="stm32f030_8h_1ab6d91dd59083eb6126584853958d6a2c"></a>DMA_CCR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x44)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aebbeeb5179e0796bcef630e4d01940fa" name="stm32f030_8h_1aebbeeb5179e0796bcef630e4d01940fa"></a>DMA_CNDTR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x48)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0c30517ff6a51e1f1cc39551a5feff7e" name="stm32f030_8h_1a0c30517ff6a51e1f1cc39551a5feff7e"></a>DMA_CPAR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x4c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aba0baa3ed30622408cdb635639b9cd04" name="stm32f030_8h_1aba0baa3ed30622408cdb635639b9cd04"></a>DMA_CMAR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x50)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a221735c961996a8a849c8b11cd7ea145" name="stm32f030_8h_1a221735c961996a8a849c8b11cd7ea145"></a>DMA_CCR5</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x58)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad6f5c375c6036240f483fb1a0e28efdc" name="stm32f030_8h_1ad6f5c375c6036240f483fb1a0e28efdc"></a>DMA_CNDTR5</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x5c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a62431ab1f40b63288eaaf72d78b61486" name="stm32f030_8h_1a62431ab1f40b63288eaaf72d78b61486"></a>DMA_CPAR5</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x60)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a00922d5c1bc58da88208a600686f0e6f" name="stm32f030_8h_1a00922d5c1bc58da88208a600686f0e6f"></a>DMA_CMAR5</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ab04dd812f37907dc8bd6ed82e346b563"> DMA_BASE </a>  + 0x64)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a74f3f2e1cd063dd4a084610c5eef89e0" name="stm32f030_8h_1a74f3f2e1cd063dd4a084610c5eef89e0"></a>TIM16_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a9f559e12cac70c13f4f9def868a43355" name="stm32f030_8h_1a9f559e12cac70c13f4f9def868a43355"></a>TIM16_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a945eb306c76f6aaea0274d7c06f9039f" name="stm32f030_8h_1a945eb306c76f6aaea0274d7c06f9039f"></a>TIM16_DIER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ada40f127abf9b98a853cfb7676530e48" name="stm32f030_8h_1ada40f127abf9b98a853cfb7676530e48"></a>TIM16_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1adde0e8cbc2842c1f901f4b245d7c23f3" name="stm32f030_8h_1adde0e8cbc2842c1f901f4b245d7c23f3"></a>TIM16_EGR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7f7c894a1945eb95edf764de860e4f29" name="stm32f030_8h_1a7f7c894a1945eb95edf764de860e4f29"></a>TIM16_CCMR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+          </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a80989e0ebfd8694206d74b909cb9b3e2" name="stm32f030_8h_1a80989e0ebfd8694206d74b909cb9b3e2"></a>TIM16_CCER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8961ababc51064bcd86dbc7c36f54c98" name="stm32f030_8h_1a8961ababc51064bcd86dbc7c36f54c98"></a>TIM16_CNT</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7ce9e7be0b3d04c4fea06d0ddaf69fe9" name="stm32f030_8h_1a7ce9e7be0b3d04c4fea06d0ddaf69fe9"></a>TIM16_PSC</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0d14811fb3b079046956b173b2ff4dfe" name="stm32f030_8h_1a0d14811fb3b079046956b173b2ff4dfe"></a>TIM16_ARR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x2c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac3b1e952319a8fdd4f43898a9bc4648b" name="stm32f030_8h_1ac3b1e952319a8fdd4f43898a9bc4648b"></a>TIM16_RCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x30)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6ea4a672c296260702c45ddd08def838" name="stm32f030_8h_1a6ea4a672c296260702c45ddd08def838"></a>TIM16_CCR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x34)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a841aab8abba35f32df5461145787d694" name="stm32f030_8h_1a841aab8abba35f32df5461145787d694"></a>TIM16_BDTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x44)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1f46f44f4297609049a075e97e9083a5" name="stm32f030_8h_1a1f46f44f4297609049a075e97e9083a5"></a>TIM16_DCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x48)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a71331e55f29a09196441f013941b22a7" name="stm32f030_8h_1a71331e55f29a09196441f013941b22a7"></a>TIM16_DMAR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a16c97093a531d763b0794c3e6d09e1bf"> TIM16_BASE </a>  + 0x4c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac7d01b304081503a98592f732061eb74" name="stm32f030_8h_1ac7d01b304081503a98592f732061eb74"></a>TIM17_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7f620d303af8a6e7fdcee2795d08e964" name="stm32f030_8h_1a7f620d303af8a6e7fdcee2795d08e964"></a>TIM17_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2b48fe8aeee0dac8ffc1bb6c2b564614" name="stm32f030_8h_1a2b48fe8aeee0dac8ffc1bb6c2b564614"></a>TIM17_DIER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aafe9b56d346bd0a64a8152ef56459a68" name="stm32f030_8h_1aafe9b56d346bd0a64a8152ef56459a68"></a>TIM17_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afdf4cb63e730373fcda7e7449f3585c4" name="stm32f030_8h_1afdf4cb63e730373fcda7e7449f3585c4"></a>TIM17_EGR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7ed327b113e9e0d28cc929f9becb9b2e" name="stm32f030_8h_1a7ed327b113e9e0d28cc929f9becb9b2e"></a>TIM17_CCMR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7f4ee3bd976c98c5f5e6ecc643ce5c2c" name="stm32f030_8h_1a7f4ee3bd976c98c5f5e6ecc643ce5c2c"></a>TIM17_CCER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6ec56a906e82ec30dce5842ebc29ba74" name="stm32f030_8h_1a6ec56a906e82ec30dce5842ebc29ba74"></a>TIM17_CNT</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a69749629b197446df85850921d9ed5a5" name="stm32f030_8h_1a69749629b197446df85850921d9ed5a5"></a>TIM17_PSC</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a055965fcc481a64a41822a346742933a" name="stm32f030_8h_1a055965fcc481a64a41822a346742933a"></a>TIM17_ARR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x2c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a863529f7dd1a221307a18f64247d5db4" name="stm32f030_8h_1a863529f7dd1a221307a18f64247d5db4"></a>TIM17_RCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x30)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7fdee7abd6eacd350c860c0f459dce80" name="stm32f030_8h_1a7fdee7abd6eacd350c860c0f459dce80"></a>TIM17_CCR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x34)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a888a65c9a04e4bda4120c30fd3a38876" name="stm32f030_8h_1a888a65c9a04e4bda4120c30fd3a38876"></a>TIM17_BDTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x44)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0b7c87e6c9f7737d95afb53c2a1d0741" name="stm32f030_8h_1a0b7c87e6c9f7737d95afb53c2a1d0741"></a>TIM17_DCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM1 7_BASE </a>  + 0x48)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2db8ac5fb5c00ccdae059adebabca970" name="stm32f030_8h_1a2db8ac5fb5c00ccdae059adebabca970"></a>TIM17_DMAR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1affbedbe30e8c4cffdea326d6c1800574"> TIM17_BASE </a>  + 0x4c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac6cd07b8922d335a858e36bbc71065b3" name="stm32f030_8h_1ac6cd07b8922d335a858e36bbc71065b3"></a>TIM15_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1acf930e0a37992fcc9cd8af56dbae2434" name="stm32f030_8h_1acf930e0a37992fcc9cd8af56dbae2434"></a>TIM15_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a012281d0111d4dcb02b558db73a17580" name="stm32f030_8h_1a012281d0111d4dcb02b558db73a17580"></a>TIM15_SMCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afdde7cd44a435dd2ba70d977a19f901d" name="stm32f030_8h_1afdde7cd44a435dd2ba70d977a19f901d"></a>TIM15_DIER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4aca4d511a9a924dca9bc454d04b8b56" name="stm32f030_8h_1a4aca4d511a9a924dca9bc454d04b8b56"></a>TIM15_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aeb29fe1d8ff9a807fd8675962dbd8425" name="stm32f030_8h_1aeb29fe1d8ff9a807fd8675962dbd8425"></a>TIM15_EGR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a45a317ca9ed3f9842504fd4f5d66e7c6" name="stm32f030_8h_1a45a317ca9ed3f9842504fd4f5d66e7c6"></a>TIM15_CCMR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afcccee9545ef203faa9764d6c0a8d35e" name="stm32f030_8h_1afcccee9545ef203faa9764d6c0a8d35e"></a>TIM15_CCER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aecec00b27950c74c8a1e1182afdcf038" name="stm32f030_8h_1aecec00b27950c74c8a1e1182afdcf038"></a>TIM15_CNT</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab88565ff06d90fa691273e370adb2108" name="stm32f030_8h_1ab88565ff06d90fa691273e370adb2108"></a>TIM15_PSC</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a46541dd40ebf81e4baf1629342fc735d" name="stm32f030_8h_1a46541dd40ebf81e4baf1629342fc735d"></a>TIM15_ARR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x2c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8cb8cae439bd2d6556bd271eaff2cd4c" name="stm32f030_8h_1a8cb8cae439bd2d6556bd271eaff2cd4c"></a>TIM15_R CR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x30)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a24ebbb61588928e44c64ab7eab708ce0" name="stm32f030_8h_1a24ebbb61588928e44c64ab7eab708ce0"></a>TIM15_CCR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x34)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a281a196fbd120fa4245b6910e032a4b7" name="stm32f030_8h_1a281a196fbd120fa4245b6910e032a4b7"></a>TIM15_CCR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x38)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4b1cd28d47564eca71793c9fe0cfb03c" name="stm32f030_8h_1a4b1cd28d47564eca71793c9fe0cfb03c"></a>TIM15_BDTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x44)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af9124f09ae874b1b198aad64a631ba3e" name="stm32f030_8h_1af9124f09ae874b1b198aad64a631ba3e"></a>TIM15_DCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x48)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a15d41f904f585b2bbf18eff6449650b6" name="stm32f030_8h_1a15d41f904f585b2bbf18eff6449650b6"></a>TIM15_DMAR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a7ab42ce1846930569d742d339b554078"> TIM15_BASE </a>  + 0x4c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa0889f12c0e570ac578c26f7ca7f300e" name="stm32f030_8h_1aa0889f12c0e570ac578c26f7ca7f300e"></a>USART1_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a621c8b25b011fdcf56e4a782d8732dd6" name="stm32f030_8h_1a621c8b25b011fdcf56e4a782d8732dd6"></a>USART1_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1dc65fcef52616580bbad9b1b71ff808" name="stm32f030_8h_1a1dc65fcef52616580bbad9b1b71ff808"></a>USART1_CR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aacb1e95db24ea6e6abdd0ca2737f4242" name="stm32f030_8h_1aacb1e95db24ea6e6abdd0ca2737f4242"></a>USART1_BRR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7dccc3dd4a4551ce2708f780f8d00f22" name="stm32f030_8h_1a7dccc3dd4a4551ce2708f780f8d00f22"></a>USART1_GTPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a81e450fcfeb44ed73e16d47acd84779d" name="stm32f030_8h_1a81e450fcfeb44ed73e16d47acd84779d"></a>USART1_RTOR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a64216ae34a514211b8a5e960d78c68ee" name="stm32f030_8h_1a64216ae34a514211b8a5e960d78c68ee"></a>USART1_RQR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad1da164b27281ae2e297676a6e4f524c" name="stm32f030_8h_1ad1da164b27281ae2e297676a6e4f524c"></a>USART1_ISR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac44ff7ae82beccebf74b774d77541a46" name="stm32f030_8h_1ac44ff7ae82beccebf74b774d77541a46"></a>USART1_ICR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac9f60dec2db1d294153fbeb61a5bf43b" name="stm32f030_8h_1ac9f60dec2db1d294153fbeb61a5bf43b"></a>USART1_RDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_B ASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0f5f2ef10b81c5354d293af82df8cece" name="stm32f030_8h_1a0f5f2ef10b81c5354d293af82df8cece"></a>USART1_TDR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a86162ab3f740db9026c1320d46938b4d"> USART1_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1d0393e29f8adf23f680d2a76b459b29" name="stm32f030_8h_1a1d0393e29f8adf23f680d2a76b459b29"></a>SPI1_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0c7183b2ad1bd6be85429e41d946e900" name="stm32f030_8h_1a0c7183b2ad1bd6be85429e41d946e900"></a>SPI1_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2b19fcaa36c268e02998a7719d021bac" name="stm32f030_8h_1a2b19fcaa36c268e02998a7719d021bac"></a>SPI1_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aac722f03db0bd29ea57a5b434d5959fe" name="stm32f030_8h_1aac722f03db0bd29ea57a5b434d5959fe"></a>SPI1_DR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a35c65ed66e29b539d9a14e833c491802" name="stm32f030_8h_1a35c65ed66e29b539d9a14e833c491802"></a>SPI1_DR8</td>
+              <td></td>
+              <td>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa1e2c60713d6f45ccb7c0c1f6917635c" name="stm32f030_8h_1aa1e2c60713d6f45ccb7c0c1f6917635c"></a>SPI1_CRCPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a15d576ce48ac059bca6053613b524186" name="stm32f030_8h_1a15d576ce48ac059bca6053613b524186"></a>SPI1_RXCRCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0eff68f8eb5ccf37b30aa58acf4fb6ba" name="stm32f030_8h_1a0eff68f8eb5ccf37b30aa58acf4fb6ba"></a>SPI1_TXCRCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a467d258c81d87a99b3886dbeff9656df" name="stm32f030_8h_1a467d258c81d87a99b3886dbeff9656df"></a>SPI2_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac840a4dced50dc6dead2bfee009c94d7" name="stm32f030_8h_1ac840a4dced50dc6dead2bfee009c94d7"></a>SPI2_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a42d844381f1f96dd5d969cccdab12144" name="stm32f030_8h_1a42d844381f1f96dd5d969cccdab12144"></a>SPI2_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aae234c4d110386ec74b380427405c110" name="stm32f030_8h_1aae234c4d110386ec74b380427405c110"></a>SPI2_DR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a35c65ed66e29b539d9a14e833c491802" name="stm32f030_8h_1a35c65ed66e29b539d9a14e833c491802"></a>SPI1_DR8</td>
+              <td><a href="platform_8h.html#platform_8h_1af7a4fc00c1f2d0def6b438c44dd37b71"> REGISTER_8 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a50cd8b47929f18b05efbd0f41253bf8d"> SPI1_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6d6f1649bba34828dc2a9182c0f1c505" name="stm32f030_8h_1a6d6f1649bba34828dc2a9182c0f1c505"></a>SPI2_CRCPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1569d55fbf01a9b6f22d0a038b639b30" name="stm32f030_8h_1a1569d55fbf01a9b6f22d0a038b639b30"></a>SPI2_RXCRCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a3cc21765f27e44275d19453b643fc805" name="stm32f030_8h_1a3cc21765f27e44275d19453b643fc805"></a>SPI2_TXCRCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ac3e357b4c25106ed375fb1affab6bb86"> SPI2_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0504f1e8351b7903aff3e6f0553ba1f7" name="stm32f030_8h_1a0504f1e8351b7903aff3e6f0553ba1f7"></a>TIM1_CR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGIST ER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7f8bc0e5b09ce56609b09c5b13c8787f" name="stm32f030_8h_1a7f8bc0e5b09ce56609b09c5b13c8787f"></a>TIM1_CR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a5b2f12fb1abe043b47b4779c533540bf" name="stm32f030_8h_1a5b2f12fb1abe043b47b4779c533540bf"></a>TIM1_SMCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a16a27b7e53fb6dfdd3fd071d1ab54f07" name="stm32f030_8h_1a16a27b7e53fb6dfdd3fd071d1ab54f07"></a>TIM1_DIER</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6fcf6b03de3bb24ab243e24818d9c078" name="stm32f030_8h_1a6fcf6b03de3bb24ab243e24818d9c078"></a>TIM1_SR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a677c4f343289d3362dde3f4b1854f883" name="stm32f030_8h_1a677c4f343289d3362dde3f4b1854f883"></a>TIM1_EGR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1 _BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac1a4bdd697ae5330529de9c15ed12681" name="stm32f030_8h_1ac1a4bdd697ae5330529de9c15ed12681"></a>TIM1_CCMR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0f57185d2b2e5f69e14397a7e001e1a5" name="stm32f030_8h_1a0f57185d2b2e5f69e14397a7e001e1a5"></a>TIM1_CCMR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1adf5f0bb72cb35755c6c3cdd0221ef169" name="stm32f030_8h_1adf5f0bb72cb35755c6c3cdd0221ef169"></a>TIM1_CCER</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab233471879bc30e909511b0a1d124924" name="stm32f030_8h_1ab233471879bc30e909511b0a1d124924"></a>TIM1_CNT</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x24)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab7004d6c468b3f5c61d3198ac54c83eb" name="stm32f030_8h_1ab7004d6c468b3f5c61d3198ac54c83eb"></a>TIM1_PSC</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab2571aab4a6b067e3495ea706b516394" name="stm32f030_8h_1ab2571aab4a6b067e3495ea706b516394"></a>TIM1_ARR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x2c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7e6467aa148d5c7cde1718a92754ac1d" name="stm32f030_8h_1a7e6467aa148d5c7cde1718a92754ac1d"></a>TIM1_RCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x30)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aded93b511a33afd7dc0a972b0179e561" name="stm32f030_8h_1aded93b511a33afd7dc0a972b0179e561"></a>TIM1_CCR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x34)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8f269c23498905687314df19cd7d6932" name="stm32f030_8h_1a8f269c23498905687314df19cd7d6932"></a>TIM1_CCR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x38)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0ecb39022b2c3e7a4dfb1d1e2d317dcb" name="stm32f030_8h_1a0ecb39022b2c3e7a4dfb1d1e2d317dcb"></a>TIM1_CCR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x3c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ada096b019c30844e22093143ae7bb9b1" name="stm32f030_8h_1ada096b019c30844e22093143ae7bb9b1"></a>TIM1_CCR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x40)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a59f8b461019da90c812424b4310bf5f7" name="stm32f030_8h_1a59f8b461019da90c812424b4310bf5f7"></a>TIM1_BDTR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x44)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aeb9c5d1dc6e7802d19f750ecddac0980" name="stm32f030_8h_1aeb9c5d1dc6e7802d19f750ecddac0980"></a>TIM1_DCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x48)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a3f0a2d64498fd9eb6a7cd382fcc9b805" name="stm32f030_8h_1a3f0a2d64498fd9eb6a7cd382fcc9b805"></a>TIM1_DMAR</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1af8aa324ca5011b8173ab16585ed7324a"> TIM1_BASE </a>  + 0x4c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac000ed7c6b1522b690b9d0af986ad110" name="stm32f030_8h_1ac000ed7c6b1522b690b9d0af986ad110"></a>ADC_ISR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ae2cc5361f3fdff3bf869b9961325ec8f" name="stm32f030_8h_1ae2cc5361f3fdff3bf869b9961325ec8f"></a>ADC_IER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a3d82abd19ec83649cdda24829d114cbe" name="stm32f030_8h_1a3d82abd19ec83649cdda24829d114cbe"></a>ADC_CR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa3d292d1c20c7a2eca55065898d39924" name="stm32f030_8h_1aa3d292d1c20c7a2eca55065898d39924"></a>ADC_CFGR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGI STER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7e759bf4cb74a73b1a7083cceabb84cb" name="stm32f030_8h_1a7e759bf4cb74a73b1a7083cceabb84cb"></a>ADC_CFGR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a10948fc9d4d4d83405e0ab9bc277eb2e" name="stm32f030_8h_1a10948fc9d4d4d83405e0ab9bc277eb2e"></a>ADC_SMPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1adb4426e0be9082743aca17157a922e10" name="stm32f030_8h_1adb4426e0be9082743aca17157a922e10"></a>ADC_TR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af35257a8a497fe5fbdc7936b83beb4f4" name="stm32f030_8h_1af35257a8a497fe5fbdc7936b83beb4f4"></a>ADC_CHSELR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x28)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1abe2a4bdb44648abfb6ebd70e063be9ef" name="stm32f030_8h_1abe2a4bdb44648abfb6ebd70e063be9ef"></a>ADC_DR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x40)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a8c424b8782f24df4cb071562651bac84" name="stm32f030_8h_1a8c424b8782f24df4cb071562651bac84"></a>ADC_CCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad06cb9e5985bd216a376f26f22303cd6"> ADC_BASE </a>  + 0x308)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a69ab94ebc8de242b77e596dd2bbcef49" name="stm32f030_8h_1a69ab94ebc8de242b77e596dd2bbcef49"></a>EXTI_IMR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"> EXTI_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4e9575b4d9ffe40c460aff68c928e497" name="stm32f030_8h_1a4e9575b4d9ffe40c460aff68c928e497"></a>EXTI_EMR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"> EXTI_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa38744d6066068db3e1d165af594133d" name="stm32f030_8h_1aa38744d6066068db3e1d165af594133d"></a>EXTI_RTSR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"> EXTI_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ada970d90e15dafefbab3bb5b3a3530a1" name="stm32f030_8h_1ada970d90e15dafefbab3bb5b3a3530a1"></a>EXTI_FTSR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"> EXTI_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af2f1ba804ff20d23e6c2e78eccf7232b" name="stm32f030_8h_1af2f1ba804ff20d23e6c2e78eccf7232b"></a>EXTI_SWIER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"> EXTI_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ab6c08bdd29b216dff011819b71328272" name="stm32f030_8h_1ab6c08bdd29b216dff011819b71328272"></a>EXTI_PR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a87371508b3bcdcd98cd1ec629be29061"> EXTI_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4fbc0e616ec890f98cf73696cba93c9b" name="stm32f030_8h_1a4fbc0e616ec890f98cf73696cba93c9b"></a>SYSCFG_CFGR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"> SYSCFG_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a55e119f87c84a7b1b9ba01c2ec3a6b4f" name="stm32f030_8h_1a55e119f87c84a7b1b9ba01c2ec3a6b4f"></a>SYSCFG_EXTICR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"> SYSCFG_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a80c96b4d593d8ef618392d6db611979a" name="stm32f030_8h_1a80c96b4d593d8ef618392d6db611979a"></a>SYSCFG_EXTICR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"> SYSCFG_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa5daf054b73b2895e304e8a36463a616" name="stm32f030_8h_1aa5daf054b73b2895e304e8a36463a616"></a>SYSCFG_EXTICR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"> SYSCFG_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afa4bb2e0a5c22355be556b7734fe0c59" name="stm32f030_8h_1afa4bb2e0a5c22355be556b7734fe0c59"></a>SYSCFG_EXTICR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"> SYSCFG_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a0748c13240bb7ed611c804f34afed05e" name="stm32f030_8h_1a0748c13240bb7ed611c804f34afed05e"></a>SYSCFG_CFGR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1a62246020bf3b34b6a4d8d0e84ec79d3d"> SYSCFG_BASE </a>  + 0x18)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1b77fde5300186cbf81428a13b8d97f2" name="stm32f030_8h_1a1b77fde5300186cbf81428a13b8d97f2"></a>STK_BASE</td>
+              <td>0xe000e010</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd" name="stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"></a>SCB_BASE</td>
+              <td>0xe000ed00</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aa0288691785a5f868238e0468b39523d" name="stm32f030_8h_1aa0288691785a5f868238e0468b39523d"></a>NVIC_BAS E</td>
+              <td>0xe000e100</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a4f239f20af1da01f35767cef1230da5b" name="stm32f030_8h_1a4f239f20af1da01f35767cef1230da5b"></a>SCB_BASE2</td>
+              <td>0xe000e008</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a59d04a66ad0b57c9a098be8d05365df6" name="stm32f030_8h_1a59d04a66ad0b57c9a098be8d05365df6"></a>NVIC_BASE2</td>
+              <td>0xe000ef00</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ae69620948dea1b76e0ab7843ab719db7" name="stm32f030_8h_1ae69620948dea1b76e0ab7843ab719db7"></a>FLASH_SIZE</td>
+              <td><a href="platform_8h.html#platform_8h_1a1e89eac3b544741f3b93578675f9d618"> REGISTER_16 </a> ( 0x1ffff7cc )</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aef12331ba174a33faf7f4340d9be5adf" name="stm32f030_8h_1aef12331ba174a33faf7f4340d9be5adf"></a>OPTION_WORD0</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( 0x1ffff800 )</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1acbb650438f8ddfe97256cb7498ba7337" name="stm32f030_8h_1acbb650438f8ddfe97256cb7498ba7337"></a>OPTION_WORD1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( 0x1ffff804 )</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a05c07499cf2bd1cb99fed9b1152b2054" name="stm32f030_8h_1a05c07499cf2bd1cb99fed9b1152b2054"></a>OPTION_WORD2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( 0x1ffff808 )</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aaff8f2953d6a9abf837bb03c2dd2ab26" name="stm32f030_8h_1aaff8f2953d6a9abf837bb03c2dd2ab26"></a>ISER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1aff7913c37f38441d5f1fcd017af5e518" name="stm32f030_8h_1aff7913c37f38441d5f1fcd017af5e518"></a>ICER</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x80)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac4d6974370927bdd7d9cb75c0ad102e9" name="stm32f030_8h_1ac4d6974370927bdd7d9cb75c0ad102e9"></a>ISPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x100)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad0fd99234ea484ba22df6fd807f05f88" name="stm32f030_8h_1ad0fd99234ea484ba22df6fd807f05f88"></a>ICPR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x180)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a656c550a32035784a8be92e091fa7468" name="stm32f030_8h_1a656c550a32035784a8be92e091fa7468"></a>IPR0</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x300)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad1cc154e16f4c05ed6cfe6ef7153c87c" name="stm32f030_8h_1ad1cc154e16f4c05ed6cfe6ef7153c87c"></a>IPR1</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x304)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1af385eecc66d227a3bba0c410d97eb2dc" name="stm32f030_8h_1af385eecc66d227a3bba0c410d97eb2dc"></a>IPR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x308)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a5b3113e5fe27014a996b9d321c89909a" name="stm32f030_8h_1a5b3113e5fe27014a996b9d321c89909a"></a>IPR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x30c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a61a12cf31ec3fa160d90365bc3ca97b6" name="stm32f030_8h_1a61a12cf31ec3fa160d90365bc3ca97b6"></a>IPR4</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x310)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2974401c0527b5d52a21e6ff4e2f1f5b" name="stm32f030_8h_1a2974401c0527b5d52a21e6ff4e2f1f5b"></a>IPR5</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x314)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a260876d10b92684684ca72130c35e636" name="stm32f030_8h_1a260876d10b92684684ca72130c35e636"></a>IPR6</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x318)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a25751d225cae622033665a0aed435aed" name="stm32f030_8h_1a25751d225cae622033665a0aed435aed"></a>IPR7</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1aa0288691785a5f868238e0468b39523d"> NVIC_BASE </a>  + 0x31c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a664a648a1ef9d90dd280176c5ec547c0" name="stm32f030_8h_1a664a648a1ef9d90dd280176c5ec547c0"></a>STK_CSR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1a1b77fde5300186cbf81428a13b8d97f2"> STK_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a6617c6912a90b37c034e0eeb2e12ec0b" name="stm32f030_8h_1a6617c6912a90b37c034e0eeb2e12ec0b"></a>STK_RVR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1a1b77fde5300186cbf81428a13b8d97f2"> STK_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1afcba0d0cff7c416138b78b1ed1198b6e" name="stm32f030_8h_1afcba0d0cff7c416138b78b1ed1198b6e"></a>STK_CVR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1a1b77fde5300186cbf81428a13b8d97f2"> STK_BASE </a>  + 8)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a2008449261a84462413fc10e8e949ac4" name="stm32f030_8h_1a2008449261a84462413fc10e8e949ac4"></a>STK_CALIB</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="xmc1100_8h.html#xmc1100_8h_1a1b77fde5300186cbf81428a13b8d97f2"> STK_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a7cac76255daff1f7a2748ba05dfc86f3" name="stm32f030_8h_1a7cac76255daff1f7a2748ba05dfc86f3"></a>CPUID</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 0)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ac9180c607226bf043dcbb78d331f938f" name="stm32f030_8h_1ac9180c607226bf043dcbb78d331f938f"></a>ICSR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 4)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a995ab7abc3c752db28dc4bbeb3347fb1" name="stm32f030_8h_1a995ab7abc3c752db28dc4bbeb3347fb1"></a>AIRCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 0x0c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a1d51b965f892c1c63477e98cf45d2ee1" name="stm32f030_8h_1a1d51b965f892c1c63477e98cf45d2ee1"></a>SCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 0x10)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1ad4bf7893b2451e38ffd105d563b0a18d" name="stm32f030_8h_1ad4bf7893b2451e38ffd105d563b0a18d"></a>CCR</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 0x14)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a006e4da87b4b61bfb7c911477669677a" name="stm32f030_8h_1a006e4da87b4b61bfb7c911477669677a"></a>SHPR2</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 0x1c)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+            <tr>
+              <td><a id="stm32f030_8h_1a64136af12f6a75b0d25f0d160899e773" name="stm32f030_8h_1a64136af12f6a75b0d25f0d160899e773"></a>SHPR3</td>
+              <td><a href="platform_8h.html#platform_8h_1a289f935a75e76edda972946d5e2364c1"> REGISTER_32 </a> ( <a href="stm32f030_8h.html#stm32f030_8h_1ad55a7ddb8d4b2398b0c1cfec76c0d9fd"> SCB_BASE </a>  + 0x20)</td>
+              <td>
+                <p>
+         </p>
+                <p>
+         </p>
+              </td>
+            </tr>
+          </table>
+      </div>
+    </div>
+
+    {% include adsense.inc %}
+    {% include disqus.inc %}
+
+  </div>
+</div>
