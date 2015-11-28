@@ -26,7 +26,7 @@ The [SensNode](/pages/sensnode/about.html) hardware splits the functionality int
 [power supply](/pages/sensnode/powerboard.html) and one or more [sensor backpacks](/pages/sensnode/backpack.html) to
 perform the actual measurements.
 
-![TODO: Module interaction]()
+![Module interaction](/images/diagrams/hardware_modules.png)
 
 Building a remote sensor is simply a matter of mixing existing designs with your own customisations. For example -
 if you develop a solar power power supply board you can combine that with an existing processor board and environment

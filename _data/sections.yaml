@@ -5,7 +5,7 @@
 - name: sensnode
   title: SensNode
   url: /pages/sensnode/about.html
-  subsections: [ sensnode_about, sensnode_hardware, sensnode_api, sensnode_sensors ]
+  subsections: [ sensnode_about, sensnode_hardware, sensnode_api ]
 
 - name: sensnet
   title: SensNet

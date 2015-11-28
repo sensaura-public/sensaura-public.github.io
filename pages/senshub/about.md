@@ -12,7 +12,7 @@ The core of SensHub is an internal message bus on which all incoming information
 structured around a heirarchial topic tree, similar to a directory structure. A message is published to a topic (such
 as *public/sensnet/sensors/garden*) and any *subscribers* to the topic will be notified when the message is sent.
 
-![TODO: Topic Tree]()
+![Topic Tree](/images/diagrams/topic_tree.png)
 
 The tree is split into two main sections - the *public* tree and the *private* tree. Messages sent to the *public*
 tree will be echoed on an external [MQTT](https://en.wikipedia.org/wiki/MQTT) broker - messages received on the MQTT

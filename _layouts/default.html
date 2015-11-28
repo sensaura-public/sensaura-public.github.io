@@ -12,10 +12,12 @@
       </div>
       <div class="col s8 row">
         {{ content }}
+        {% include adsense.inc %}
+        {% include disqus.inc %}
       </div>
     </div>
-    {% include footer.html %}
   </div>
+  {% include footer.html %}
   {% include javascript.inc %}
 </body>
 </html>

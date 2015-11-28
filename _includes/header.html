@@ -9,26 +9,28 @@
     </ul>
     {% endif %}
   {% endfor %}
-  <nav>
-    <div class="nav-wrapper container">
-      <a href="{{ page.master }}" class="brand-logo"><img src="/images/common/sensaura_full_dark_64.png"/></a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      {% for section in site.data.sections %}
-        {% if page.section == section.name %}
-          {% if section.subsections.size > 0 %}
-            <li class="active"><a class="dropdown-button" href="#!" data-activates="{{ section.name }}">{{ section.title }}<i class="material-icons right">arrow_drop_down</i></a></li>
+  <div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="{{ page.master }}" class="brand-logo"><img src="/images/common/sensaura_full_dark_64.png"/></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {% for section in site.data.sections %}
+          {% if page.section == section.name %}
+            {% if section.subsections.size > 0 %}
+              <li class="active"><a class="dropdown-button" href="#!" data-activates="{{ section.name }}">{{ section.title }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            {% else %}
+              <li class="active"><a href="{{ section.url }}">{{ section.title }}</a></li>
+            {% endif %}
           {% else %}
-            <li class="active"><a href="{{ section.url }}">{{ section.title }}</a></li>
+            {% if section.subsections.size > 0 %}
+              <li><a class="dropdown-button" href="#!" data-activates="{{ section.name }}">{{ section.title }}<i class="material-icons right">arrow_drop_down</i></a></li>
+            {% else %}
+              <li><a href="{{ section.url }}">{{ section.title }}</a></li>
+            {% endif %}
           {% endif %}
-        {% else %}
-          {% if section.subsections.size > 0 %}
-            <li><a class="dropdown-button" href="#!" data-activates="{{ section.name }}">{{ section.title }}<i class="material-icons right">arrow_drop_down</i></a></li>
-          {% else %}
-            <li><a href="{{ section.url }}">{{ section.title }}</a></li>
-          {% endif %}
-        {% endif %}
-      {% endfor %}
-      </ul>
-    </div>
-  </nav>
+        {% endfor %}
+        </ul>
+      </div>
+    </nav>
+  </div>
 </header>

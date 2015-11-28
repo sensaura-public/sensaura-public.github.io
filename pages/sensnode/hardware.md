@@ -10,7 +10,7 @@ consists of a PCB form factor, pin headers and electrical characteristics.
 
 The form factor specifies the size of the PCB and the location of the headers.
 
-![TODO: PCB Form Factor]()
+![PCB Form Factor](/images/diagrams/sensnode_form_factor.png)
 
 The size of the PCB is designed to be small enough to easily deploy but large enough that it can be built by hand with
 relative ease. A SensNode (and associated back pack boards) can be etched or milled as single sided PCBs as well as

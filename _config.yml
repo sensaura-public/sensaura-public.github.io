@@ -24,7 +24,7 @@ defaults:
     values:
       section: "blog"
       master: "/"
-      widgets: [ "category", "slack", "recent", "adsense" ]
+      widgets: [ "slack", "recent" ]
   # Set the default layout for posts and drafts
   -
     scope:
