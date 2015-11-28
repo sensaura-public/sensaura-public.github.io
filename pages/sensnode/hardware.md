@@ -33,8 +33,6 @@ boards.
 The *POWER* header provides the primary power source for the board. A [power adapter](/pages/sensnode/powerboard.html) provides
 the voltage, all other boards are consumers.
 
-![TODO: Power Header Pinout]()
-
 |Pin|Label    |Description                                     |
 |---|---------|------------------------------------------------|
 | 1 |Vcc      |3.3V regulated supply. Must support up to 150mA.|
@@ -59,7 +57,7 @@ programming mode.
 | 6 |RESET    |CPU reset line, active low.                     |
 
 As different manufacturers provide different methods of entering bootloader mode on start up this interface defines
-a generic method interface. The boot loader entry sequence is show below:
+a generic interface. The boot loader entry sequence, from the point of view of an external programmer, is shown below:
 
 ![TODO: Bootloader Entry]()
 

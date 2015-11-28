@@ -62,9 +62,6 @@ firmware is reloaded and a different UUID is assigned to the node. When a node j
 be queried and the initial values read. During normal operation these values will be updated by events sent from the
 node or by direct query from the SensNet library.
 
-![TODO: Attribute Model]()
-
 Each attribute description consists of a name, a read/write flag and a data type. Common types such as string, flag,
 number and date are supported and arbitrary data (up to 20 bytes in size) can be used. This design was heavily influenced
 by the Bluetooth LE GATT protocol and has many aspects in common.
-

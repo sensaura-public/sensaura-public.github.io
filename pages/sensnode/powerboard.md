@@ -13,11 +13,18 @@ This includes the *ACTION* button, the *INDICATOR* LED and a battery monitoring 
 
 ## Power Interface Header
 
-![TODO: Power Interface Header]()
-
 The power interface uses the 6 pin *POWER* header on the SensNode board. At a minimum a power supply adapter must
 provide a regulated 3.3V Vcc source and a ground connection - the simplest implementation of a power board would just
 be a regulator circuit.
+
+|Pin|Label    |Description                                     |
+|---|---------|------------------------------------------------|
+| 1 |Vcc      |3.3V regulated supply. Must support up to 150mA.|
+| 2 |GND      |Ground.                                         |
+| 3 |Vbat     |Battery level indication - 0 to 3.3V.           |
+| 4 |LATCH    |Power latch output, active low.                 |
+| 5 |ACTION   |Action button input, active low.                |
+| 6 |INDICATOR|Indicator LED output, active high.              |
 
 The power interface is designed to support *push on*/*push off* operation under software control. The *ACTION* button
 doubles as the power switch and, when closed, provide power on the Vcc line until it is released.

@@ -18,14 +18,9 @@ The tree is split into two main sections - the *public* tree and the *private* t
 tree will be echoed on an external [MQTT](https://en.wikipedia.org/wiki/MQTT) broker - messages received on the MQTT
 server will also be reflected on the internal message bus as well.
 
-![TODO: Message Format]()
-
 Messages are represented as dictionaries mapping key names to arbitrary values - internally a [IReadOnlyDictionary](https://msdn.microsoft.com/en-us/library/hh136548(v=vs.110).aspx)
 is passed to subscribers. When messages are passed outside the application - to the MQTT broker or through the web interface
 for example - they are converted to [JSON](http://www.json.org/) format.
-
-To provide more flexibility
-[MQTT](https://en.wikipedia.org/wiki/MQTT)
 
 ## Rules Engine
 
