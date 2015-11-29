@@ -1,6 +1,7 @@
 ---
 title: Silicon Labs Low Power Design Competition
 category: sensnode
+cover: photos/zero_gecko_prototype.jpg
 ---
 A few months ago I found out about a [Low Power Contest](http://community.silabs.com/t5/Contests/Low-Power-Contest/m-p/153186#U153186)
 being run by [Silicon Labs](http://www.silabs.com/Pages/default.aspx). The [SensNode](/pages/sensnode/about.html) hardware
@@ -10,7 +11,7 @@ so I moved on to the next stage, prototyping a SensNode board with the starter k
 
 ![Zero Gecko Breakout](/images/photos/zero_gecko_prototype.jpg)
 
-My [entry is now submitted](TODO: link to entry) but unfortunately it was not entirely complete. You can read the actual
+My [entry is now submitted](http://community.silabs.com/t5/Projects/Low-Power-Contest-2015-Wireless-Sensor-Platform/m-p/158364) but unfortunately it was not entirely complete. You can read the actual
 submission for more details but it boiled down to a lot of problems maintaining reliable communications with the NRF24L01+
 module on the breakout board. These modules seem very sensitive to noise on the SPI bus, when the connecting tracks are
 fairly short (such as when the CPU and the module are on the same PCB) this isn't really an issue but with the jumper
@@ -49,4 +50,5 @@ time constraints imposed by the competition I can devote some time to building a
 back to the [XMC1100](http://www.infineon.com/cms/en/product/microcontroller/32-bit-industrial-microcontroller-based-on-arm-registered-cortex-registered-m/32-bit-xmc1000-industrial-microcontroller-arm-registered-cortex-registered-m0/channel.html?channel=db3a30433c1a8752013c1aa35a6a0029)
 based board design I was working on prior to the competition.
 
-In either case entering the competition was well worth it, I'm a few more steps closer to fully functional prototype.
+In either case entering the competition was well worth it, I'm a few more steps closer to fully functional prototype. Be sure
+to check the [other entries](http://community.silabs.com/t5/forums/filteredbylabelpage/board-id/9/label-name/low%20power%20design%20contest), there are some interesting designs there.
