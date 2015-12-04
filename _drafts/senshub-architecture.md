@@ -1,14 +1,14 @@
 ---
 title: SensHub Architecture
 category: senshub
+cover: logos/csharp.png
 ---
 I pushed a lot of [SensHub](/pages/senshub/about.html) related code to the
 [public repository](https://github.com/sensaura-public/senshub) today. This
 update includes a plugin framework, the internal HTTP server, MQTT integration
 as well as refactoring the messaging system. It's not yet in a state where it
-can be used *in the wild* but it is several steps closer to that goal.
-
-The overall architecture is fairly settled now so this seems like a good
+can be used *in the wild* but it is several steps closer to that goal. The
+overall architecture is fairly settled now so this seems like a good
 opportunity to describe it and cover some of the implementation details.
 
 ## Deployment Targets
@@ -20,15 +20,19 @@ HTTP server while a *development* environment would consist of SensHub running
 on a desktop machine with the MQTT server located elsewhere on the network and
 serving up the web interface itself.
 
-![TODO: Product and Development Deployments]()
-
 The target device for production will be a low power (in terms of processing
 and energy), constrained resources device like the [Raspberry Pi](https://www.raspberrypi.org/)
-or [CHIP](http://getchip.com/) single board computers.
+or [CHIP](http://getchip.com/) single board computers. This means that some
+care has to be taken to reduce the amount of memory and processing power the server
+requires. As a result I've tried to keep the implementation as simple as possible
+and have been careful about external dependencies.
 
 ## Software Architecture
 
-TODO: Overview
+There are two core parts to the SensHub server - the message bus that is used
+to distribute messages and events between the components and the plugin system
+that allows external components to add additional sources and actions for those
+messages.
 
 ### Message Bus
 
@@ -113,15 +117,15 @@ ITopic topic = messageBus.Private.CreateTopic("server/notifications/errors");
 messageBus.Publish(topic, builder.CreateMessage());
 ```
 
-> A note about topics: there is no restriction on how you set up the topic
-> topic tree or where you publish messages but SensHub does use a simple
-> convention of splitting the tree into two parts - *public* and *private*.
-> Any message sent to the *public* part of the tree will be replicated on
-> the external MQTT server (and vice-versa, messages coming from MQTT will
-> be sent to the *public* tree as well) while messages on the *private* tree
-> remain internal to the server. The line in the sample above that reads
-> *messageBus.Private.CreateTopic("server/notifications/errors")* creates
-> the topic *private/server/notifications/errors*.
+The server doesn't impose any restriction on how you set up the topic
+topic tree or where you publish messages to but it does use a simple
+convention of splitting the tree into two parts - *public* and *private*.
+Any message sent to the *public* part of the tree will be replicated on
+the external MQTT server (and vice-versa, messages coming from MQTT will
+be sent to the *public* tree as well) while messages on the *private* tree
+remain internal to the server. The line in the sample above that reads
+*messageBus.Private.CreateTopic("server/notifications/errors")* creates
+the topic *private/server/notifications/errors*.
 
 Receiving messages is just as simple, get a reference to a topic and call
 *Subscribe()* to attach a *ISubscriber* instance to it. Any messages sent to
@@ -225,11 +229,105 @@ others and can have no effect on their operation. The only possible way to for
 plugins to communicate is over the message bus and even then you have no way
 of knowing if anyone was listening for messages you send anyway.
 
-TODO: Internal Plugins
+External plugins are simply .NET assemblies compiled to a DLL and placed in
+the servers *plugins* directory. On start up the server simply inspects each
+DLL searching for any classes that implement *IPlugin*; any that are found
+are instantiated, the assembly queried for some additional metadata about the
+plugin and then they are added to the list of available plugins.
 
-TODO: External Plugins
+The plugin loading code is shown below, this snippet is part of a loop which
+inspects each DLL file in turn:
 
-## User Interface
+```C#
+// Load the assembly
+Assembly asm = null;
+try
+{
+  this.Log().Debug("Attempting to load '{0}'", pluginDLL);
+  asm = Assembly.LoadFile(pluginDLL);
+}
+catch (Exception ex)
+{
+    this.Log().Error("Failed to load assembly from file '{0}' - {1}", pluginDLL, ex.ToString());
+    continue;
+}
+// Get the plugins defined in the file (it can have more than one)
+Type[] types = null;
+try
+{
+  types = asm.GetTypes();
+}
+catch (Exception ex)
+{
+    // TODO: an exception here indicates a plugin built against a different version
+    //       of the API. Should report it as such.
+    this.Log().Error("Failed to load assembly from file '{0}' - {1}", pluginDLL, ex.ToString());
+    continue;
+}
+// Load metadata from the assembly
+metadata.LoadFromAssembly(asm);
+// Look for plugins
+foreach (var candidate in types)
+{
+  if (typeof(IPlugin).IsAssignableFrom(candidate))
+  {
+    // Make sure we have metadata available
+    if (metadata.GetDescription(candidate) == null)
+    {
+      this.Log().Warn("Plugin '{0}.{1}' does not provide a description.", candidate.Namespace, candidate.Name);
+      continue;
+    }
+    if (typeof(IConfigurable).IsAssignableFrom(candidate) && (metadata.GetConfiguration(candidate) == null))
+    {
+      this.Log().Warn("Plugin '{0}.{1}' is marked as configurable but does not provide a configuration description.", candidate.Namespace, candidate.Name);
+      continue;
+    }
+    // Go ahead and try to load it
+    try
+    {
+      this.Log().Debug("Creating plugin '{0}.{1}'", candidate.Namespace, candidate.Name);
+      Object instance = Activator.CreateInstance(candidate);
+      AddPlugin((IPlugin)instance);
+    }
+    catch (Exception ex)
+    {
+      this.Log().Error("Unable to create plugin with class '{0}' in extension '{1}' - {2}",
+        candidate.Name,
+        pluginDLL,
+        ex.ToString()
+        );
+      continue;
+    }
+  }
+}
+```
+
+The metadata mentioned in the code above is some additional information about
+the plugin - mainly localised strings for its description and configuration
+information. This is just an XML file stored as an embedded resource in the
+DLL with a standard name.
+
+A lot of the core functionality, such as the MQTT integration, is implemented
+using the plugin system as well - these are simply added to the list of available
+plugins manually rather than being automatically discovered. The only difference
+between these built-in plugins and the external ones is that they have access
+to more of the server internals because they are part of the same assembly.
+
+The plugin system makes it easier to add extra functionality to SensHub without
+having to modify the server source code directly. The plugin API is separated
+out into it's own assembly (you can [see the source here](TODO)); a plugin
+project simply needs to reference that assembly and the [Splat](https://github.com/paulcbetts/splat)
+library (used for logging, service discovery and some other cross platform
+functionality) to be able to work with the server.
 
 ## Next Steps
 
+I'm pretty happy with the progress made in the past week, I'm hoping to have
+some basic rules and actions working soon. I'm using a simple [Slack](https://slack.com/)
+integration as the first external plugin, it just takes messages arriving on the
+topic it's attached to and sends it to a specified channel in your Slack team.
+Getting that to work will be a good test of the overall architecture.
+
+Now that it's the weekend again though it's time to switch focus to hardware
+while I have access to my equipment. Hopefully I will have an update related
+to that in the next few days.
