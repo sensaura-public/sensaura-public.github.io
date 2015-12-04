@@ -315,7 +315,7 @@ to more of the server internals because they are part of the same assembly.
 
 The plugin system makes it easier to add extra functionality to SensHub without
 having to modify the server source code directly. The plugin API is separated
-out into it's own assembly (you can [see the source here](TODO)); a plugin
+out into it's own assembly (you can [see the source here](https://github.com/sensaura-public/senshub/tree/master/SensHub%20API)); a plugin
 project simply needs to reference that assembly and the [Splat](https://github.com/paulcbetts/splat)
 library (used for logging, service discovery and some other cross platform
 functionality) to be able to work with the server.
