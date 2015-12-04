@@ -25,3 +25,8 @@
   font-style: bold;
   border-bottom: 1px solid;
   }
+
+.highlight {
+  border-left: 2px solid #b3d3ff;
+  padding-left: 1em;
+  }
