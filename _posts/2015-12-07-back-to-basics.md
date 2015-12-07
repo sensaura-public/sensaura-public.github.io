@@ -1,6 +1,7 @@
 ---
 title: Back to Basics, An ATMega SensNode
 category: sensnode
+cover: 2015/12/07/atmega_sensnode_sensor.jpg
 ---
 The NRF24L01 modules are still giving me a lot of grief unfortunately, getting
 reliable communications with them over the SPI bus is proving far more difficult
@@ -8,7 +9,7 @@ than anticipated. As they are a key component of the [SensNode](/pages/sensnode/
 hardware platform I really need to prove that they can be used as designed. It's
 time to step back to a *known working* configuration and move forward from there.
 
-![TODO: Image of swim timer modules]()
+![Swim Timer Modules](/images/2015/12/07/swimtimer.jpg)
 
 Some time ago I designed a race timing system for a friends project based
 around an ATmega CPU and using the NRF24L01 modules for communication. They
@@ -52,7 +53,7 @@ To cut a long story short this means that although it might be possible to run
 a very simple SensNode implementation on the ATmega it may be too limited for
 practical purposes. As a prototype for basic testing though it should be sufficient.
 
-![TODO: SensNode ATmega PCB]()
+![SensNode ATmega PCB](/images/2015/12/07/atmega_sensnode.jpg)
 
 The design I came up with is based around the DIP version of the ATmega328p,
 simply because I have some of them available to use immediately. The board
@@ -64,6 +65,8 @@ significantly and allow the board to be brought back down to the correct
 dimensions. If the ATmega proves to be a reasonable core I will do a redesign
 and make it one of the reference implementations - it doesn't hurt to have a
 good range of options.
+
+![ATmega Form Factor](/images/2015/12/07/atmega_sensnode_sensor.jpg)
 
 I'm using [Optiboot](https://github.com/Optiboot/optiboot) as the bootloader
 on the AVR which means I can simply use [avrdude](http://www.nongnu.org/avrdude/)
