@@ -1,5 +1,5 @@
 ---
-title: Back to Basics, An ATMega SensNode
+title: Back to Basics, an ATmega SensNode
 category: sensnode
 cover: 2015/12/07/atmega_sensnode_sensor.jpg
 ---
