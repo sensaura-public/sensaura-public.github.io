@@ -13,7 +13,9 @@
       <div class="col s12 m8 row">
         <h1>{{ page.title }}</h1>
         <span class="byline">{{ page.date | date_to_string }}</span>
-        {{ content }}
+        <div class="markdown">
+          {{ content }}
+        </div>
         {% include adsense.inc %}
         {% include disqus.inc %}
       </div>
