@@ -3,11 +3,11 @@ title: SensHub UI
 category: senshub
 cover: 2015/12/13/senshub_plugins.png
 ---
-This weeks update to SensHub is starting to flesh out the UI and RPC interface.
+This weeks update to the SensHub code is starting to flesh out the UI and the RPC calls required to implement it. The interface uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html) for the look and feel to provide a familiar and, hopefully, easy to use interface to the system.
 
 ![Plugin Management](/images/2015/12/13/senshub_plugins.png)
 
-Managment of [SensHub]() is done through a web interface, I'm using Google [Material Design](https://www.google.com/design/spec/material-design/introduction.html) for the look and feel. The specific implementation is provided by the excellent *[materialize.css](http://materializecss.com/)* CSS framework along with *[jQuery](https://jquery.com/)* to provide the client side logic.
+The implementation is using the excellent *[materialize.css](http://materializecss.com/)* CSS framework along with *[jQuery](https://jquery.com/)* to provide the client side logic. There are a handful of other opensource CSS components in use as well - including *[markdown-js](https://github.com/evilstreak/markdown-js)* to allow richly formatted text in descriptions and *[CodeMirror](https://codemirror.net/)* for syntax highlighted editing of scripts in the browser.
 
 ![Configuration on Mobile](/images/2015/12/13/senshub_config_mobile.png)
 
