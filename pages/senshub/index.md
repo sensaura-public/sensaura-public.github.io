@@ -34,7 +34,7 @@ The current version of the SensHub server is implemented in C# and will run on t
 Mono on a Linux or OS/X platform. SensHub is a server application - the host machine is expected to be always on.
 
 The anticipated target hardware is a single board computer with similar capabilities to a [Raspberry Pi](https://www.raspberrypi.org/)
-combined with WiFi (802.11g/n) support and an adapter to communicate with the [SensNet](/pages/sensnet/about.html)
+combined with WiFi (802.11g/n) support and an adapter to communicate with the [SensNet](/pages/sensnet/index.html)
 network.
 
 Internal testing is being done on a [Raspberry Pi 2](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)

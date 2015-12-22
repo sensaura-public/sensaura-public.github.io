@@ -3,7 +3,7 @@ title: IoTWeb - An Embedded Web Server
 category: senshub
 ---
 After playing with the [Windows 10 IoT Core](https://dev.windows.com/en-us/iot)
-on the Raspberry Pi 2 I thought it would be a good platform for the [SensHub](/pages/senshub/about.html)
+on the Raspberry Pi 2 I thought it would be a good platform for the [SensHub](/pages/senshub/index.html)
 server so I decided to see what would be required.
 
 # Features and Limitations

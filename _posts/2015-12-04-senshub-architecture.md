@@ -3,7 +3,7 @@ title: SensHub Architecture
 category: senshub
 cover: logos/csharp.png
 ---
-I pushed a lot of [SensHub](/pages/senshub/about.html) related code to the
+I pushed a lot of [SensHub](/pages/senshub/index.html) related code to the
 [public repository](https://github.com/sensaura-public/senshub) today. This
 update includes a plugin framework, the internal HTTP server, MQTT integration
 as well as refactoring the messaging system. It's not yet in a state where it

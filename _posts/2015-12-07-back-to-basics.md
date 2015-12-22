@@ -5,7 +5,7 @@ cover: 2015/12/07/atmega_sensnode_sensor.jpg
 ---
 The NRF24L01 modules are still giving me a lot of grief unfortunately, getting
 reliable communications with them over the SPI bus is proving far more difficult
-than anticipated. As they are a key component of the [SensNode](/pages/sensnode/about.html)
+than anticipated. As they are a key component of the [SensNode](/pages/sensnode/index.html)
 hardware platform I really need to prove that they can be used as designed. It's
 time to step back to a *known working* configuration and move forward from there.
 
@@ -16,7 +16,7 @@ around an ATmega CPU and using the NRF24L01 modules for communication. They
 worked well and were regularly used for nearly two years. It was this project
 that inspired my choice of the NRF24L01 as the wireless communications module
 for SensNode in the first place. I still had a few of the prototypes stored
-away so they can be repurposed to test the [SensNet](/pages/sensnet/about.html)
+away so they can be repurposed to test the [SensNet](/pages/sensnet/index.html)
 protocol.
 
 I still need a SensNode form factor module to do a complete test of the network
@@ -76,7 +76,7 @@ the *PROG* line from the debug header. A more complete solution would jump
 straight to user code if the *PROG* line isn't asserted.
 
 Now I have the hardware in place to verify the NRF communications in general
-and the [SensNet](/pages/sensnet/about.html) in particular. Unfortunately
+and the [SensNet](/pages/sensnet/index.html) in particular. Unfortunately
 building up and testing hardware takes a lot more time (and requires far more
 physical resources) than writing the software does - this part of the project
 is progressing at a much slower rate than I would have preferred. With luck

@@ -9,7 +9,7 @@ as possible to build and deploy remote sensors. SensNode consists of a [hardware
 and a [software API](/apidocs/sensnode/index.html) that allow a range of devices that adhere to the specific to interact
 with each other.
 
-The [SensNode](/pages/sensnode/about.html) hardware splits the functionality into three distinct areas - the
+The [SensNode](/pages/sensnode/index.html) hardware splits the functionality into three distinct areas - the
 [processor board](/pages/sensnode/cpuboard.html) which contains the main CPU and networking functionality, a
 [power supply](/pages/sensnode/powerboard.html) and one or more [sensor backpacks](/pages/sensnode/backpack.html) to
 perform the actual measurements.
@@ -49,7 +49,7 @@ the portability of your code.
 
 ## Networking
 
-The SensNode API includes support for the [SensNet](/pages/sensnet/about.html) protocol and will handle the majority
+The SensNode API includes support for the [SensNet](/pages/sensnet/index.html) protocol and will handle the majority
 of network operations in the background without requiring specific application support. Simple define attributes in
 your main source file and update them as needed in the application loop;
 
@@ -78,5 +78,5 @@ void loop() {
 
 The sample code above shows a very simple main loop for a garden sensor. In this case the sensor reads the values from
 the hardware sensors and updates the attributes accordingly. The SensNode library will ensure the appropriate updates
-are sent over [SensNet](/pages/sensnet/about.html) as well as handling other network operations such as joining the
+are sent over [SensNet](/pages/sensnet/index.html) as well as handling other network operations such as joining the
 network, responding to value requests and describing the available attributs to the network controller.

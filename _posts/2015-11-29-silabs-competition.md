@@ -4,7 +4,7 @@ category: sensnode
 cover: photos/zero_gecko_prototype.jpg
 ---
 A few months ago I found out about a [Low Power Contest](http://community.silabs.com/t5/Contests/Low-Power-Contest/m-p/153186#U153186)
-being run by [Silicon Labs](http://www.silabs.com/Pages/default.aspx). The [SensNode](/pages/sensnode/about.html) hardware
+being run by [Silicon Labs](http://www.silabs.com/Pages/default.aspx). The [SensNode](/pages/sensnode/index.html) hardware
 seemed a good candidate so I submitted an outline to the first phase of the competition which was simply looking for
 ideas. In return Silicon Labs sent me a [EFM32 Zero Gecko Starter Kit](https://www.silabs.com/products/mcu/lowpower/Pages/efm32zg-stk3200.aspx)
 so I moved on to the next stage, prototyping a SensNode board with the starter kit acting as the processor.

@@ -4,8 +4,8 @@ section: home
 ---
 # About Sensaura
 
-The Sensaura platform consists of three inter-related projects - the [SensNode](/pages/sensnode/about.html) hardware
-platform, the [SensNet](/pages/sensnet/about.html) NRF24L01+ based networking protocol and [SensHub](/pages/senshub/about.html)
+The Sensaura platform consists of three inter-related projects - the [SensNode](/pages/sensnode/index.html) hardware
+platform, the [SensNet](/pages/sensnet/index.html) NRF24L01+ based networking protocol and [SensHub](/pages/senshub/index.html)
 message bus service and rules engine. The components are intended to be used together to provide a scalable remote sensing
 platform for home, office and manufacturing environments.
 
