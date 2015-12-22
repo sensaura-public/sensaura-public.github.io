@@ -23,7 +23,7 @@ library of modules that can be mixed and matched to suit a wide range of sensor 
 
 ## Processor Boards
 
-[Processor boards](/pages/sensnode/cpuboard) are the basis of the SensNode system and consist of an ARM CPU, a
+[Processor boards](/pages/sensnode/cpuboard.html) are the basis of the SensNode system and consist of an ARM CPU, a
 NRF24L01+ 2.4GHz RF module and a well defined form factor with expansion headers. Processor boards are not tied
 to any manufacturer or model of ARM chip - the current prototypes are built around an EFM32 Cortex-M0 CPU and
 additional designs are being built around the XMC1100 and STM32F030 CPUs.

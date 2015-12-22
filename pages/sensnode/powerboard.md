@@ -29,13 +29,11 @@ be a regulator circuit.
 The power interface is designed to support *push on*/*push off* operation under software control. The *ACTION* button
 doubles as the power switch and, when closed, provide power on the Vcc line until it is released.
 
-![TODO: Power On Cycle]()
-
 The firmware will pull the *LATCH* pin low early in the startup process, the power adapter must provide power on Vcc
-while the *LATCH* pin remains low. The full power on sequence is shown in the diagram above.
+while the *LATCH* pin remains low.
 
 The processor board can switch itself off by raising *LATCH* high. This will be done by the firmware if the user code
-calls the [shutdown()](TODO) function, if the battery level falls below a safe value or if the *ACTION* pin is depressed
+calls the shutdown() function, if the battery level falls below a safe value or if the *ACTION* pin is depressed
 for more than two seconds.
 
 ## User Input and Feedback
