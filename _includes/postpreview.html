@@ -16,9 +16,9 @@
           <span class="card-title">{{ post.title }}</span>
           {% endif %}
         </div>
-        <div class="card-content post-preview">
+        <div class="card-content">
           <div class="byline">{{ post.date | date_to_string }} | <a href="{{ post.url }}#disqus_thread" data-disqus-identifier="{{ post.url }}">Comments</a></div>
-          {{ post.excerpt }}
+          <div class="post-preview">{{ post.excerpt }}</div>
         </div>
       </div>
     </div>
