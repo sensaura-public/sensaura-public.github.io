@@ -2,6 +2,7 @@
 title: SensHub UI
 category: senshub
 cover: 2015/12/13/senshub_plugins.png
+textcolor: black
 ---
 This weeks update to the SensHub code is starting to flesh out the UI and the RPC calls required to implement it. The interface uses [Material Design](https://www.google.com/design/spec/material-design/introduction.html) for the look and feel to provide a familiar and, hopefully, easy to use interface to the system.
 
