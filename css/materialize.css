@@ -8469,4 +8469,131 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   max-width: 100%;
   height: auto; }
 
+.post-preview p {
+  margin: 30px 0;
+  overflow: hidden;
+  position: relative;
+  font-weight: 300; }
+  @media only screen and (min-width: 360px) {
+    .post-preview p {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      max-height: 6rem; } }
+  @media only screen and (min-width: 390px) {
+    .post-preview p {
+      font-size: 1.224rem;
+      line-height: 1.53rem;
+      max-height: 6.12rem; } }
+  @media only screen and (min-width: 420px) {
+    .post-preview p {
+      font-size: 1.248rem;
+      line-height: 1.56rem;
+      max-height: 6.24rem; } }
+  @media only screen and (min-width: 450px) {
+    .post-preview p {
+      font-size: 1.272rem;
+      line-height: 1.59rem;
+      max-height: 6.36rem; } }
+  @media only screen and (min-width: 480px) {
+    .post-preview p {
+      font-size: 1.296rem;
+      line-height: 1.62rem;
+      max-height: 6.48rem; } }
+  @media only screen and (min-width: 510px) {
+    .post-preview p {
+      font-size: 1.32rem;
+      line-height: 1.65rem;
+      max-height: 6.6rem; } }
+  @media only screen and (min-width: 540px) {
+    .post-preview p {
+      font-size: 1.344rem;
+      line-height: 1.68rem;
+      max-height: 6.72rem; } }
+  @media only screen and (min-width: 570px) {
+    .post-preview p {
+      font-size: 1.368rem;
+      line-height: 1.71rem;
+      max-height: 6.84rem; } }
+  @media only screen and (min-width: 600px) {
+    .post-preview p {
+      font-size: 1.392rem;
+      line-height: 1.74rem;
+      max-height: 6.96rem; } }
+  @media only screen and (min-width: 630px) {
+    .post-preview p {
+      font-size: 1.416rem;
+      line-height: 1.77rem;
+      max-height: 7.08rem; } }
+  @media only screen and (min-width: 660px) {
+    .post-preview p {
+      font-size: 1.44rem;
+      line-height: 1.8rem;
+      max-height: 7.2rem; } }
+  @media only screen and (min-width: 690px) {
+    .post-preview p {
+      font-size: 1.464rem;
+      line-height: 1.83rem;
+      max-height: 7.32rem; } }
+  @media only screen and (min-width: 720px) {
+    .post-preview p {
+      font-size: 1.488rem;
+      line-height: 1.86rem;
+      max-height: 7.44rem; } }
+  @media only screen and (min-width: 750px) {
+    .post-preview p {
+      font-size: 1.512rem;
+      line-height: 1.89rem;
+      max-height: 7.56rem; } }
+  @media only screen and (min-width: 780px) {
+    .post-preview p {
+      font-size: 1.536rem;
+      line-height: 1.92rem;
+      max-height: 7.68rem; } }
+  @media only screen and (min-width: 810px) {
+    .post-preview p {
+      font-size: 1.56rem;
+      line-height: 1.95rem;
+      max-height: 7.8rem; } }
+  @media only screen and (min-width: 840px) {
+    .post-preview p {
+      font-size: 1.584rem;
+      line-height: 1.98rem;
+      max-height: 7.92rem; } }
+  @media only screen and (min-width: 870px) {
+    .post-preview p {
+      font-size: 1.608rem;
+      line-height: 2.01rem;
+      max-height: 8.04rem; } }
+  @media only screen and (min-width: 900px) {
+    .post-preview p {
+      font-size: 1.632rem;
+      line-height: 2.04rem;
+      max-height: 8.16rem; } }
+  @media only screen and (min-width: 930px) {
+    .post-preview p {
+      font-size: 1.656rem;
+      line-height: 2.07rem;
+      max-height: 8.28rem; } }
+  @media only screen and (min-width: 960px) {
+    .post-preview p {
+      font-size: 1.68rem;
+      line-height: 2.1rem;
+      max-height: 8.4rem; } }
+  @media only screen and (max-width: 360px) {
+    .post-preview p {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      max-height: 6rem; } }
+.post-preview p:before {
+  bottom: 0;
+  position: absolute;
+  right: 0;
+  content: '\2026'; }
+.post-preview p:after {
+  content: '';
+  position: absolute;
+  height: 50px;
+  width: 100%;
+  z-index: 1; }
+
 /*# sourceMappingURL=materialize.css.map */
