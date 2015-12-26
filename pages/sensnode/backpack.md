@@ -1,8 +1,7 @@
 ---
-title: Sensor Boards
+title: SensNode Sensor Boards
+section: sensnode
 ---
-# Sensor Boards
-
 Most customisation on a SensNode device will be done by building sensor board (or *back packs*). These boards adhere
 to the [SensNode Form Factor](/pages/sensnode/hardware.html) and plug above or below a [processor board](/pages/sensnode/cpuboard.html)
 to provide input for the sensor.

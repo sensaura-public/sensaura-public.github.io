@@ -1,5 +1,6 @@
 ---
-title: Processor Board
+title: SensNode Processor Boards
+section: sensnode
 ---
 # Processor Boards
 
@@ -12,7 +13,7 @@ minimalistic to allow for a wide range of CPUs from different manufacturers to b
 To provide full support for the [SensNode API](/apidocs/sensnode/index.html) and [hardware specification](/pages/sensnode/hardware.html)
 the selected CPU should have the following features:
 
-  * At least 16K of flash and 4K of RAM. These requirements are determined by the [SensNet](/pages/sensnet/about.html)
+  * At least 16K of flash and 4K of RAM. These requirements are determined by the [SensNet](/pages/sensnet/index.html)
     implementation.
   * At least 14 available GPIO pins (of which at least 4 support analog input) to provide a fully functional header
     interface.

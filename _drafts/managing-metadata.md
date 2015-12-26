@@ -1,5 +1,5 @@
 ---
 title: Managing Metadata
-category: SensHub
+category: senshub
 ---
 

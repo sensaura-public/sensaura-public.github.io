@@ -1,10 +1,8 @@
 ---
-title: Hardware Specification
+title: SensNode Hardware Specification
+section: sensnode
 ---
-# SensNode Hardware Specification
-
-A SensNode device must adhere to this hardware specification to provide interoperability between components. The specification
-consists of a PCB form factor, pin headers and electrical characteristics.
+A SensNode device must adhere to this hardware specification to provide interoperability between components. The specification consists of a PCB form factor, pin headers and electrical characteristics.
 
 
 ## Form Factor

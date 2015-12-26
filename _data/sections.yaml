@@ -2,15 +2,15 @@
   title: Blog
   url: /blog/index.html
 
-- name: sensnode
-  title: SensNode
-  url: /pages/sensnode/about.html
-  subsections: [ sensnode_about, sensnode_hardware, sensnode_api ]
+- name: senshub
+  title: SensHub
+  url: /pages/senshub/index.html
 
 - name: sensnet
   title: SensNet
-  url: /pages/sensnet/about.html
+  url: /pages/sensnet/index.html
 
-- name: senshub
-  title: SensHub
-  url: /pages/senshub/about.html
+- name: sensnode
+  title: SensNode
+  url: /pages/sensnode/index.html
+  subsections: [ sensnode_about, sensnode_hardware, sensnode_api ]

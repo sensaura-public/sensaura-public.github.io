@@ -1,7 +1,7 @@
 ---
 title: SensHub Architecture
 category: senshub
-cover: logos/csharp.png
+cover: covers/coding.png
 ---
 I pushed a lot of [SensHub](/pages/senshub/about.html) related code to the
 [public repository](https://github.com/sensaura-public/senshub) today. This
