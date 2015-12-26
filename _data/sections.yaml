@@ -4,13 +4,13 @@
 
 - name: sensnode
   title: SensNode
-  url: /pages/sensnode/about.html
+  url: /pages/sensnode/index.html
   subsections: [ sensnode_about, sensnode_hardware, sensnode_api ]
 
 - name: sensnet
   title: SensNet
-  url: /pages/sensnet/about.html
+  url: /pages/sensnet/index.html
 
 - name: senshub
   title: SensHub
-  url: /pages/senshub/about.html
+  url: /pages/senshub/index.html
