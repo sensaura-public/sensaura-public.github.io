@@ -5,34 +5,53 @@
 </head>
 <body>
   {% include header.html %}
-  <div class="container">
-    <div class="row">
-      <div class="col s12 row markdown">
-        {{ content }}
+  <div class="container row">
+    <!-- Project summary -->
+    <div class="col s12 row hide-on-med-and-down">
+      <div class="col s12 center-align">
+        <h1><a href="/pages/index.html">Measure, Manage and Control your World.</a></h1>
       </div>
-      <!-- Show recent posts -->
-      {% assign counter = 0 %}
-      {% for post in site.posts %}
-        {% if counter == 2 %}
-          <div class="col s12 l6">
-            <div class="row grey lighten-4" style="border: 1px solid gray; margin: 0.5em 0.05em 0.2em 0.05em">
-              <div class="col s12 post-title">Discuss on Slack</a></div>
-              <div class="col s3"><img class="responsive-img" src="/images/logos/slack-chat-64.png" alt=""></div>
-              <div class="col s9">
-                The Sensaura project has it's very own Slack team - <a href="https://docs.google.com/a/sensaura.org/forms/d/1PTCu0A5u7OZh136BmPCS3jx0VPoCGIwvEc2fYyVhNYQ/viewform">click here</a>
-                to request an invitation and one will be automatically sent to you.
-              </div>
-            </div>
-          </div>
-        {% endif %}
-        {% if counter < 6 %}
-          {% assign counter = counter | plus:1 %}
-          {% include postpreview.html %}
-        {% endif %}
-      {% endfor %}
-      {% include adsense.inc %}
-      {% include disqus.inc %}
+      <div class="col s4 center-align">
+        <h2><a href="/pages/senshub/index.html">SensHub</a></h2>
+        <p class="flow-text" style="background: url('/images/icons/senshub_light.png') no-repeat center">Combine sensor data, notifications and analytics in one place. Use rules to trigger actions. Display real time information on dashboards.</p>
+      </div>
+      <div class="col s4 center-align">
+        <h2><a href="/pages/sensnet/index.html">SensNet</a></h2>
+        <p class="flow-text" style="background: url('/images/icons/sensnet_light.png') no-repeat center">A simple and portable wireless protocol for sensors and actuators. Automatically discover new devices as they are added.</p>
+      </div>
+      <div class="col s4 center-align">
+        <h2><a href="/pages/sensnode/index.html">SensNode</a></h2>
+        <p class="flow-text" style="background: url('/images/icons/sensnode_light.png') no-repeat center">A cost effective and versatile hardware platform for sensor projects. Build and deploy custom sensors easily and cheaply.</p>
+      </div>
     </div>
+    <div class="col s12 hide-on-large-only">
+      <div class="card">
+        <div class="card-image">
+          <a href="/pages/index.html">
+            <img src="/images/covers/sensaura.jpg">
+          </a>
+          <span class="card-title">{{ post.title }}</span>
+        </div>
+        <div class="card-content">
+          <div class="markdown flow-text">
+            <p>Sensaura consists of three inter-related projects - the <a href="/pages/sensnode/index.html">SensNode</a> hardware platform, the <a href="/pages/sensnet/index.html">SensNet</a> NRF24L01+ based networking protocol and <a href="/pages/senshub/index.html">SensHub</a> message bus service and rules engine. The components are intended to be used together to provide a scalable remote sensing platform for home, office and manufacturing environments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Separator -->
+    <div class="col s12 center-align">
+      <hr>
+    </div>
+    <!-- Recent posts -->
+    {% assign counter = 0 %}
+    {% for post in site.posts %}
+      {% if counter < 8 %}
+        {% assign counter = counter | plus:1 %}
+        {% include postpreview.html %}
+      {% endif %}
+    {% endfor %}
+    {% include adsense.inc %}
   </div>
   {% include footer.html %}
   {% include javascript.inc %}

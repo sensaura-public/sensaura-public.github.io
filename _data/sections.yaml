@@ -2,19 +2,18 @@
   title: Blog
   url: /blog/index.html
 
-- name: sensnode
-  title: SensNode
+- name: senshub
+  title: SensHub
   url: /pages/sensnode/index.html
-  subsections: [ sensnode_about, sensnode_hardware, sensnode_api ]
 
 - name: sensnet
   title: SensNet
   url: /pages/sensnet/index.html
 
-- name: senshub
-  title: SensHub
-  url: /pages/senshub/index.html
-
+- name: sensnode
+  title: SensNode
+  url: /pages/sensnode/index.html
+  subsections: [ sensnode_about, sensnode_hardware, sensnode_api ]
 - name: tools
   title: Tools
   url: /pages/tools/index.html

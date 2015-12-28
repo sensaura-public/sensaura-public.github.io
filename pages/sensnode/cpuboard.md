@@ -1,5 +1,6 @@
 ---
-title: Processor Board
+title: SensNode Processor Boards
+section: sensnode
 ---
 # Processor Boards
 

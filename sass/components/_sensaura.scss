@@ -5,3 +5,41 @@
     height: auto;
     }
   }
+
+// Use response text in previews
+.post-preview {
+  p {
+    margin: 30px 0;
+    overflow: hidden;
+    position: relative;
+    font-weight: 300;
+    $i: 0;
+    @while $i <= $intervals {
+      @media only screen and (min-width : 360 + ($i * $interval-size)) {
+        font-size: 1.2rem * (1 + (.02 * $i));
+        line-height: 1.5rem * (1 + (.02 * $i));
+        max-height: 6rem *  (1 + (.02 * $i));
+        }
+      $i: $i + 1;
+      }
+    // Handle below 360px screen
+    @media only screen and (max-width: 360px) {
+      font-size: 1.2rem;
+      line-height: 1.5rem;
+      max-height: 6rem;
+      }
+    }
+  p:before  {
+    bottom: 0;
+    position: absolute;
+    right: 0;
+    content: '\2026';
+    }
+  p:after {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    z-index: 1;
+    }
+  }

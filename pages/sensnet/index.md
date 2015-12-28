@@ -1,9 +1,7 @@
 ---
-title: SensNet
+title: The SensNet Sensor Protocol
 section: sensnet
 ---
-# SensNet Sensor Protocol
-
 The SensNet protocol is a simple data transfer protocol built on the NRF24L01+ that allows *attributes* on a sensor
 to be read from or written to through a simple API. The network uses a [star topology](https://en.wikipedia.org/wiki/Star_network)
 where each network consists of a single hub and multiple nodes.

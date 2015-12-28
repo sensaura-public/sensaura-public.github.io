@@ -1,25 +1,17 @@
 ---
-title: SensNode
+title: The SensNode Hardware Platform
 section: sensnode
 ---
-# SensNode Hardware Platform
-
 A SensNode is a ARM based processor board with integrated NRF24L01+ wireless networking designed to make it as simple
 as possible to build and deploy remote sensors. SensNode consists of a [hardware specification](/pages/sensnode/hardware.html)
 and a [software API](/apidocs/sensnode/index.html) that allow a range of devices that adhere to the specific to interact
 with each other.
 
-The [SensNode](/pages/sensnode/index.html) hardware splits the functionality into three distinct areas - the
-[processor board](/pages/sensnode/cpuboard.html) which contains the main CPU and networking functionality, a
-[power supply](/pages/sensnode/powerboard.html) and one or more [sensor backpacks](/pages/sensnode/backpack.html) to
-perform the actual measurements.
+The SensNode hardware splits the functionality into three distinct areas - a [processor board](/pages/sensnode/cpuboard.html) that contains the main CPU and networking functionality, a [power supply](/pages/sensnode/powerboard.html) and one or more [sensor backpacks](/pages/sensnode/backpack.html) to perform the actual measurements.
 
 ![Module interaction](/images/diagrams/hardware_modules.png)
 
-Building a remote sensor is simply a matter of mixing existing designs with your own customisations. For example -
-if you develop a solar power power supply board you can combine that with an existing processor board and environment
-sensor backpack to deploy sensors for a garden. If you contribute your designs back to the project we can build up a
-library of modules that can be mixed and matched to suit a wide range of sensor requirements.
+Building a remote sensor is simply a matter of mixing existing designs with your own customisations. For example - if you develop a solar power power supply board you can combine that with an existing processor board and environment sensor backpack to deploy sensors for a garden. If you contribute your designs back to the project we can build up a library of modules that can be mixed and matched to suit a wide range of sensor requirements.
 
 ## Processor Boards
 
