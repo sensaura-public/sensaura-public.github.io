@@ -53,7 +53,11 @@ When you install the library with NuGet the appropriate package will be installe
 
 # Installation
 
-TODO: Walk though NuGet installation
+The simplest way to install the component is to use the [NuGet package](https://www.nuget.org/packages/IotWeb/) using the [Package Manager Console](http://docs.nuget.org/consume/package-manager-console) or through the *Manage NuGet Packages* options on your project.
+
+![Installing With NuGet](/images/tools/iotweb/nuget_install.png)
+
+The version available on NuGet will be slightly older than the version available in GitHub but will be more stable and include less experimental or new features.
 
 # A Simple Example
 
