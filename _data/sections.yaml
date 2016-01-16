@@ -4,7 +4,7 @@
 
 - name: senshub
   title: SensHub
-  url: /pages/sensnode/index.html
+  url: /pages/senshub/index.html
 
 - name: sensnet
   title: SensNet
