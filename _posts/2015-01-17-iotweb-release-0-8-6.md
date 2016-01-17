@@ -1,14 +1,15 @@
 ---
 title: IotWeb 0.8.6 Released
 category: tools
+cover: covers/coding.jpg
 ---
 A new version (0.8.6) of the [IotWeb Library](http://sensaura.org/pages/tools/iotweb/index.html) has been pushed to [NuGet](https://www.nuget.org/packages/IotWeb/). If you are using a previous version please upgrade.
 
 The changes in this version are minimal:
 
-* Changed IServer/ISocket server interface to take the port number as a parameter in the constructor rather than on the *Start()* method. This makes it more generic (and simplifies the integration with [SensHub](http://sensaura.org/pages/senshub/index.html)).
-* Added support for sending binary WebSocket frames (requested on Slack).
-* Changed filter interface to support before and after filter hooks. This makes it easy to do things like time request handling and perform logging. Also allows for custom HTTP error pages.
+1. Changed IServer/ISocket server interface to take the port number as a parameter in the constructor rather than on the *Start()* method. This makes it more generic (and simplifies the integration with [SensHub](http://sensaura.org/pages/senshub/index.html)).
+2. Added support for sending binary WebSocket frames (requested on Slack).
+3. Changed filter interface to support before and after filter hooks. This makes it easy to do things like time request handling and perform logging. Also allows for custom HTTP error pages.
 
 There will be some changes required to hosting code. The port number is now specified when the socket server is constructed rather than when it is started, a simple sample of a server hosting embedded content would look like this:
 
