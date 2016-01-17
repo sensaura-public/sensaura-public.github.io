@@ -1,7 +1,7 @@
 ---
 title: IotWeb 0.8.6 Released
 category: tools
-cover: covers/coding.jpg
+cover: covers/coding.png
 ---
 A new version (0.8.6) of the [IotWeb Library](http://sensaura.org/pages/tools/iotweb/index.html) has been pushed to [NuGet](https://www.nuget.org/packages/IotWeb/). If you are using a previous version please upgrade.
 
