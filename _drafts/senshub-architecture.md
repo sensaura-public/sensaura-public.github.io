@@ -20,15 +20,15 @@ In the new design there is no real 'hub' anymore, SensHub is more of a framework
 
 ## MQTT Messaging
 
-Overview of [PubSub](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) messaging (MQTT in particular)
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is an implementation of the [Publish/Subscribe pattern](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern) with topic based filtering. In essence each message is a combination of a topic and a payload, producers *publish* a topic/payload combination and consumers *subscribe* to a topic to filter the payloads they will receive.
 
-Message is a combination of a topic and a payload.
-Consumers subscribe to a topic and receive messages sent to it (supports wildcards)
-Consumers don't know who sent the message
-Multiple consumers can subscribe to the same topic (each gets a copy of the message)
-Producers publish messages
-Producers don't know how many (if any) subscribers are listening.
-Multiple producers can publish to the same topic.
+![TODO: Message Transport]()
+
+MQTT uses string based topics in a tree like heirarchy, very similar to a directory structure, that are expressed as a set of names separated by the '/' character (for example - '*senshub/services/datastore*' or '*data/sensors/garage*'). Subscribers may listen to multiple topics either by using wildcards for topic names or by subscribing to multiple individual topics.
+
+The system is very decoupled - when a publisher sends a message it doesn't know how many (if any) subscribers received it, similarly a subscriber doesn't know if anyone is publishing on a topic until it actually receives a message.
+
+
 
 ## Topic Naming and Data Format Conventions
 
