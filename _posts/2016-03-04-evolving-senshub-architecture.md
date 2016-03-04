@@ -1,7 +1,7 @@
 ---
 title: The Evolving SensHub Architecture
 category: senshub
-cover: 2016/03/04/senshub_architecture_2.png
+cover: 2016/03/04/cover.png
 textcolor: black
 ---
 While working on a project I like to evaluate implementations and ideas done by others in the same space (like the comparison to the Riots system [I posted earlier](http://sensaura.org/sensnode/2016/01/15/riots-plug-and-play-iot.html)) - quite often this leads to improvements to my own code and designs, sometimes minor and sometimes fairly major. I've been following the JeeLabs blog for a while now (he does a lot of work with similar goals to mine) so when he started a series of posts on the [JeeLabs JET](http://jeelabs.org/article/1604a/) sensor hub implementation it seemed like a good idea to compare it to my own [SensHub design](http://sensaura.org/pages/senshub/index.html). That comparison has lead to some major design changes to SensHub which have kept me occupied for the past month.
